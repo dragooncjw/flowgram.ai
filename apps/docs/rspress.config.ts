@@ -8,6 +8,7 @@ export default defineConfig({
   base: '/flowgram.ai/',
   title: 'FlowGram.AI',
   globalStyles: path.join(__dirname, './global.less'),
+  ssg: false,
   builderConfig: {
     tools: {
       rspack: {
