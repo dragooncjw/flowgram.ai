@@ -5,7 +5,7 @@ import { pluginPlayground } from '@rspress/plugin-playground';
 
 export default defineConfig({
   root: path.join(__dirname, 'src'),
-  base: '/',
+  base: '/flowgram.ai/',
   title: 'FlowGram.AI',
   globalStyles: path.join(__dirname, './global.less'),
   builderConfig: {
