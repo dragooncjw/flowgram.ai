@@ -1,3 +1,11 @@
+import React from 'react';
 import './index.less';
 
-export { DemoFreeLayout as FreeFeatureOverview } from '@flowgram.ai/demo-free-layout';
+// https://github.com/web-infra-dev/rspress/issues/553
+const FreeFeatureOverview = React.lazy(() =>
+  import('@flowgram.ai/demo-free-layout').then((module) => ({
+    default: module.DemoFreeLayout,
+  }))
+);
+
+export { FreeFeatureOverview };
