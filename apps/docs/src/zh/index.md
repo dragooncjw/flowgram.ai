@@ -18,14 +18,14 @@ hero:
 features:
   - title: 扣子
     link: https://www.coze.cn/docs/guides/welcome
-    details: <img class="medium-zoom-image" style="border-radius&#58 8px; height&#58 180px" src="/ref-coze.png"/>
+    details: <img class="medium-zoom-image" style="border-radius&#58 8px; height&#58 180px" src="https://dragooncjw.github.io/flowgram.ai/ref-coze.png"/>
     icon: 🏃🏻‍♀️
   - title: 飞书低代码平台工作流
     link: https://ae.feishu.cn/hc/zh-CN/articles/120610822514
-    details: <img class="medium-zoom-image" style="border-radius&#58 8px; height&#58 180px" src="/ref-apaas.png"/>
+    details: <img class="medium-zoom-image" style="border-radius&#58 8px; height&#58 180px" src="https://dragooncjw.github.io/flowgram.ai/ref-apaas.png"/>
     icon: 📦
   - title: 飞书多维表格
     link: https://www.feishu.cn/hc/zh-CN/articles/908751305974
-    details: <img class="medium-zoom-image" style="border-radius&#58 8px; height&#58 180px" src="/ref-bitable.png"/>
+    details: <img class="medium-zoom-image" style="border-radius&#58 8px; height&#58 180px" src="https://dragooncjw.github.io/flowgram.ai/ref-bitable.png"/>
     icon: 🎨
 ---
