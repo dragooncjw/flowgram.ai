@@ -72,8 +72,7 @@ export default defineConfig({
       {
         icon: 'github',
         mode: 'link',
-        // TODO: @chenjiawei.inizio 后续迁移到 github 的地址
-        content: '',
+        content: 'https://github.com/dragooncjw/flowgram.ai',
       },
       {
         icon: 'discord',

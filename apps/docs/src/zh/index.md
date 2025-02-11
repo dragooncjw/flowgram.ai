@@ -11,8 +11,7 @@ hero:
       link: /guide/
     - theme: alt
       text: GitHub
-      # TODO: @chenjiawei.inizio 后续迁移到 github 的地址
-      link: blank
+      link: https://github.com/dragooncjw/flowgram.ai
   image:
     src: /logo.png
     alt: Logo
