@@ -1,0 +1,17 @@
+[
+  {
+    "type": "file",
+    "name": "index",
+    "label": "API 预览"
+  },
+  {
+    "type": "file",
+    "name": "common-apis",
+    "label": "常用 API"
+  },
+  {
+    "type": "dir",
+    "name": "plugins",
+    "label": "插件"
+  }
+]

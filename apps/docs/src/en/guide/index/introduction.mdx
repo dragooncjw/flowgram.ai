@@ -1,0 +1,185 @@
+# Question & Answer
+## Why not use ReactFlow
+- ReactFlow doesn't handle data modeling or provide layout algorithms. It only handles rendering, which means development costs remain high for complex features.
+See: https://reactflow.dev/examples/nodes/custom-node
+- ReactFlow's interaction customization is costly. For example, it's difficult to select nodes when the canvas is zoomed out, and it doesn't support drag-and-drop reconnection of lines.
+<table>
+  <tr>
+    <td><img src="@/public/gifs/reactflow-render.gif"/></td>
+    <td><img src="@/public/gifs/reactflow-interaction.gif"/></td>
+  </tr>
+</table>
+
+## ReactFlow Paid Features
+
+| Paid Features                    | Supported by FlowGramAI | Future Plans |
+|----------------------------------|------------------------|--------------|
+| Grouping                         | Yes                    |              |
+| Redo/Undo                        | Yes                    |              |
+| Copy/Paste                       | Yes                    |              |
+| Help Lines                       | Yes                    |              |
+| Custom Nodes and Shapes          | Yes                    |              |
+| Custom Lines                     | Yes                    |              |
+| AutoLayout                       | Yes                    |              |
+| ForceLayout                      | No                     | No           |
+| Expand/Collapse                  | Yes                    |              |
+| Collaborative                    | No                     | Yes          |
+| WorkflowBuilder (Fixed Layout Complete Example) | Yes     |              |
+
+## Why IOC is Needed
+
+:::tip Key Concepts:
+- Inversion of Control (IOC): A design principle in object-oriented programming that reduces coupling between code modules. The most common implementation is Dependency Injection (DI)
+- Domain Logic: Also known as Business Logic, these are logic components related to specific product features
+- Aspect-Oriented Programming (AOP): The core design principle is to split software systems into common logic (cross-cutting, pervasive) and domain logic (vertical-cutting) aspects. Cross-cutting parts can be "consumed as needed" by all vertical-cutting parts
+
+:::
+
+Before answering this question, let's understand aspect-oriented programming. AOP aims to break down domain logic into finer granularity, where cross-cutting parts can be "consumed as needed" by vertical-cutting parts. The connection between cross-cutting and vertical-cutting is called Weaving, and IOC plays the role of Weaving injection into vertical-cutting parts.
+
+![Aspect-Oriented Programming](@/public/weaving.png)
+
+Ideal Aspect-Oriented Programming
+
+```ts
+- myAppliation provides business logic
+  - service specific business logic services
+     - customDomainLogicService
+  - contributionImplement hook registration instantiation
+    - MyApplicationContributionImpl
+  - component business components
+
+- core provides common logic
+  - model common models
+  - contribution hook interfaces
+     - LifecycleContribution application lifecycle
+     - CommandContribution
+  - service common services
+     - CommandService
+     - ClipboardService
+  - component common components
+  ```
+
+  ```ts
+  // IOC injection
+@injectable()
+export class CustomDomainLogicService {
+  @inject(FlowContextService) protected flowContextService: FlowContextService;
+  @inject(CommandService) protected commandService: CommandService;
+  @inject(SelectionService) protected selectionService: SelectionService;
+}
+// IOC interface declaration
+interface LifecycleContribution {
+   onInit(): void
+   onStart(): void
+   onDispose(): void
+}
+// IOC interface implementation
+@injectable()
+export class MyApplicationContributionImpl implement LifecycleContribution {
+    onStart(): void {
+      // Specific business logic code
+    }
+}
+
+// Manually mount to lifecycle hook
+bind(LifecycleContribution).toService(MyApplicationContributionImpl)
+```
+
+:::warning IOC is a means of aspect-oriented programming. After introduction, underlying modules can expose interfaces for external registration, bringing benefits:
+- Implements microkernel + plugin design, enabling plugin modularity and on-demand consumption
+- Allows cleaner package separation, implementing feature-based package splitting
+:::
+
+## Why ECS is Needed
+
+:::warning ECS (Entity-Component-System)
+Suitable for decoupling large data objects, commonly used in games where each character (Entity) has extensive data that needs to be split into physics engine-related data, skin-related, character attributes, etc. (multiple Components) for consumption by different subsystems (Systems). Flow data structures are complex and well-suited for ECS decomposition.
+:::
+
+![ECS](./assets/ecs.png)
+
+ReduxStore Pseudo Code
+```jsx pure
+const store = () => ({
+  nodes: [{
+    position: any
+    form: any
+    data3: any
+
+  }],
+  edges: []
+})
+
+function Playground() {
+  const { nodes } = useStore(store)
+
+  return nodes.map(node => <Node data={node} />)
+}
+```
+Advantages:
+- Simple to use with centralized data management
+
+Disadvantages:
+- Centralized data management cannot update precisely, leading to performance bottlenecks
+- Poor extensibility, adding new node data couples everything into one large JSON
+
+ECS Solution
+Note:
+- NodeData corresponds to ECS - Component
+- Layer corresponds to ECS - System
+```jsx pure
+class FlowDocument {
+dataDefines: [
+  NodePositionData,
+  NodeFormData,
+  NodeLineData
+]
+nodeEntities: Entity[] = []
+}
+
+
+class Entity {
+id: string // Only ID without data
+getData: (dataId: string) => EntityData
+}
+
+// Render lines
+class LinesLayer {
+@observeEntityData(NodeLineData) lines
+render() {
+  return lines.map(line => <Line data={line} />)
+}
+}
+
+// Render node positions
+class NodePositionsLayer {
+@observeEntityData(NodePositionData) positions
+return() {
+
+}
+}
+
+// Render node forms
+class  NodeFormsLayer {
+  @observeEntityData(NodeFormData) contents
+return() {}
+}
+
+class Playground {
+layers: [
+  LinesLayer, // Line rendering
+  NodePositionsLayer, // Position rendering
+  NodeFormsLayer // Content rendering
+]
+render() {
+  return this.layers.map(layer => layer.render())
+}
+}
+```
+Advantages:
+- Node data is separated for individual rendering control, enabling precise performance updates
+- Strong extensibility, adding new node data only requires adding XXXData + XXXLayer
+
+Disadvantages:
+- Has a learning curve

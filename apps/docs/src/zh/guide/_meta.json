@@ -1,0 +1,8 @@
+[
+  "get-start",
+  {
+    "type": "dir",
+    "name": "index",
+    "label": "简介"
+  }
+]

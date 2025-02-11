@@ -1,0 +1,22 @@
+[
+  {
+    "text": "Guide",
+    "link": "/guide/",
+    "activeMatch": "/guide/"
+  },
+  {
+    "text": "Playground",
+    "link": "/playground/",
+    "activeMatch": "/playground/"
+  },
+  {
+    "text": "Common APIs",
+    "link": "/api/",
+    "activeMatch": "/api/"
+  },
+  {
+    "text": "APIs",
+    "link": "/auto-docs/",
+    "activeMatch": "/auto-docs/"
+  }
+]

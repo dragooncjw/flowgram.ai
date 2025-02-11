@@ -1,0 +1,13 @@
+# Introduction
+
+FlowGramAI 是一套基于节点编辑的可视化图形工具，并提供丰富的API 和 插件，帮助开发者快速创建自由连线布局或自动化布局模式的流程，并内置节点引擎及变量引擎等核心插件。
+
+
+![FlowGramAI 架构](@/public/canvas-engine.png)
+
+## FlowGramAI 简介
+- CanvasEngine：画布引擎负责绘制“点-线”构成的图, 保障大规模节点时的流畅性, 如 Benchmark-Flow-230
+- NodeEngine: 节点引擎提供 渲染、校验、数据修改、画布联动等能力，统一支撑内置节点, 各类动态下发节点
+- VariableEngine: 变量引擎引入作用域模型, 抽象各业务场景的变量, 核心是变量及其引用的 CRUD
+- Material（原 Setter）: 物料库包含 UI, validators, effects 等 setters, 业务接入后可覆盖、可扩展
+- Host: SDK 接入方的宿主环境, 主要提供: SDK 生命周期 hooks, 业务组件库的扩展实现

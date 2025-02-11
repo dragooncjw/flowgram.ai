@@ -1,0 +1,31 @@
+# NodeEngine
+
+NodeEngine is a framework for writing flow node logic. It allows businesses to focus on their own rendering and data logic without having to worry about the underlying APIs of the canvas and nodes interconnections. At the same time, NodeEngine has precipitated the best node writing paradigm, helping businesses solve various problems that may arise in flow business, such as data logic and rendering coupling.
+
+NodeEngine is optional. If you don't have any of the following complex node logic, you can choose not to enable NodeEngine and maintain the data and rendering logic by yourself. Complex node logic such as: 1) nodes can be validated or trigger data side effects without rendering; 2) rich nodes interconnections; 3) redo/undo; and so on.
+
+# Basic Concepts
+
+**FlowNodeEntity**
+Flow node model.
+
+**FlowNodeRegistry**
+Static configuration of flow nodes.
+
+**FormMeta**
+Static configuration of the node engine. Configured in the `formMeta` field of FlowNodeRegistry.
+
+**Form**
+It maintains the node's data, and provides rendering, validation, side effects, and other capabilities. And `FormModel` provides a bunch of data manipulation apis .
+
+**Field**
+A rendering field in a node form. Note that Form has already provided the data layer logic, Field is more of a rendering layer model, it only exists after the form field is rendered.
+
+**validate**
+Form validation. Including individual field validation as well as overall form validation.
+
+**effect**
+Side effects of form data. Usually refers to triggering specific logic when certain events occur in the form data. For example, if the data of a certain field changes, some information needs to be synchronized to a certain store, this can be called an effect.
+
+**FormPlugin**
+Form plugin can be configured in formMeta, plugins can perform a series of deep operations on the form. For example, variable plugin.

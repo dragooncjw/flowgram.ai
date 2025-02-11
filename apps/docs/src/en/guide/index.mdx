@@ -1,0 +1,13 @@
+# Introduction
+
+FlowGramAI is a set of visual graphical tools based on node editing, providing rich APIs and plugins to help developers quickly create processes in free layout or fixed layout modes. It also includes core plugins such as the node engine and variable engine.
+
+
+![FlowGramAI Architecture](@/public/canvas-engine.png)
+
+## Introduction to FlowGramAI
+- CanvasEngine: The canvas engine is responsible for drawing graphs composed of "points and lines", ensuring smoothness when dealing with a large number of nodes, such as Benchmark-Flow-230.
+- NodeEngine: The node engine provides capabilities such as rendering, validation, data modification, and canvas linkage, uniformly supporting built-in nodes and various dynamically delivered nodes.
+- VariableEngine: The variable engine introduces a scope model to abstract variables in various business scenarios. The core is the CRUD of variables and their references.
+- Material (formerly Setter): The material library includes setters such as UI, validators, and effects. After business integration, it can be covered and extended.
+- Host: The host environment of the SDK access party mainly provides SDK lifecycle hooks and extended implementations of the business component library.

@@ -1,0 +1,17 @@
+[
+  {
+    "type": "file",
+    "name": "index",
+    "label": "API Overview"
+  },
+  {
+    "type": "file",
+    "name": "common-apis",
+    "label": "Common APIs"
+  },
+  {
+    "type": "dir",
+    "name": "plugins",
+    "label": "Plugins"
+  }
+]

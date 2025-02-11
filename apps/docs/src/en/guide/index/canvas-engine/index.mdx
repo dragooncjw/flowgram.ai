@@ -1,0 +1,176 @@
+# Core Modeling
+
+Playground provides an underlying coordinate system
+
+```ts
+interface Playground {
+   node: HTMLDivElement // DOM node where canvas is mounted
+   scrollToView({
+     entities?: Entity[] // Specified nodes
+     easing?: boolean // Enable easing
+     bounds?: Reactangle // Specify target bbox position
+    }) // Smoothly scroll canvas to center on specific node
+   toReactComponent() // Render as React node
+   readonly: boolean // Read-only mode
+   config: PlaygroundConfigEntity // Contains canvas data like zoom, scroll etc.
+}
+// Hook for quick access
+const playground = usePlayground()
+```
+
+## Layer
+
+:::warning P.S.
+- The rendering layer establishes its own coordinate system at the bottom layer, implementing simulated scrolling, zooming and other logic based on this system. Nodes also need to be transformed to this coordinate system when calculating viewport
+- Rendering is split into multiple layers (Layer) on canvas. The layered design is based on ECS data splitting concept, where different Layers only monitor their desired data and render independently without interference. Layer can be understood as ECS's System, i.e. where Entity data is ultimately consumed
+- Layer implements mobx-like observer reactive dynamic dependency collection, where data updates trigger autorun or render
+
+:::
+
+![Aspect-Oriented Programming](../assets/layer-uml.jpg)
+
+- Layer lifecycle
+
+```ts
+interface Layer {
+    /**
+     * Triggered on initialization
+     */
+    onReady?(): void;
+
+    /**
+     * Triggered when playground size changes
+     */
+    onResize?(size: PipelineDimension): void;
+
+    /**
+     * Triggered when playground gains focus
+     */
+    onFocus?(): void;
+
+    /**
+     * Triggered when playground loses focus
+     */
+    onBlur?(): void;
+
+    /**
+     * Monitor zoom
+     */
+    onZoom?(scale: number): void;
+
+    /**
+     * Monitor scroll
+     */
+    onScroll?(scroll: { scrollX: number; scrollY: number }): void;
+
+    /**
+     * Triggered on viewport update
+     */
+    onViewportChange?(): void;
+
+    /**
+     * readonly or disable state changes
+     * @param state
+     */
+    onReadonlyOrDisabledChange?(state: { disabled: boolean; readonly: boolean }): void;
+
+    /**
+     * Data updates automatically trigger React render, if not provided React rendering won't be called
+     */
+    render?(): JSX.Element
+}
+```
+
+Layer's positioning is actually similar to Unity game engine's [MonoBehaviour](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html). Unity game engine's script extensions are all based on this, which can be considered the core design, also based on C#'s reflection capability for dependency injection
+
+```C#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+public class MyMonoBehavior : MonoBehaviour
+{
+    void Awake()
+    {
+        Debug.Log("Awake method is always called before application starts.");
+    }
+    void Start()
+    {
+        Debug.Log("Start method is always called after Awake().");
+    }
+    void Update()
+    {
+        Debug.Log("Update method is called in every frame.");
+    }
+}
+```
+
+- Layer's reactive updates
+
+```ts
+export class DemoLayer extends Layer {
+    // Injection of any inversify module
+    @inject(FlowDocument) document: FlowDocument
+    // Monitor single Entity
+    @observeEntity(SomeEntity) entity: SomeEntity
+    // Monitor multiple Entities
+    @observeEntities(SomeEntity) entities: SomeEntity[]
+    // Monitor Entity data block (ECS - Component) changes
+    @observeEntityDatas(SomeEntity, SomeEntityData) transforms: SomeEntityData[]
+    autorun() {}
+    render() {
+      return <div></div>
+    }
+}
+```
+
+## FlowNodeEntity
+- Node is a tree, in free canvas mode, nodes are flat without child nodes
+```ts
+interface FlowNodeEntity {
+    id: string
+    children?: FlowNodeEntity[]
+    pre?: FlowNodeEntity
+    next?: FlowNodeEntity
+    parent?: FlowNodeEntity
+    collapsed: boolean // Whether expanded
+    getData(dataRegistry): NodeEntityData
+    addData(dataRegistry)
+}
+```
+
+## 2.4.4 FlowNodeTransformData Node's bbox
+
+```ts
+class FlowNodeTransformData {
+    localTransform: Matrix, // Relative offset, only relative to previous Sibling node offset in same Block
+    worldTransform: Matrix, // Absolute offset, accumulated offset relative to Parent and Sibling nodes
+    delta: Point // Center/left alignment offset, independent of Matrix, controlled by each node
+    getSize(): Size, // Calculated from own (independent node) or child branch node width/height spacing
+    getBounds(): Rectangle // Calculated from worldMatrix and size, used for final rendering, this range can also be used to determine highlight selection area
+    inputPoint(): Point // Input point position, generally the center-top position of Block's first node (centered layout)
+    outputPoint(): Point // Output point position, default is node's center-bottom position, but for conditional branches, determined by specific logic like built-in end nodes
+}
+```
+
+## FlowNodeRenderData Node content rendering data
+
+```ts
+class FlowNodeRenderData {
+  node: HTMLDivElement // Current node's DOM
+  expanded: boolean // Whether expanded
+  activated: boolean // Whether activated
+  hidden: boolean // Whether hidden
+}
+```
+
+## FlowDocument
+
+```ts
+interface FlowDocument {
+    root: FlowNodeEntity // Canvas root node
+    fromJSON(data): void // Import data
+    toJSON(): FlowDocumentJSON // Export data
+    addNode(type: string, meta: any): FlowNodeEntity // Add node
+    traverseDFS(fn: (node: FlowNodeEntity) => void, startNode = this.root) // Traverse
+}
+```

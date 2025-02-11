@@ -1,0 +1,22 @@
+[
+  {
+    "type": "file",
+    "name": "index",
+    "label": "体验环境"
+  },
+  {
+    "type": "file",
+    "name": "fixed-feature-overview",
+    "label": "自动化布局功能概览"
+  },
+  {
+    "type": "file",
+    "name": "free-feature-overview",
+    "label": "自由连线布局功能概览"
+  },
+  {
+    "type": "dir",
+    "name": "canvas-engine",
+    "label": "画布引擎"
+  }
+]

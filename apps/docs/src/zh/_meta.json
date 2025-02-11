@@ -1,0 +1,22 @@
+[
+  {
+    "text": "指引",
+    "link": "/guide/",
+    "activeMatch": "/guide/"
+  },
+  {
+    "text": "体验环境",
+    "link": "/playground/",
+    "activeMatch": "/playground/"
+  },
+  {
+    "text": "常用 API",
+    "link": "/api/",
+    "activeMatch": "/api/"
+  },
+  {
+    "text": "API 文档",
+    "link": "/auto-docs/",
+    "activeMatch": "/auto-docs/"
+  }
+]
