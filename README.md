@@ -11,7 +11,20 @@
 ### Installation
   
 ```sh
-npm install @flowgram.ai/client
+# Install rush
+npm install -g @microsoft/rush
+
+# Install all dependencies
+rush update
+
+# Build all packages
+rush build
+
+# Run demos
+# FixedLayout
+rush dev:demo-fixed-layout
+# FreeLayout
+rush dev:demo-free-layout
 ```
 
 ## 🌟 Contributors
