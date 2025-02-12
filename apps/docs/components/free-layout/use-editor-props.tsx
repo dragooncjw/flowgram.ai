@@ -29,7 +29,7 @@ export const useEditorProps = () => {
          */
         renderDefaultNode: (props: WorkflowNodeProps) => (
           <WorkflowNodeRenderer className="demo-node" node={props.node}>
-            <div className="demo-node-title">{props.node.getExtInfo().title}</div>
+            <div className="demo-node-title">{props.node?.getExtInfo?.()?.title}</div>
             <div className="demo-node-content flow-canvas-not-draggable">
               <input
                 onChange={(e) => props.node.updateExtInfo({ title: e.currentTarget.value })}
