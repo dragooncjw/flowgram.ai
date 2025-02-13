@@ -454,6 +454,13 @@
       "projectFolder": "apps/docs",
       "tags": [ "docs" ]
     },
+    // cli
+    {
+      "packageName": "@flowgram.ai/create-demo",
+      "projectFolder": "apps/create-demo",
+      "tags": [ "level-1", "team-flow" ],
+      "versionPolicyName": "publishPolicy"
+    },
     // demos
     {
       "packageName": "@flowgram.ai/demo-fixed-layout",

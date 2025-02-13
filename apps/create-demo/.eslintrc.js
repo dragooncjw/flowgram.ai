@@ -4,6 +4,6 @@ module.exports = defineConfig({
   preset: 'web',
   packageRoot: __dirname,
   rules: {
-    'react/no-deprecated': 'off',
+    'no-console': 'off',
   },
 });
