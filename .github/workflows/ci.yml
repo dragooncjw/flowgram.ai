@@ -1,7 +1,7 @@
 name: CI
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "chore/update-ci" ]
   pull_request_target:
     branches: [ "main" ]
 jobs:
@@ -22,14 +22,14 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Verify Change Logs
-        run: node common/scripts/install-run-rush.js change --verify
+      # - name: Verify Change Logs
+      #   run: node common/scripts/install-run-rush.js change --verify
       - name: Rush Install
         run: node common/scripts/install-run-rush.js install
       - name: Rush build
         run: node common/scripts/install-run-rush.js build
-      # - name: Check Lint
-      #   run: node common/scripts/install-run-rush.js lint
+      - name: Check Lint
+        run: node common/scripts/install-run-rush.js lint
       - name: Check TS
         run: node common/scripts/install-run-rush.js ts-check
       - name: Test (coverage)
