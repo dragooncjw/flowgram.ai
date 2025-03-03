@@ -29,7 +29,7 @@ jobs:
       - name: Rush build
         run: node common/scripts/install-run-rush.js build
       - name: Check Lint
-        run: node common/scripts/install-run-rush.js lint
+        run: node common/scripts/install-run-rush.js lint --verbose
       - name: Check TS
         run: node common/scripts/install-run-rush.js ts-check
       - name: Test (coverage)
