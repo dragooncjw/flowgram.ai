@@ -20,7 +20,7 @@ const Warning = styled.span`
 export const Feedback = ({ errors, warnings, invalid }: StatePanelProps) => {
   const renderFeedbacks = (fs: FieldError[] | FieldWarning[] | undefined) => {
     if (!fs) return null;
-    return fs.map(f => <span key={f.name}>{f.message}</span>);
+    return fs.map((f) => <span key={f.name}>{f.message}</span>);
   };
   return (
     <div>

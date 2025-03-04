@@ -1,19 +1,20 @@
 import { useMemo } from 'react';
 
+import { createMinimapPlugin } from '@flowgram.ai/minimap-plugin';
+import { createFreeSnapPlugin } from '@flowgram.ai/free-snap-plugin';
 import {
   FreeLayoutProps,
   WorkflowNodeProps,
   WorkflowNodeRenderer,
   Field,
-  useNodeRender
+  useNodeRender,
 } from '@flowgram.ai/free-layout-editor';
-import { createMinimapPlugin } from '@flowgram.ai/minimap-plugin';
-import { createFreeSnapPlugin } from '@flowgram.ai/free-snap-plugin';
 
+import { nodeRegistries } from '../node-registries';
 import { initialData } from '../initial-data';
-import { nodeRegistries } from '../node-registries'
 
-export const useEditorProps = () => useMemo<FreeLayoutProps>(
+export const useEditorProps = () =>
+  useMemo<FreeLayoutProps>(
     () => ({
       /**
        * Whether to enable the background
@@ -47,7 +48,8 @@ export const useEditorProps = () => useMemo<FreeLayoutProps>(
             /**
              * Render form
              */
-            render: () => <>
+            render: () => (
+              <>
                 <Field<string> name="title">
                   {({ field }) => <div className="demo-free-node-title">{field.value}</div>}
                 </Field>
@@ -57,7 +59,8 @@ export const useEditorProps = () => useMemo<FreeLayoutProps>(
                   </Field>
                 </div>
               </>
-          }
+            ),
+          },
         };
       },
       materials: {
@@ -65,12 +68,12 @@ export const useEditorProps = () => useMemo<FreeLayoutProps>(
          * Render Node
          */
         renderDefaultNode: (props: WorkflowNodeProps) => {
-          const { form } = useNodeRender()
+          const { form } = useNodeRender();
           return (
             <WorkflowNodeRenderer className="demo-free-node" node={props.node}>
               {form?.render()}
             </WorkflowNodeRenderer>
-          )
+          );
         },
       },
       /**
@@ -95,7 +98,7 @@ export const useEditorProps = () => useMemo<FreeLayoutProps>(
       /**
        * Playground init
        */
-      onInit: ctx => {},
+      onInit: (ctx) => {},
       /**
        * Playground render
        */
@@ -146,7 +149,7 @@ export const useEditorProps = () => useMemo<FreeLayoutProps>(
           alignLineWidth: 1,
           alignCrossWidth: 8,
         }),
-      ]
+      ],
     }),
-    [],
+    []
   );

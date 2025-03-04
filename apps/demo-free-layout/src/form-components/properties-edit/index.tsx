@@ -13,7 +13,7 @@ export interface PropertiesEditProps {
   useFx?: boolean;
 }
 
-export const PropertiesEdit: React.FC<PropertiesEditProps> = props => {
+export const PropertiesEdit: React.FC<PropertiesEditProps> = (props) => {
   const value = (props.value || {}) as Record<string, JsonSchema>;
   const { readonly } = useContext(NodeRenderContext);
   const [newProperty, updateNewPropertyFromCache] = useState<{ key: string; value: JsonSchema }>({
@@ -28,7 +28,7 @@ export const PropertiesEdit: React.FC<PropertiesEditProps> = props => {
   const updateProperty = (
     propertyValue: JsonSchema,
     propertyKey: string,
-    newPropertyKey?: string,
+    newPropertyKey?: string
   ) => {
     const newValue = { ...value };
     if (newPropertyKey) {
@@ -42,7 +42,7 @@ export const PropertiesEdit: React.FC<PropertiesEditProps> = props => {
   const updateNewProperty = (
     propertyValue: JsonSchema,
     propertyKey: string,
-    newPropertyKey?: string,
+    newPropertyKey?: string
   ) => {
     // const newValue = { ...value }
     if (newPropertyKey) {
@@ -59,7 +59,7 @@ export const PropertiesEdit: React.FC<PropertiesEditProps> = props => {
   };
   return (
     <>
-      {Object.keys(props.value || {}).map(key => {
+      {Object.keys(props.value || {}).map((key) => {
         const property = (value[key] || {}) as JsonSchema;
         return (
           <PropertyEdit

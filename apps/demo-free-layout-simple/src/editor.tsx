@@ -1,17 +1,14 @@
-import {
-  EditorRenderer,
-  FreeLayoutEditorProvider,
-} from '@flowgram.ai/free-layout-editor';
+import { EditorRenderer, FreeLayoutEditorProvider } from '@flowgram.ai/free-layout-editor';
 
+import { useEditorProps } from './hooks/use-editor-props';
+import { Tools } from './components/tools';
 import { NodeAddPanel } from './components/node-add-panel';
-import { Tools } from './components/tools'
-import { Minimap } from './components/minimap'
-import { useEditorProps } from './hooks/use-editor-props'
+import { Minimap } from './components/minimap';
 import '@flowgram.ai/free-layout-editor/index.css';
 import './index.css';
 
 export const Editor = () => {
-  const editorProps = useEditorProps()
+  const editorProps = useEditorProps();
   return (
     <FreeLayoutEditorProvider {...editorProps}>
       <div className="demo-free-container">
@@ -23,5 +20,5 @@ export const Editor = () => {
         <Minimap />
       </div>
     </FreeLayoutEditorProvider>
-  )
+  );
 };

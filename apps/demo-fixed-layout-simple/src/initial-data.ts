@@ -11,7 +11,7 @@ export const initialData: FlowDocumentJSON = {
       type: 'start',
       data: {
         title: 'Start',
-        content: 'start content'
+        content: 'start content',
       },
       blocks: [],
     },
@@ -20,7 +20,7 @@ export const initialData: FlowDocumentJSON = {
       id: 'condition_0',
       type: 'condition',
       data: {
-        title: 'Condition'
+        title: 'Condition',
       },
       blocks: [
         {
@@ -28,7 +28,7 @@ export const initialData: FlowDocumentJSON = {
           type: 'block',
           data: {
             title: 'Branch 0',
-            content: 'branch 1 content'
+            content: 'branch 1 content',
           },
           blocks: [
             {
@@ -36,7 +36,7 @@ export const initialData: FlowDocumentJSON = {
               type: 'custom',
               data: {
                 title: 'Custom',
-                content: 'custrom content'
+                content: 'custrom content',
               },
             },
           ],
@@ -46,7 +46,7 @@ export const initialData: FlowDocumentJSON = {
           type: 'block',
           data: {
             title: 'Branch 1',
-            content: 'branch 1 content'
+            content: 'branch 1 content',
           },
           blocks: [],
         },
@@ -58,9 +58,8 @@ export const initialData: FlowDocumentJSON = {
       type: 'end',
       data: {
         title: 'End',
-        content: 'end content'
+        content: 'end content',
       },
     },
   ],
 };
-

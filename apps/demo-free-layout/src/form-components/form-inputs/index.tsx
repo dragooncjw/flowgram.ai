@@ -18,7 +18,7 @@ export function FormInputs() {
         if (!properties) {
           return <></>;
         }
-        const content = Object.keys(properties).map(key => {
+        const content = Object.keys(properties).map((key) => {
           const property = properties[key];
           return (
             <Field key={key} name={`inputsValues.${key}`} defaultValue={property.default}>

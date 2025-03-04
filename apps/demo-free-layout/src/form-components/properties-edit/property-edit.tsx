@@ -17,7 +17,7 @@ export interface PropertyEditProps {
   onDelete?: () => void;
 }
 
-export const PropertyEdit: React.FC<PropertyEditProps> = props => {
+export const PropertyEdit: React.FC<PropertyEditProps> = (props) => {
   const { value, disabled } = props;
   const [inputKey, updateKey] = useState(props.propertyKey);
   const updateProperty = (key: keyof JsonSchema, val: any) => {
@@ -34,12 +34,12 @@ export const PropertyEdit: React.FC<PropertyEditProps> = props => {
           value={value.type}
           disabled={disabled}
           style={{ position: 'absolute', top: 6, left: 4, zIndex: 1 }}
-          onChange={val => updateProperty('type', val)}
+          onChange={(val) => updateProperty('type', val)}
         />
         <Input
           value={inputKey}
           disabled={disabled}
-          onChange={v => updateKey(v.trim())}
+          onChange={(v) => updateKey(v.trim())}
           onBlur={() => {
             if (inputKey !== '') {
               props.onChange(value, props.propertyKey, inputKey);
@@ -54,14 +54,14 @@ export const PropertyEdit: React.FC<PropertyEditProps> = props => {
         <VariableSelector
           value={value.default}
           disabled={disabled}
-          onChange={val => updateProperty('default', val)}
+          onChange={(val) => updateProperty('default', val)}
           style={{ flexGrow: 1, height: 32 }}
         />
       ) : (
         <Input
           disabled={disabled}
           value={value.default}
-          onChange={val => updateProperty('default', val)}
+          onChange={(val) => updateProperty('default', val)}
         />
       )}
       {props.onDelete && !disabled && (

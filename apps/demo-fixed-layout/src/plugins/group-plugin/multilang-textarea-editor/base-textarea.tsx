@@ -15,7 +15,7 @@ interface Props {
   [key: string]: any;
 }
 
-const BaseTextarea: React.FC<Props> = props => {
+const BaseTextarea: React.FC<Props> = (props) => {
   const { value, onChange, onBlur, editing, onFocus, autoSize = true, ...rest } = props;
 
   const [data, setData] = useState(value);
@@ -46,7 +46,7 @@ const BaseTextarea: React.FC<Props> = props => {
       {...rest}
       ref={textareaRef}
       value={data}
-      onChange={v => {
+      onChange={(v) => {
         setData(v);
       }}
       onEnterPress={onSubmit}

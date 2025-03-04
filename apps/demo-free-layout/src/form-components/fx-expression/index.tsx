@@ -45,7 +45,7 @@ export function FxExpression(props: FxExpressionProps) {
           value={value.content}
           hasError={props.hasError}
           style={{ flexGrow: 1 }}
-          onChange={v => onChange({ type: 'expression', content: v })}
+          onChange={(v) => onChange({ type: 'expression', content: v })}
           disabled={disabled}
         />
       ) : (

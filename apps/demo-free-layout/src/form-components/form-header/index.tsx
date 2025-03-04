@@ -71,7 +71,7 @@ export function FormHeader() {
               size="small"
               theme="borderless"
               icon={<IconMore />}
-              onClick={e => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
             />
           </Dropdown>
         </Operators>

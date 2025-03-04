@@ -10,7 +10,7 @@ export const initialData: WorkflowJSON = {
       },
       data: {
         title: 'Start',
-        content: 'Start content'
+        content: 'Start content',
       },
     },
     {
@@ -21,7 +21,7 @@ export const initialData: WorkflowJSON = {
       },
       data: {
         title: 'Custom',
-        content: 'Custom node content'
+        content: 'Custom node content',
       },
     },
     {
@@ -32,7 +32,7 @@ export const initialData: WorkflowJSON = {
       },
       data: {
         title: 'End',
-        content: 'End content'
+        content: 'End content',
       },
     },
   ],
@@ -47,4 +47,3 @@ export const initialData: WorkflowJSON = {
     },
   ],
 };
-

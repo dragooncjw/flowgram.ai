@@ -12,14 +12,14 @@ export interface PropsType {
 export function DragNode(props: PropsType): JSX.Element {
   const { dragStart, dragNodes } = props;
 
-  const icon = FlowNodeRegistries.find(registry => registry.type === dragStart?.flowNodeType)?.info
-    ?.icon;
+  const icon = FlowNodeRegistries.find((registry) => registry.type === dragStart?.flowNodeType)
+    ?.info?.icon;
 
   const dragLength = (dragNodes || [])
-    .map(_node =>
+    .map((_node) =>
       _node.allCollapsedChildren.length
-        ? _node.allCollapsedChildren.filter(_n => !_n.hidden).length
-        : 1,
+        ? _node.allCollapsedChildren.filter((_n) => !_n.hidden).length
+        : 1
     )
     .reduce((acm, curr) => acm + curr, 0);
 

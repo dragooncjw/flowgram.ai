@@ -29,7 +29,7 @@ export function ConditionInputs() {
                 <FormItem name="if" type="boolean" required={true} labelWidth={40}>
                   <FxExpression
                     value={childField.value.value}
-                    onChange={v => childField.onChange({ key: childField.value.key, value: v })}
+                    onChange={(v) => childField.onChange({ key: childField.value.key, value: v })}
                     icon={
                       <Button
                         theme="borderless"

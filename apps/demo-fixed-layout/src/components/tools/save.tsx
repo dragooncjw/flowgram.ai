@@ -1,10 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
-import {
-  useClientContext,
-  getNodeForm,
-  FlowNodeEntity,
-} from '@flowgram.ai/fixed-layout-editor';
+import { useClientContext, getNodeForm, FlowNodeEntity } from '@flowgram.ai/fixed-layout-editor';
 import { Button, Badge } from '@douyinfe/semi-ui';
 
 export function Save(props: { disabled: boolean }) {
@@ -12,8 +8,8 @@ export function Save(props: { disabled: boolean }) {
   const clientContext = useClientContext();
 
   const updateValidateData = useCallback(() => {
-    const allForms = clientContext.document.getAllNodes().map(node => getNodeForm(node));
-    const count = allForms.filter(form => form?.state.invalid).length;
+    const allForms = clientContext.document.getAllNodes().map((node) => getNodeForm(node));
+    const count = allForms.filter((form) => form?.state.invalid).length;
     setErrorCount(count);
   }, [clientContext]);
 
@@ -21,8 +17,8 @@ export function Save(props: { disabled: boolean }) {
    * Validate all node and Save
    */
   const onSave = useCallback(async () => {
-    const allForms = clientContext.document.getAllNodes().map(node => getNodeForm(node));
-    await Promise.all(allForms.map(async form => form?.validate()));
+    const allForms = clientContext.document.getAllNodes().map((node) => getNodeForm(node));
+    await Promise.all(allForms.map(async (form) => form?.validate()));
     console.log('>>>>> save data: ', clientContext.document.toJSON());
   }, [clientContext]);
 
@@ -37,9 +33,9 @@ export function Save(props: { disabled: boolean }) {
         node.onDispose(() => formValidateDispose.dispose());
       }
     };
-    clientContext.document.getAllNodes().map(node => listenSingleNodeValidate(node));
+    clientContext.document.getAllNodes().map((node) => listenSingleNodeValidate(node));
     const dispose = clientContext.document.onNodeCreate(({ node }) =>
-      listenSingleNodeValidate(node),
+      listenSingleNodeValidate(node)
     );
     return () => dispose.dispose();
   }, [clientContext]);

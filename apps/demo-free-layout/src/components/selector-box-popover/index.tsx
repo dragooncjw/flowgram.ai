@@ -22,7 +22,7 @@ export const SelectorBoxPopover: FunctionComponent<SelectorBoxPopoverProps> = ({
         top: bounds.top,
         transform: 'translate(-100%, -100%)',
       }}
-      onMouseDown={e => {
+      onMouseDown={(e) => {
         e.stopPropagation();
       }}
     >
@@ -36,7 +36,7 @@ export const SelectorBoxPopover: FunctionComponent<SelectorBoxPopoverProps> = ({
             style={{ height: BUTTON_HEIGHT }}
             type="primary"
             theme="solid"
-            onMouseDown={e => {
+            onMouseDown={(e) => {
               commandRegistry.executeCommand(FlowCommandId.COLLAPSE);
             }}
           />
@@ -48,7 +48,7 @@ export const SelectorBoxPopover: FunctionComponent<SelectorBoxPopoverProps> = ({
             style={{ height: BUTTON_HEIGHT }}
             type="primary"
             theme="solid"
-            onMouseDown={e => {
+            onMouseDown={(e) => {
               commandRegistry.executeCommand(FlowCommandId.EXPAND);
             }}
           />

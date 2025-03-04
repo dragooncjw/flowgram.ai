@@ -40,7 +40,7 @@ export const SelectorBoxPopover: FunctionComponent<SelectorBoxPopoverProps> = ({
       return false;
     }
     const findGroupInNodes = (nodes: FlowNodeEntity[]): boolean =>
-      nodes.some(node => {
+      nodes.some((node) => {
         if (node.flowNodeType === FlowNodeBaseType.GROUP) {
           return true;
         }
@@ -63,7 +63,7 @@ export const SelectorBoxPopover: FunctionComponent<SelectorBoxPopoverProps> = ({
           top: bounds.top,
           transform: 'translate(-100%, -100%)',
         }}
-        onMouseDown={e => {
+        onMouseDown={(e) => {
           e.stopPropagation();
         }}
       >
@@ -78,7 +78,7 @@ export const SelectorBoxPopover: FunctionComponent<SelectorBoxPopoverProps> = ({
                 icon={<IconHandle />}
                 type="primary"
                 theme="solid"
-                onMouseDown={e => {
+                onMouseDown={(e) => {
                   e.stopPropagation();
                   startDrag(e, {
                     dragStartEntity: selectNodes[0],
@@ -95,7 +95,7 @@ export const SelectorBoxPopover: FunctionComponent<SelectorBoxPopoverProps> = ({
               style={{ height: BUTTON_HEIGHT }}
               type="primary"
               theme="solid"
-              onMouseDown={e => {
+              onMouseDown={(e) => {
                 commandRegistry.executeCommand(FlowCommandId.COLLAPSE);
               }}
             />
@@ -107,7 +107,7 @@ export const SelectorBoxPopover: FunctionComponent<SelectorBoxPopoverProps> = ({
               style={{ height: BUTTON_HEIGHT }}
               type="primary"
               theme="solid"
-              onMouseDown={e => {
+              onMouseDown={(e) => {
                 commandRegistry.executeCommand(FlowCommandId.EXPAND);
               }}
             />
@@ -155,7 +155,7 @@ export const SelectorBoxPopover: FunctionComponent<SelectorBoxPopoverProps> = ({
       </div>
       <div
         style={{ cursor: draggable ? 'grab' : 'auto' }}
-        onMouseDown={e => {
+        onMouseDown={(e) => {
           e.stopPropagation();
           startDrag(e, {
             dragStartEntity: selectNodes[0],

@@ -15,7 +15,7 @@ const generateNewIdForChildren = (n: FlowNodeEntity): FlowNodeEntity => {
     return {
       ...n,
       id: generateNodeId(n),
-      blocks: n.blocks.map(b => generateNewIdForChildren(b)),
+      blocks: n.blocks.map((b) => generateNewIdForChildren(b)),
     } as FlowNodeEntity;
   } else {
     return {
@@ -39,7 +39,7 @@ export default function Adder(props: {
 
   const activated = useMemo(
     () => props.hoverActivated && !playground.config.readonly,
-    [props.hoverActivated, playground.config.readonly],
+    [props.hoverActivated, playground.config.readonly]
   );
 
   const add = (addProps: any) => {
@@ -111,7 +111,7 @@ export default function Adder(props: {
               }
             : {}
         }
-        onMouseDown={e => e.stopPropagation()}
+        onMouseDown={(e) => e.stopPropagation()}
       >
         {props.hoverActivated ? (
           <IconPlusCircle

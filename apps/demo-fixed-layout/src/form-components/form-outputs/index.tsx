@@ -10,7 +10,7 @@ export function FormOutputs() {
       {({ field }) => {
         const properties = field.value?.properties;
         if (properties) {
-          const content = Object.keys(properties).map(key => {
+          const content = Object.keys(properties).map((key) => {
             const property = properties[key];
             return <TypeTag key={key} name={key} type={property.type as string} />;
           });

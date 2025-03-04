@@ -1,5 +1,5 @@
-import { FlowNodeRegistry } from '@flowgram.ai/fixed-layout-editor';
 import { nanoid } from 'nanoid';
+import { FlowNodeRegistry } from '@flowgram.ai/fixed-layout-editor';
 
 /**
  * 自定义节点注册
@@ -67,9 +67,9 @@ export const nodeRegistries: FlowNodeRegistry[] = [
         type: 'custom',
         data: {
           title: 'Custom',
-          content: 'this is custom content'
-        }
-      }
-    }
-  }
+          content: 'this is custom content',
+        },
+      };
+    },
+  },
 ];

@@ -21,7 +21,7 @@ interface Props {
   onEditingChange?: (editing: boolean) => void;
 }
 
-const MultiLineEditor: React.FC<Props> = props => {
+const MultiLineEditor: React.FC<Props> = (props) => {
   const {
     value,
     onChange,

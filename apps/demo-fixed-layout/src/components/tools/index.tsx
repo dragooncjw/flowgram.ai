@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import {
-  usePlayground,
-  usePlaygroundTools,
-  useRefresh,
-} from '@flowgram.ai/fixed-layout-editor';
+import { usePlayground, usePlaygroundTools, useRefresh } from '@flowgram.ai/fixed-layout-editor';
 import { Tooltip, IconButton } from '@douyinfe/semi-ui';
 import { IconUndo, IconRedo } from '@douyinfe/semi-icons';
 

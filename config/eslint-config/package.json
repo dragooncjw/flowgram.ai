@@ -8,7 +8,6 @@
     "build": "tsc -b --force",
     "dev": "npm run build -- -w",
     "lint": "eslint ./src --cache",
-    "lint:fix": "eslint --fix ../../packages",
     "test": "exit",
     "test:cov": "exit"
   },

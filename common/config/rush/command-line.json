@@ -252,6 +252,14 @@
       "safeForSimultaneousRushProcesses": true
     },
     {
+      "name": "lint:fix",
+      "commandKind": "bulk",
+      "summary": "⭐️️ Run eslint fix in packages",
+      "ignoreMissingScript": true,
+      "enableParallelism": true,
+      "safeForSimultaneousRushProcesses": true
+    },
+    {
       "name": "dev:demo-fixed-layout",
       "commandKind": "global",
       "summary": "⭐️️ run dev in app/demo-fixed-layout",

@@ -41,7 +41,7 @@ export function FormHeader() {
 
   return (
     <Header
-      onMouseDown={e => {
+      onMouseDown={(e) => {
         // trigger drag node
         startDrag(e);
         e.stopPropagation();
@@ -73,7 +73,7 @@ export function FormHeader() {
               size="small"
               theme="borderless"
               icon={<IconMore />}
-              onClick={e => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
             />
           </Dropdown>
         </Operators>

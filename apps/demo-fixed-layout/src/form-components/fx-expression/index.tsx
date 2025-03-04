@@ -43,7 +43,7 @@ export function FxExpression(props: FxExpressionProps) {
         <VariableSelector
           value={value.content}
           style={{ flexGrow: 1 }}
-          onChange={v => onChange({ type: 'expression', content: v })}
+          onChange={(v) => onChange({ type: 'expression', content: v })}
           disabled={disabled}
         />
       ) : (

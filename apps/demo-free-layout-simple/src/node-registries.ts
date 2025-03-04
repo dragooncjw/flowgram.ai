@@ -24,8 +24,7 @@ export const nodeRegistries: WorkflowNodeRegistry[] = [
   },
   {
     type: 'custom',
-    meta: {
-    },
+    meta: {},
     defaultPorts: [{ type: 'output' }, { type: 'input' }], // A normal node has two ports
   },
 ];

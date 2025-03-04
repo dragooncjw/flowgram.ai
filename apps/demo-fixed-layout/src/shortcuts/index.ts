@@ -14,27 +14,27 @@ import { writeData } from './utils';
 import { FlowCommandId } from './constants';
 
 type ShortcutGetter = (
-  ctx: FixedLayoutPluginContext,
+  ctx: FixedLayoutPluginContext
 ) => Parameters<ShortcutsRegistry['addHandlers']>[0];
 
-const copy: ShortcutGetter = ctx => {
+const copy: ShortcutGetter = (ctx) => {
   const selection = ctx.selection;
   const clipboard = ctx.clipboard;
 
   return {
     commandId: FlowCommandId.COPY,
     shortcuts: ['meta c', 'ctrl c'],
-    isEnabled: node =>
+    isEnabled: (node) =>
       (selection?.selection.length > 0 || node instanceof FlowNodeEntity) &&
       !ctx.playground.config.readonlyOrDisabled,
-    execute: node => {
+    execute: (node) => {
       const nodes =
         node instanceof FlowNodeEntity
           ? [node]
           : (selection.selection.filter(
-              _entity => _entity instanceof FlowNodeEntity,
+              (_entity) => _entity instanceof FlowNodeEntity
             ) as FlowNodeEntity[]);
-      const originNodes = nodes.map(n => ({
+      const originNodes = nodes.map((n) => ({
         ...n.toJSON(),
         id: `${n.flowNodeType}_${nanoid()}`,
       }));
@@ -47,7 +47,7 @@ const copy: ShortcutGetter = ctx => {
   };
 };
 
-const cut: ShortcutGetter = ctx => {
+const cut: ShortcutGetter = (ctx) => {
   const selection = ctx.selection;
 
   const commandRegistry = ctx.get<CommandRegistry>(CommandRegistry);
@@ -75,7 +75,7 @@ const cut: ShortcutGetter = ctx => {
   };
 };
 
-const zoomIn: ShortcutGetter = ctx => {
+const zoomIn: ShortcutGetter = (ctx) => {
   const config = ctx.playground.config;
 
   return {
@@ -87,7 +87,7 @@ const zoomIn: ShortcutGetter = ctx => {
   };
 };
 
-const zoomOut: ShortcutGetter = ctx => {
+const zoomOut: ShortcutGetter = (ctx) => {
   const config = ctx.playground.config;
 
   return {
@@ -99,7 +99,7 @@ const zoomOut: ShortcutGetter = ctx => {
   };
 };
 
-const resetZoom: ShortcutGetter = ctx => ({
+const resetZoom: ShortcutGetter = (ctx) => ({
   commandId: FlowCommandId.RESET_ZOOM,
   commandDetail: {
     label: 'Reset Zoom',
@@ -110,7 +110,7 @@ const resetZoom: ShortcutGetter = ctx => ({
   },
 });
 
-const group: ShortcutGetter = ctx => ({
+const group: ShortcutGetter = (ctx) => ({
   commandId: FlowCommandId.GROUP,
   commandDetail: {
     label: 'Create Group',
@@ -123,14 +123,14 @@ const group: ShortcutGetter = ctx => ({
     const selection = ctx.playground.selectionService;
 
     groupService.createGroup(
-      selection.selection.filter(_entity => _entity instanceof FlowNodeEntity) as FlowNodeEntity[],
+      selection.selection.filter((_entity) => _entity instanceof FlowNodeEntity) as FlowNodeEntity[]
     );
 
     ctx.playground.selectionService.selection = [];
   },
 });
 
-const selectAll: ShortcutGetter = ctx => ({
+const selectAll: ShortcutGetter = (ctx) => ({
   commandId: FlowCommandId.SELECT_ALL,
   commandDetail: {
     label: 'Select All',
@@ -139,14 +139,14 @@ const selectAll: ShortcutGetter = ctx => ({
   isEnabled: () => !ctx.playground.config.readonlyOrDisabled,
   execute: () => {
     const allNodes = (ctx.document.root.children || []).filter(
-      node => node.flowNodeType !== 'start' && node.flowNodeType !== 'end',
+      (node) => node.flowNodeType !== 'start' && node.flowNodeType !== 'end'
     );
 
     ctx.playground.selectionService.selection = allNodes;
   },
 });
 
-const cancelSelect: ShortcutGetter = ctx => ({
+const cancelSelect: ShortcutGetter = (ctx) => ({
   commandId: FlowCommandId.CANCEL_SELECT,
   commandDetail: {
     label: 'Cancel Select',
@@ -157,7 +157,7 @@ const cancelSelect: ShortcutGetter = ctx => ({
   },
 });
 
-const collapse: ShortcutGetter = ctx => ({
+const collapse: ShortcutGetter = (ctx) => ({
   commandId: FlowCommandId.COLLAPSE,
   commandDetail: {
     label: 'Collapse',
@@ -168,19 +168,19 @@ const collapse: ShortcutGetter = ctx => ({
     const selection = ctx.selection;
 
     const selectNodes = selection.selection.filter(
-      _entity => _entity instanceof FlowNodeEntity,
+      (_entity) => _entity instanceof FlowNodeEntity
     ) as FlowNodeEntity[];
 
     selectNodes
-      .map(_node => [_node, ..._node.allCollapsedChildren])
+      .map((_node) => [_node, ..._node.allCollapsedChildren])
       .flat()
-      .forEach(node => {
+      .forEach((node) => {
         const renderData = node.getData(FlowNodeRenderData);
 
         if (
           node.firstChild &&
           [FlowNodeBaseType.BLOCK_ICON, FlowNodeBaseType.BLOCK_ORDER_ICON].includes(
-            node.firstChild.flowNodeType as FlowNodeBaseType,
+            node.firstChild.flowNodeType as FlowNodeBaseType
           )
         ) {
           node.collapsed = true;
@@ -191,7 +191,7 @@ const collapse: ShortcutGetter = ctx => ({
   },
 });
 
-const expand: ShortcutGetter = ctx => ({
+const expand: ShortcutGetter = (ctx) => ({
   commandId: FlowCommandId.EXPAND,
   commandDetail: {
     label: 'Expand',
@@ -202,19 +202,19 @@ const expand: ShortcutGetter = ctx => ({
     const selection = ctx.selection;
 
     const selectNodes = selection.selection.filter(
-      _entity => _entity instanceof FlowNodeEntity,
+      (_entity) => _entity instanceof FlowNodeEntity
     ) as FlowNodeEntity[];
 
     selectNodes
-      .map(_node => [_node, ..._node.allCollapsedChildren])
+      .map((_node) => [_node, ..._node.allCollapsedChildren])
       .flat()
-      .forEach(node => {
+      .forEach((node) => {
         const renderData = node.getData(FlowNodeRenderData);
 
         if (
           node.firstChild &&
           [FlowNodeBaseType.BLOCK_ICON, FlowNodeBaseType.BLOCK_ORDER_ICON].includes(
-            node.firstChild.flowNodeType as FlowNodeBaseType,
+            node.firstChild.flowNodeType as FlowNodeBaseType
           )
         ) {
           node.collapsed = false;

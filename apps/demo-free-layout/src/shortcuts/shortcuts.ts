@@ -25,7 +25,7 @@ export function shortcuts(shortcutsRegistry: ShortcutsRegistry, ctx: FreeLayoutP
   shortcutsRegistry.addHandlers({
     commandId: FlowCommandId.COPY,
     shortcuts: ['meta c', 'ctrl c'],
-    execute: async e => {
+    execute: async (e) => {
       const document = ctx.get<WorkflowDocument>(WorkflowDocument);
       const selectService = ctx.get<WorkflowSelectService>(WorkflowSelectService);
 
@@ -45,30 +45,30 @@ export function shortcuts(shortcutsRegistry: ShortcutsRegistry, ctx: FreeLayoutP
         return;
       }
       const nodeEntities = selectedNodes.filter(
-        n => n.flowNodeType !== 'start' && n.flowNodeType !== 'end',
+        (n) => n.flowNodeType !== 'start' && n.flowNodeType !== 'end'
       );
       const nodes = await Promise.all(
-        nodeEntities.map(async nodeEntity => {
+        nodeEntities.map(async (nodeEntity) => {
           const nodeJSON = await document.toNodeJSON(nodeEntity);
           return {
             nodeJSON,
             nodeType: nodeEntity.flowNodeType,
           };
-        }),
+        })
       );
       navigator.clipboard
         .writeText(
           JSON.stringify({
             nodes,
             fromHost: window.location.host,
-          }),
+          })
         )
         .then(() => {
           Toast.success({
             content: 'Nodes copied',
           });
         })
-        .catch(err => {
+        .catch((err) => {
           Toast.error({
             content: 'Failed to copy nodes',
           });
@@ -86,16 +86,16 @@ export function shortcuts(shortcutsRegistry: ShortcutsRegistry, ctx: FreeLayoutP
 
       if (selectedNodes && Array.isArray(selectedNodes)) {
         const newNodes = await Promise.all(
-          selectedNodes.map(async node => {
+          selectedNodes.map(async (node) => {
             const nodeJSON = await document.toNodeJSON(node);
             return document.copyNodeFromJSON(
               nodeJSON.type as string,
               nodeJSON,
               '',
               nodeJSON.meta?.position,
-              node.parent?.id,
+              node.parent?.id
             );
-          }),
+          })
         );
         return newNodes;
       }
@@ -137,7 +137,7 @@ export function shortcuts(shortcutsRegistry: ShortcutsRegistry, ctx: FreeLayoutP
             ? dragService.adjustSubNodePosition(
                 nodeJSON.type as string,
                 containerNode,
-                nodeJSON.meta?.position,
+                nodeJSON.meta?.position
               )
             : nodeJSON.meta?.position;
           return document.copyNodeFromJSON(
@@ -145,9 +145,9 @@ export function shortcuts(shortcutsRegistry: ShortcutsRegistry, ctx: FreeLayoutP
             nodeJSON,
             '',
             position,
-            containerNode?.id,
+            containerNode?.id
           );
-        }),
+        })
       );
 
       if (nodes.length > 0) {
@@ -171,10 +171,10 @@ export function shortcuts(shortcutsRegistry: ShortcutsRegistry, ctx: FreeLayoutP
       const selection = ctx.selection;
 
       const selectNodes = selection.selection.filter(
-        _entity => _entity instanceof FlowNodeEntity,
+        (_entity) => _entity instanceof FlowNodeEntity
       ) as FlowNodeEntity[];
 
-      selectNodes.forEach(node => {
+      selectNodes.forEach((node) => {
         node.renderData.expanded = false;
       });
     },
@@ -191,10 +191,10 @@ export function shortcuts(shortcutsRegistry: ShortcutsRegistry, ctx: FreeLayoutP
       const selection = ctx.selection;
 
       const selectNodes = selection.selection.filter(
-        _entity => _entity instanceof FlowNodeEntity,
+        (_entity) => _entity instanceof FlowNodeEntity
       ) as FlowNodeEntity[];
 
-      selectNodes.forEach(node => {
+      selectNodes.forEach((node) => {
         node.renderData.expanded = true;
       });
     },

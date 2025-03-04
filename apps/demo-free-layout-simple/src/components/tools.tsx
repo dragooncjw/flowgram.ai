@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
+
 import { usePlaygroundTools, useClientContext } from '@flowgram.ai/free-layout-editor';
 
 export function Tools() {
@@ -15,13 +16,21 @@ export function Tools() {
     return () => disposable.dispose();
   }, [history]);
 
-  return <div style={{ position: 'absolute', zIndex: 10, bottom: 16, left: 226, display: 'flex', gap: 8 }}>
-    <button onClick={() => tools.zoomin()}>ZoomIn</button>
-    <button onClick={() => tools.zoomout()}>ZoomOut</button>
-    <button onClick={() => tools.fitView()}>Fitview</button>
-    <button onClick={() => tools.autoLayout()}>AutoLayout</button>
-    <button onClick={() => history.undo()} disabled={!canUndo}>Undo</button>
-    <button onClick={() => history.redo()} disabled={!canRedo}>Redo</button>
-    <span>{Math.floor(tools.zoom * 100)}%</span>
-  </div>
+  return (
+    <div
+      style={{ position: 'absolute', zIndex: 10, bottom: 16, left: 226, display: 'flex', gap: 8 }}
+    >
+      <button onClick={() => tools.zoomin()}>ZoomIn</button>
+      <button onClick={() => tools.zoomout()}>ZoomOut</button>
+      <button onClick={() => tools.fitView()}>Fitview</button>
+      <button onClick={() => tools.autoLayout()}>AutoLayout</button>
+      <button onClick={() => history.undo()} disabled={!canUndo}>
+        Undo
+      </button>
+      <button onClick={() => history.redo()} disabled={!canRedo}>
+        Redo
+      </button>
+      <span>{Math.floor(tools.zoom * 100)}%</span>
+    </div>
+  );
 }

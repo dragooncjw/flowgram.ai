@@ -12,7 +12,7 @@ export interface TypeSelectorProps {
 }
 const dropdownMenus = ['object', 'boolean', 'array', 'string', 'integer', 'number'];
 
-export const TypeSelector: React.FC<TypeSelectorProps> = props => {
+export const TypeSelector: React.FC<TypeSelectorProps> = (props) => {
   const { value, disabled } = props;
   const icon = VariableTypeIcons[value as any];
   return (
@@ -22,7 +22,7 @@ export const TypeSelector: React.FC<TypeSelectorProps> = props => {
       disabled={disabled}
       render={
         <Dropdown.Menu>
-          {dropdownMenus.map(key => (
+          {dropdownMenus.map((key) => (
             <Dropdown.Item
               key={key}
               onClick={() => {
@@ -39,7 +39,7 @@ export const TypeSelector: React.FC<TypeSelectorProps> = props => {
       <Tag
         color="white"
         style={props.style}
-        onClick={e => {
+        onClick={(e) => {
           e.stopPropagation();
           e.preventDefault();
         }}

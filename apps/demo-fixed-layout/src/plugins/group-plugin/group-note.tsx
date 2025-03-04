@@ -19,7 +19,7 @@ interface GroupNoteProps {
   enableTooltip?: boolean;
 }
 
-export const GroupNote: FC<GroupNoteProps> = props => {
+export const GroupNote: FC<GroupNoteProps> = (props) => {
   const {
     groupController,
     containerStyle = {},
@@ -65,14 +65,14 @@ export const GroupNote: FC<GroupNoteProps> = props => {
       >
         <MultiLineEditor
           value={editingValue}
-          onChange={note => {
+          onChange={(note) => {
             setEditingValue(note || '');
           }}
           readonly={playground.config.readonly}
           placeholder="Please enter note"
           style={textStyle}
           autoSize={autoSize}
-          onEditingChange={editingState => {
+          onEditingChange={(editingState) => {
             if (editingState) {
               setTooltipVisible(false);
             }

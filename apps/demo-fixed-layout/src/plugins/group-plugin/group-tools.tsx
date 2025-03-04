@@ -29,7 +29,7 @@ interface GroupToolsProps {
 
 const BUTTON_HEIGHT = 24;
 
-export const GroupTools: FC<GroupToolsProps> = props => {
+export const GroupTools: FC<GroupToolsProps> = (props) => {
   const { groupNode, groupController, visible, style = {} } = props;
 
   const groupService = useService<FlowGroupService>(FlowGroupService);
@@ -53,7 +53,7 @@ export const GroupTools: FC<GroupToolsProps> = props => {
         color: 'rgb(97, 69, 211)',
         ...style,
       }}
-      onMouseDown={e => {
+      onMouseDown={(e) => {
         e.stopPropagation();
       }}
     >
@@ -64,7 +64,7 @@ export const GroupTools: FC<GroupToolsProps> = props => {
             icon={<IconHandle />}
             type="primary"
             theme="borderless"
-            onMouseDown={e => {
+            onMouseDown={(e) => {
               e.stopPropagation();
               startDrag(e, {
                 dragStartEntity: groupNode,
@@ -80,7 +80,7 @@ export const GroupTools: FC<GroupToolsProps> = props => {
             icon={groupController?.collapsed ? <IconExpand /> : <IconShrink />}
             type="primary"
             theme="borderless"
-            onClick={e => {
+            onClick={(e) => {
               if (!groupController) {
                 return;
               }
