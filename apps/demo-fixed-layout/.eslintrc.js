@@ -7,4 +7,9 @@ module.exports = defineConfig({
     'no-console': 'off',
     'react/prop-types': 'off',
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 });
