@@ -4,6 +4,9 @@ import {
   usePlaygroundTools,
   type InteractiveType as IdeInteractiveType,
 } from '@flowgram.ai/free-layout-editor';
+import { Tooltip, Popover } from '@douyinfe/semi-ui';
+
+import { MousePadSelector } from './mouse-pad-selector';
 
 export const CACHE_KEY = 'workflow_prefer_interactive_type';
 export const SHOW_KEY = 'show_workflow_interactive_type_guide';
@@ -25,9 +28,6 @@ export enum InteractiveType {
   Mouse = 'MOUSE',
   Pad = 'PAD',
 }
-import { Tooltip, Popover } from '@douyinfe/semi-ui';
-
-import { MousePadSelector } from './mouse-pad-selector';
 
 export const Interactive = () => {
   const tools = usePlaygroundTools();

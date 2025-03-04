@@ -1,11 +1,11 @@
 import { EditorRenderer, FreeLayoutEditorProvider } from '@flowgram.ai/free-layout-editor';
 
-import { DemoTools } from './components/tools';
-import '@flowgram.ai/free-layout-editor/index.css';
-import './styles/index.css';
 import { nodeRegistries } from './nodes';
 import { initialData } from './initial-data';
 import { useEditorProps } from './hooks';
+import { DemoTools } from './components/tools';
+import '@flowgram.ai/free-layout-editor/index.css';
+import './styles/index.css';
 
 export const Editor = () => {
   const editorProps = useEditorProps(initialData, nodeRegistries);
