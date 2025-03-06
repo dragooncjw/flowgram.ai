@@ -17,13 +17,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 2
-      - name: Check if branch is main
-        run: |
-          if [ "$GITHUB_REF" != "refs/heads/gh-pages" ]; then
-            echo "Not on gh-pages branch, exiting workflow."
-            exit 1
-          fi
-          echo "On gh-pages branch, continuing workflow."
       - name: Config Git User
         run: |
           git config --local user.name "dragooncjw"
