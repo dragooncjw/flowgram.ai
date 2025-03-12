@@ -31,7 +31,7 @@ export default function BranchAdder(props: PropsType) {
   return (
     <Container
       isVertical={isVertical}
-      activated={activated}
+      activated={activated || nodeData?.hovered}
       onMouseEnter={() => nodeData?.toggleMouseEnter()}
       onMouseLeave={() => nodeData?.toggleMouseLeave()}
     >
