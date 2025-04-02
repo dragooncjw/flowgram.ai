@@ -22,7 +22,9 @@ export const InlineBlocksRegistry: FlowNodeRegistry = {
     hidden: true,
     spacing: (node) => getDefaultSpacing(node.entity, ConstantKeys.NODE_SPACING),
     isInlineBlocks: true,
-    inlineSpacingPre: DEFAULT_SPACING.INLINE_BLOCKS_PADDING_TOP,
+    inlineSpacingPre: (node) =>
+      getDefaultSpacing(node.entity, ConstantKeys.INLINE_BLOCKS_PADDING_TOP) ||
+      DEFAULT_SPACING.INLINE_BLOCKS_PADDING_TOP,
     inlineSpacingAfter: (node) =>
       getDefaultSpacing(node.entity, ConstantKeys.INLINE_BLOCKS_PADDING_BOTTOM),
   },

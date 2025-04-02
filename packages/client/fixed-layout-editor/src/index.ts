@@ -15,3 +15,4 @@ export * from './hooks/use-node-render';
 export * from './hooks/use-playground-tools';
 export { useClientContext } from './hooks/use-client-context';
 export * from './types';
+export { createOperationPlugin } from './plugins/create-operation-plugin';

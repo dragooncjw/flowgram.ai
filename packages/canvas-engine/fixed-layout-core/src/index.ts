@@ -10,6 +10,8 @@ import {
   TryCatchRegistry,
   StartRegistry,
   RootRegistry,
+  InlineBlocksRegistry,
+  EndRegistry,
 } from './activities';
 
 export const FixedLayoutRegistries = {
@@ -23,4 +25,6 @@ export const FixedLayoutRegistries = {
   TryCatchRegistry,
   StartRegistry,
   RootRegistry,
+  InlineBlocksRegistry,
+  EndRegistry,
 };

@@ -65,4 +65,9 @@ export const ConstantKeys = {
    * 线条、label 激活后的颜色
    */
   BASE_ACTIVATED_COLOR: 'BASE_ACTIVATED_COLOR',
+  /**
+   * Branch bottom margin
+   * 分支下边距
+   */
+  INLINE_BLOCKS_PADDING_TOP: 'INLINE_BLOCKS_PADDING_TOP',
 };

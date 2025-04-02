@@ -8,3 +8,4 @@ export { ScrollBarEvents } from './utils';
 export { MARK_ARROW_ID } from './components/MarkerArrow';
 export { MARK_ACTIVATED_ARROW_ID } from './components/MarkerActivatedArrow';
 export { useBaseColor } from './hooks/use-base-color';
+export { createLines } from './components/LinesRenderer';
