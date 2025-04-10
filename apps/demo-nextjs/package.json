@@ -1,6 +1,21 @@
 {
     "name": "@flowgram.ai/demo-nextjs",
     "version": "0.1.0",
+    "description": "",
+    "keywords": [],
+    "license": "MIT",
+    "files": [
+        "public/",
+        "src/",
+        ".eslintrc.js",
+        ".gitignore",
+        "next.config.ts",
+        "pnpm-lock.yaml",
+        "postcss.config.mjs",
+        "package.json",
+        "tsconfig.json",
+        "README.md"
+    ],
     "scripts": {
         "dev": "next dev",
         "build": "next build",
@@ -35,5 +50,9 @@
         "eslint": "^8.54.0",
         "eslint-config-next": "15.2.4",
         "@eslint/eslintrc": "^3"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
     }
 }
