@@ -22,8 +22,13 @@ export const HistoryContainerModule = new ContainerModule(
     bind(HistoryConfig).toSelf().inSingletonScope();
 
     onActivation(HistoryService, (ctx, historyService) => {
-      const historyManager =
-        ctx.container?.parent?.get(HistoryManager) || ctx.container.get(HistoryManager);
+      let historyManager;
+
+      if (ctx.container?.parent?.isBound(HistoryManager)) {
+        historyManager = ctx.container?.parent?.get(HistoryManager);
+      } else {
+        historyManager = ctx.container.get(HistoryManager);
+      }
 
       if (!historyManager) {
         return historyService;
@@ -33,5 +38,5 @@ export const HistoryContainerModule = new ContainerModule(
       historyManager.registerHistoryService(historyService);
       return historyService;
     });
-  },
+  }
 );
