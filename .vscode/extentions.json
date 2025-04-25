@@ -1,6 +1,8 @@
 {
   "recommendations": [
+    "styled-components.vscode-styled-components",
     "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "streetsidesoftware.code-spell-checker",
     "codezombiech.gitignore",

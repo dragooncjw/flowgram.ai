@@ -6,17 +6,11 @@
   "editor.formatOnSave": true,
   "editor.formatOnType": false,
   "editor.formatOnPaste": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
-    // "source.sortImports": "always"
+    "source.fixAll.eslint": "explicit"
   },
-  "workbench.editorAssociations": {
-    "*.mdc": "default"
-  },
-  "editor.formatOnSaveMode": "modificationsIfAvailable",
   "search.followSymlinks": false,
   "search.exclude": {
     "**/node_modules": true,
@@ -43,18 +37,16 @@
     ".babelrc": "json",
     ".eslintrc": "jsonc",
     ".eslintrc*.json": "jsonc",
-    ".stylelintrc": "javascript",
+    ".stylelintrc": "jsonc",
     "stylelintrc": "jsonc",
     "*.json": "jsonc",
     "package.json": "json",
-    "*.mdc": "markdown",
     ".htmlhintrc": "jsonc",
     "htmlhintrc": "jsonc",
     "Procfile*": "shellscript",
     "README": "markdown",
     "**/coverage/**/*.*": "plaintext",
     "OWNERS": "yaml",
-    // 需要将 pnpm-lock file 设置为 plaintext，不做解析，否则打开文件时 vscode 容易卡死
     "**/pnpm-lock.yaml": "plaintext",
     "**/dist/**": "plaintext",
     "**/dist_*/**": "plaintext",
@@ -68,9 +60,7 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
-    "**/.rush": true,
-    "**/.swc": true,
-    "**/rush-logs": true
+    "**/.rush": true
   },
   "files.watcherExclude": {
     "**/.git/objects/**": true,
@@ -90,48 +80,24 @@
     "typescript",
     "typescriptreact"
   ],
-  "editor.semanticHighlighting.enabled": false,
   "eslint.format.enable": true,
-  "eslint.enable": true,
-  "eslint.useFlatConfig": true,
-  "eslint.codeActionsOnSave.mode": "problems",
-  "eslint.lintTask.enable": false,
+  "eslint.lintTask.enable": true,
   "javascript.validate.enable": false,
+  "typescript.validate.enable": true,
   "typescript.tsdk": "config/ts-config/node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "typescript.disableAutomaticTypeAcquisition": true,
-  "typescript.format.enable": false,
-  "typescript.referencesCodeLens.enabled": false,
-  "typescript.preferGoToSourceDefinition": true,
-  "typescript.updateImportsOnFileMove.enabled": "never",
-  // tsserver log 不会自动删除，日积月累，导致磁盘空间不足，因此默认关闭
-  "typescript.tsserver.log": "off",
-  "typescript.tsserver.experimental.enableProjectDiagnostics": false,
-  "typescript.workspaceSymbols.excludeLibrarySymbols": true,
-  "editor.minimap.enabled": true,
-  "typescript.preferences.includePackageJsonAutoImports": "off",
-  "typescript.suggest.autoImports": true,
-  "typescript.tsserver.maxTsServerMemory": 10240,
-  "typescript.tsserver.enableRegionDiagnostics": false,
+  "typescript.tsserver.maxTsServerMemory": 8192,
+  // "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   "typescript.tsserver.watchOptions": {
     "fallbackPolling": "dynamicPriorityPolling",
-    "synchronousWatchDirectory": true,
-    "watchDirectory": "useFsEvents",
-    "watchFile": "useFsEventsOnParentDirectory",
-    "excludeDirectories": ["/**/node_modules"],
-    "excludeLibrarySymbols": true,
-    "excludeFiles": ["/**/node_modules/**"]
+    "synchronousWatchDirectory": false,
+    "watchDirectory": "dynamicPriorityPolling",
+    "watchFile": "useFsEventsOnParentDirectory"
   },
   "css.validate": false,
   "scss.validate": false,
   "less.validate": false,
-  "stylelint.enable": true,
-  "stylelint.validate": ["css", "scss", "less"],
-  // "stylelint.stylelintPath": "config/stylelint-config/node_modules/stylelint",
   "emmet.triggerExpansionOnTab": true,
-  "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
+
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -141,12 +107,6 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -154,13 +114,19 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[less]": {
-    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    "editor.defaultFormatter": "vscode.css-language-features"
   },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
@@ -173,14 +139,5 @@
   },
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
-  },
-  "svg.preview.background": "white",
-  "[xml]": {
-    "editor.defaultFormatter": "mblode.pretty-formatter"
-  },
-  "[sql]": {
-    "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
-  },
-  "git.openRepositoryInParentFolders": "always",
-  "references.preferredLocation": "view"
+  }
 }
