@@ -11,8 +11,8 @@ export const EditorClient = () => {
   }, []);
 
   if (!isMounted) {
-      // only render <Editor /> in browser client
-      return null
+    // only render <Editor /> in browser client
+    return null;
   }
 
   return <Editor />;
