@@ -63,6 +63,9 @@ our name.
 # create demo
 npx @flowgram.ai/create-app@latest
 
+# in PowerShell
+npx "@flowgram.ai/create-app@latest"
+
 # select demo
 - fixed-layout # full-feature overview
 - free-layout # full-feature overview
