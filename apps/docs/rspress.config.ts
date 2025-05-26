@@ -8,6 +8,9 @@ export default defineConfig({
   base: '/',
   title: 'FlowGram.AI',
   globalStyles: path.join(__dirname, './global.less'),
+  route: {
+    exclude: ['./global.d.ts'],
+  },
   builderConfig: {
     source: {
       decorators: {
@@ -58,7 +61,7 @@ export default defineConfig({
       },
     },
   },
-  ssg: false,
+  ssg: true,
   // locales 为一个对象数组
   locales: [
     {
