@@ -32,23 +32,6 @@ export default defineConfig({
               },
             ],
           },
-          optimization: {
-            splitChunks: {
-              chunks: 'all', // 拆分所有模块，包括异步和同步
-              minSize: 30 * 1024, // 30KB 以下不拆分
-              maxSize: 500 * 1024, // 500KB 以上强制拆分
-              minChunks: 1, // 最少被引用 1 次就可以拆分
-              automaticNameDelimiter: '-',
-              cacheGroups: {
-                vendors: {
-                  test: /[\\/]node_modules[\\/]/,
-                  name: 'vendors',
-                  chunks: 'all',
-                  priority: -10, // 优先级
-                },
-              },
-            },
-          },
           // 禁用 ES 模块输出（启用 CommonJS）
           experiments: {
             outputModule: false,
