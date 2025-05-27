@@ -20,12 +20,4 @@ test.describe('node operations', () => {
     const defaultNodeCount = await editorPage.getNodeCount();
     expect(defaultNodeCount).toEqual(11);
   });
-
-  // test('delete node', async () => {
-  //   expect(await editorPage.getNodeCount()).to.eq(2);
-  //   await editorPage.addNode('base');
-  //   expect(await editorPage.getNodeCount()).to.eq(3);
-  //   await editorPage.deleteNode('base_2');
-  //   expect(await editorPage.getNodeCount()).to.eq(2);
-  // });
 });
