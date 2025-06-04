@@ -1,0 +1,3146 @@
+---
+url: /guide/introduction.md
+---
+
+#
+
+FlowGram 是一套基于节点编辑的流程搭建引擎，帮助开发者快速创建固定布局或自由连线布局模式的流程，并提供一套交互的最佳实践,
+很适合有明确输入和输出的可视化工作流。
+
+在 AI 如火如荼的当下，我们也会更专注于如何让流程赋能 AI，为此特意加上 AI 后缀。
+
+官方 Demo#
+
+交互体验#
+
+提供一套交互的最佳实践，让操作流程更加丝滑
+
+线上应用#
+
+
+
+---
+url: /examples/index.md
+---
+
+
+
+
+---
+url: /examples/fixed-layout/fixed-layout-simple.md
+---
+
+#
+
+安装#
+
+源码#
+
+https://github.com/bytedance/flowgram.ai/tree/main/apps/demo-fixed-layout-simple
+
+
+
+---
+url: /examples/fixed-layout/fixed-composite-nodes.md
+---
+
+#
+
+安装#
+
+源码#
+
+* jsonData:
+  https://github.com/bytedance/flowgram.ai/tree/main/apps/demo-fixed-layout-sim
+  ple/src/data
+* nodeRegistries:
+  https://github.com/bytedance/flowgram.ai/tree/main/packages/canvas-engine/fix
+  ed-layout-core/src/activities
+
+
+
+---
+url: /examples/fixed-layout/fixed-feature-overview.md
+---
+
+#
+
+安装#
+
+源码#
+
+https://github.com/bytedance/flowgram.ai/tree/main/apps/demo-fixed-layout
+
+功能介绍#
+
+
+
+---
+url: /examples/free-layout/free-layout-simple.md
+---
+
+#
+
+功能介绍#
+
+Free Layout 是 Flowgram.ai 提供的自由布局编辑器组件，允许用户创建和编辑流程图、工作流和各种节点连接图表。核心功能包括：
+
+* 节点自由拖拽与定位
+* 节点连接与边缘管理
+* 可配置的节点注册与自定义渲染
+* 内置撤销/重做历史记录
+* 支持插件扩展（如缩略图、自动对齐等）
+
+从零构建自由布局编辑器#
+
+本节将带你从零开始构建一个自由布局编辑器应用，完整演示如何使用 @flowgram.ai/free-layout-editor 包构建一个可交互的流程编辑器。
+
+1. 环境准备#
+
+首先，我们需要创建一个新的项目：
+
+2. 项目结构#
+
+创建完成后，项目结构如下：
+
+3. 开发流程#
+
+步骤一：定义初始数据#
+
+首先，我们需要定义画布的初始数据结构，包括节点和连线：
+
+步骤二：注册节点类型#
+
+接下来，我们需要定义不同类型节点的行为和外观：
+
+步骤三：创建编辑器配置#
+
+使用 React hook 封装编辑器配置：
+
+步骤四：创建节点添加面板#
+
+步骤五：创建工具栏和缩略图#
+
+步骤六：组装编辑器主组件#
+
+步骤七：创建应用入口#
+
+步骤八：添加样式#
+
+4. 运行项目#
+
+完成上述步骤后，你可以运行项目查看效果：
+
+项目将在本地启动，通常访问 http://localhost:3000 即可看到效果。
+
+核心概念#
+
+1. 数据结构#
+
+Free Layout 使用标准化的数据结构来描述节点和连接：
+
+2. 节点注册#
+
+使用 nodeRegistries 定义不同类型节点的行为和外观：
+
+3. 编辑器组件#
+
+4. 核心钩子函数#
+
+在组件中可以使用多种钩子函数获取和操作编辑器：
+
+5. 插件扩展#
+
+Free Layout 支持通过插件机制扩展功能：
+
+安装#
+
+源码#
+
+https://github.com/bytedance/flowgram.ai/tree/main/apps/demo-free-layout-simple
+
+
+
+---
+url: /examples/free-layout/free-feature-overview.md
+---
+
+#
+
+安装#
+
+源码#
+
+https://github.com/bytedance/flowgram.ai/tree/main/apps/demo-free-layout
+
+功能介绍#
+
+
+
+---
+url: /examples/node-form/basic.md
+---
+
+#
+
+
+
+---
+url: /examples/node-form/effect.md
+---
+
+#
+
+以下例子展示了表单副作用的配置方式。举了两个个例子，行为描述如下
+
+1. Basic effect(基础例子)：当表单项值变更时，控制台会打印表单当前值。
+2. Control other fields (控制其他表单项的值)：当前表单项数据变更时要同时改变另一个表单项的值。
+
+
+
+---
+url: /examples/node-form/array.md
+---
+
+#
+
+以下例子展示了数组的基本用法，包含：
+
+* 基本写法（渲染、增删）。
+* 如何对数组每项配置校验逻辑。 此处的校验规则为每项最大长度不超过8个英文字符。
+* 如何对数组每项配置副作用。 此处的副作用为每项在初始化时控制台输出 ${name} value init to ${value}, 值变更时输出
+  ${name} value changed to ${value}
+* 数组项如何做交换。
+
+
+
+---
+url: /examples/node-form/dynamic.md
+---
+
+#
+
+当前例子展示了如何通过 deps 字段来声明表单项之间的联动更新关系。
+
+例子说明：当 Country 有值时才会显示 City 字段。
+
+你也可以将form.getValueIn('country') 作为 city Field 下组件的入参，来控制组件内的行为,
+如筛选当前country下的cities。
+
+
+
+---
+url: /api/common-apis.md
+---
+
+#
+
+FlowDocument （自动化布局文档数据）#
+
+WorkflowDocument (自由连线布局文档数据) 继承自 FlowDocument#
+
+FlowNodeEntity（节点）#
+
+Playground （画布）#
+
+SelectionService (选择器)#
+
+
+
+---
+url: /api/index.md
+---
+
+
+
+
+---
+url: /api/plugins.md
+---
+
+这里是官网 api 配置，demo 用。
+
+
+
+---
+url: /api/plugins/config-basic.md
+---
+
+#
+
+
+root#
+
+ * Type: string
+ * Default: docs
+
+Specifies the document root directory. For example:
+
+
+
+This config supports both relative and absolute paths, with relative paths being
+relative to the current working directory(cwd).
+
+Of course, in addition to specifying the document root directory through the
+config file, you can also specify it through command line parameters, such as:
+
+
+
+
+base#
+
+ * Type: string
+ * Default: /
+
+Deployment base path. For example, if you plan to deploy your site to
+https://foo.github.io/bar/, then you should set base to "/bar/":
+
+
+
+
+title#
+
+ * Type: string
+ * Default: "Rspress"
+
+Site title. This parameter will be used as the title of the HTML page. For
+example:
+
+
+
+
+description#
+
+ * Type: string
+ * Default: ""
+
+Site description. This will be used as the description of the HTML page. For
+example:
+
+
+
+
+icon#
+
+ * Type: string
+ * Default: ""
+
+Site icon. This path will be used as the icon path for the HTML page. For
+example:
+
+
+
+The framework will find your icon in the public directory, of course you can
+also set it to a CDN address.
+
+
+logo#
+
+ * Type: string | { dark: string; light: string }
+ * Default: ""
+
+Site logo. This path will be used as the logo path in the upper left corner of
+the navbar. For example:
+
+
+
+The framework will find your icon in the public directory, you can also set it
+to a CDN address.
+
+Of course you can set different logos for dark/light mode:
+
+
+
+
+logoText#
+
+ * Type: string
+ * Default: ""
+
+Site logo Text. This text will be used as the logo text in the upper left corner
+of the navbar. For example:
+
+
+
+
+outDir#
+
+ * Type: string
+ * Default: doc_build
+
+Custom output directory for built sites. for example:
+
+
+
+
+locales#
+
+ * Type: Locale[]
+
+
+
+I18n config of the site. for example:
+
+
+
+
+head#
+
+ * Type: string | [string, Record<string, string>] | (route) => string |
+   [string, Record<string, string>] | undefined
+ * Can be appended per page via frontmatter
+
+Additional elements to render in the <head> tag in the page HTML.
+
+
+
+
+mediumZoom#
+
+ * Type: boolean | { selector?: string }
+ * Default: true
+
+Whether to enable the image zoom function. It is enabled by default, you can
+disable it by setting mediumZoom to false.
+
+> The bottom layer is implemented using the medium-zoom library.
+
+Example usage:
+
+
+
+
+search#
+
+ * Type: { searchHooks: string; versioned: boolean; }
+
+
+searchHooks#
+
+You can add search runtime hooks logic through the searchHooks parameter, for
+example:
+
+
+
+For specific hook logic, you can read Customize Search Functions.
+
+
+versioned#
+
+If you are using multiVersion, the versioned parameter allows you to create a
+separate search index for each version of your documentation. When enabled, the
+search will only query the index corresponding to the currently selected
+version.
+
+
+
+
+globalUIComponents#
+
+ * Type: (string | [string, object])[]
+ * Default: []
+
+You can register global UI components through the globalUIComponents parameter,
+for example:
+
+
+
+The item of globalUIComponents can be a string, which is the path of the
+component file, or an array, the first item is the path of the component file,
+and the second item is the component props, for example:
+
+
+
+
+multiVersion#
+
+ * Type: { default: string; versions: string[] }
+
+You can enable multi-version support through the multiVersion parameter, for
+example:
+
+
+
+The default parameter is the default version, and the versions parameter is the
+version list.
+
+
+route#
+
+ * Type: Object
+
+Custom route config.
+
+
+route.include#
+
+ * Type: string[]
+ * Default: []
+
+Add some extra files in the route. By default, only the files in the document
+root directory will be included in the route. If you want to add some extra
+files to the route, you can use this option. For example:
+
+
+
+> Note: The strings in the array support glob patterns, the glob expression
+> should be based on the root directory of the document, with the corresponding
+> extensions suffix.
+
+NOTE
+
+We recommend using addPages hook in a custom Rspress plugin to add some
+additional files to the route, so that the page route and file path/content can
+be specified more flexibly and reasonably.
+
+
+route.exclude#
+
+ * Type: string[]
+ * Default: []
+
+Exclude some files from the route. For example:
+
+
+
+> Note: The strings in the array support glob patterns, the glob expression
+> should be based on the root directory of the document.
+
+
+route.extensions#
+
+ * Type: string[]
+ * Default: []
+
+The extensions of the files that will be included in the route. By default,
+Rspress will include all 'js', 'jsx', 'ts', 'tsx', 'md', 'mdx' files in the
+route. If you want to customize the extensions, you can use this option. For
+example:
+
+
+
+
+route.cleanUrls#
+
+ * Type: Boolean
+ * Default: false
+
+Generate url without suffix when cleanUrls is true for shorter url link.
+
+
+
+
+ssg#
+
+ * Type: boolean | { strict?: boolean }
+ * Default: true
+
+Determines whether to enable Static Site Generation. It is enabled by default,
+but you can disable it by setting ssg to false.
+
+
+
+If SSG fails, it will fallback to CSR by default. You can set ssg to { strict:
+true } to strictly require SSG to succeed, otherwise an error will be thrown.
+
+
+
+
+replaceRules#
+
+ * Type: { search: string | RegExp; replace: string; }[]
+ * Default: []
+
+You can set text replacement rules for the entire site through replaceRules. The
+rules will apply to everything including _meta.json files, frontmatter
+configurations, and document content and titles.
+
+
+
+
+---
+url: /api/plugins/config-build.md
+---
+
+#
+
+
+builderConfig#
+
+ * Type: RsbuildConfig
+
+Used to customize the configurations of Rsbuild. For detailed configurations,
+please refer to Rsbuild - Config.
+
+ * Example: Use resolve.alias to configure path aliases:
+
+
+
+ * Example: Use tools.rspack to modify the Rspack configuration, such as
+   registering a webpack or Rspack plugin:
+
+
+
+WARNING
+
+If you want to modify the output directory, please use outDir.
+
+
+builderPlugins#
+
+ * Type: RsbuildPlugin[]
+
+Used to register Rsbuild plugins.
+
+You can use the rich plugins of Rsbuild in the Rspress project to quickly extend
+the building capabilities.
+
+ * Example: Support Vue SFC through @rsbuild/plugin-vue
+
+
+
+ * Example: Add Google analytics through rsbuild-plugin-google-analytics
+
+
+
+ * Example: Add Open Graph meta tags through rsbuild-plugin-open-graph
+
+
+
+You can also override the built-in plugins @rsbuild/plugin-react,
+@rsbuild/plugin-sass and @rsbuild/plugin-less, and customize relevant plugin
+options.
+
+ * Example: Modify related options of built-in @rsbuild/plugin-less plugin
+
+
+
+
+Default Config#
+
+If you need to view the default Rspack or Rsbuild configs, you can add the
+DEBUG=rsbuild parameter when running the rspress dev or rspress build command:
+
+
+
+After execution, the rsbuild.config.js file is created in the doc_build
+directory, which contains the complete builderConfig.
+
+> Please refer to Rsbuild - Debug Mode for more information on how to debug the
+> Rsbuild.
+
+
+markdown#
+
+ * Type: Object
+
+Configure MDX-related compilation abilities.
+
+
+markdown.remarkPlugins#
+
+ * Type: Array
+ * Default: []
+
+Configure the remark plugins. for example:
+
+
+
+
+markdown.rehypePlugins#
+
+ * Type: Array
+
+Configure the rehype plugin. for example:
+
+
+
+
+markdown.checkDeadLinks#
+
+ * Type: boolean
+ * Default: false
+
+Whether to check for dead links. for example:
+
+
+
+After enabling this config, the framework will check the links in the document
+based on the conventional routing table. If there is an unreachable link, the
+build will throw an error and exit.
+
+
+markdown.mdxRs#
+
+ * Type: boolean | { include: (filepath: string) => boolean }
+ * Default: true
+
+
+markdown.showLineNumbers#
+
+ * Type: boolean
+
+Whether to display the line number of the code block. Defaults to false.
+
+
+markdown.defaultWrapCode#
+
+ * Type: boolean
+
+Whether to enable long code line wrapping display by default. Defaults to false.
+
+
+markdown.globalComponents#
+
+ * Type: string[]
+
+Register component to the global scope, which will make it automatically
+available in every MDX file, without any import statements.For example:
+
+
+
+Then you can use the Alert component in any MDX file:
+
+
+
+Danger
+
+Please set markdown.mdxRs to false when configuring globalComponents, otherwise
+the global components will not take effect.
+
+
+markdown.highlightLanguages#
+
+ * Type: [string, string][]
+ * Default:
+
+
+
+Rspress supports automatic import of highlighted languages and makes some
+language aliases by default.
+
+ * By default, it is implemented based on Prism.js. You can also switch to Shiki
+   through @rspress/plugin-shiki.
+ * The default configuration alias languages include js, jsx, ts, tsx, xml, md,
+   mdx.
+
+You can also extend these default aliases, such as:
+
+
+
+The alias of each language is configured in the format of [string, string]. The
+former is the alias of the language, and the latter is the full name of the
+language. You can go to File List to view the full names of all supported
+languages.
+
+
+---
+url: /api/plugins/config-frontmatter.md
+---
+
+#
+
+
+title#
+
+ * Type: string
+
+The title of the page. By default, the page's h1 heading will be used as the
+title of the HTML document. But if you want to use a different title, you can
+use Front Matter to specify the title of the page. For example:
+
+
+
+
+description#
+
+ * Type: string
+
+A custom description for the page. For example:
+
+
+
+
+pageType#
+
+ * Type: 'home' | 'doc' | 'custom' | 'blank' | '404'
+ * Default: 'doc'
+
+The type of the page. By default, the page type is doc. But if you want to use a
+different page type, you can use the Front Matter field pageType to specify the
+page type. E.g:
+
+
+
+The meaning of each pageType config is as follows:
+
+
+titleSuffix#
+
+ * Type: string
+
+Set the suffix of the page title. When titleSuffix is not set, the site's title
+is used as the suffix by default.
+
+
+
+The default separator between the title and the suffix is -, you can also use |
+for separation:
+
+
+
+
+head#
+
+ * Type: [string, Record<string, string>][]
+
+Specify extra head tags to be injected for the current page. Will be appended
+after head tags injected by site-level config.
+
+For example, you can use these headers to specify custom meta tags for Open
+Graph.
+
+
+
+Note
+
+Make sure to correctly define the header tag names and their attribute names.
+
+For tags and attribute names that contain a hyphen (-), use the camelCase
+format. For example, http-equiv="refresh" should be defined as httpEquiv:
+refresh.
+
+This is because under the hood, headers are handled by React and
+react-helmet-async.
+
+
+hero#
+
+ * Type: Object
+
+The hero config for the home page. It has the following types:
+
+
+
+For example, you can use the following Front Matter to specify a page's hero
+config:
+
+
+
+When setting hero.text, you can use the | symbol in YAML to manually control
+line breaks:
+
+
+
+Or you can use HTML to specify the hero config for the page:
+
+
+
+
+features#
+
+ * Type: Array
+ * Default: []
+
+features config of the home page. It has the following types:
+
+
+
+For example, you could use the following to specify the features configuration
+for the home page:
+
+
+
+
+sidebar#
+
+Whether to show the sidebar on the left. By default, the doc page will display
+the sidebar on the left. If you want to hide the sidebar on the left, you can
+use the following Front Matter config:
+
+
+
+
+outline#
+
+Whether to display the outline column on the right. By default, the doc page
+displays the outline column on the right. You can hide the outline column with
+the following config:
+
+
+
+
+footer#
+
+Whether to display the components at the bottom of the document (such as
+previous/next page). By default, the doc page will display the footer at the
+bottom. You can hide the footer with the following config:
+
+
+
+
+navbar#
+
+Whether to hide the top navigation bar. You can hide the top nav bar with the
+following config:
+
+
+
+
+overviewHeaders#
+
+ * Type: number[]
+ * Default: [2]
+
+The headers shown in the overview page. By default, the displayed header is h2.
+But if you want to display different headers, you can specify it using the
+overviewHeaders Front Matter field. For example:
+
+
+
+Or
+
+
+
+
+context#
+
+ * Type: string
+
+After configuration, the data-context attribute will be added to the DOM node
+when the sidebar is generated, and the value is the configured value.
+
+
+
+
+
+The DOM structure of the final generated sidebar is abbreviated as follows:
+
+
+
+
+---
+url: /api/plugins/config-theme.md
+---
+
+#
+
+Theme config is located under themeConfig in the doc param. For example:
+
+
+
+
+nav#
+
+ * Type: Array
+ * Default: []
+
+The nav configuration is an array of NavItem with the following types:
+
+
+
+activeMatch is used to match the current route, when the route matches the
+activeMatch rule, the nav item will be highlighted. By default, activeMatch is
+the link of the nav item.
+
+For example:
+
+
+
+Of course, multi-level menus can also be configured in the nav array with the
+following types:
+
+
+
+For example the following configuration:
+
+
+
+
+sidebar#
+
+ * Type: Object
+
+The sidebar of the website. The config is an object with the following types:
+
+
+
+For example:
+
+
+
+
+footer#
+
+ * Type: Object
+ * Default: {}
+
+The footer of the home page.
+
+The footer config is an object of Footer, which has the following types:
+
+
+
+message is a string that can contain HTML content. This string will be inserted
+into the footer using dangerouslySetInnerHTML, allowing you to pass in HTML
+template tags to design your footer.
+
+For example:
+
+
+
+
+outlineTitle#
+
+ * Type: string
+ * Default: 'ON THIS PAGE'
+
+Configure the title of the outline in the outline panel.
+
+For example:
+
+
+
+
+lastUpdated#
+
+ * Type: boolean
+ * Default: false
+
+Whether to display the last update time, it is not displayed by default.
+
+For example:
+
+
+
+
+lastUpdatedText#
+
+ * Type: string
+ * Default: Last Updated
+
+The text of the last update time.
+
+For example:
+
+
+
+
+prevPageText#
+
+ * Type: string
+ * Default: Previous Page
+
+The text of the previous page. for example:
+
+
+
+
+searchPlaceholderText#
+
+ * Type: string
+ * Default: Search Docs
+
+The placeholder text of the search box. For example:
+
+
+
+
+searchNoResultsText#
+
+ * Type: string
+ * Default: No results for
+
+The text of no search result. For example:
+
+
+
+
+searchSuggestedQueryText#
+
+ * Type: string
+ * Default: Please try again with a different keyword
+
+The text of suggested query text when no search result. For example:
+
+
+
+
+overview#
+
+ * Type: Object
+
+The config of overview page/component. The config is an object with the
+following types:
+
+
+
+For example:
+
+
+
+
+socialLinks#
+
+ * Type: Array
+ * Default: []
+
+You can add related links through the following config, such as github links, x
+links, etc. Related links support four modes: link mode text mode image mode dom
+mode, for example:
+
+
+
+ * When in link mode, click the icon to jump to the link.
+ * When in text mode, when the mouse moves over the icon, a pop-up box will be
+   displayed, and the content of the pop-up box is the entered text
+ * When in the img mode, moving the mouse over the icon will display a bullet
+   box, and the content of the bullet box is the specified picture. It should be
+   noted that the picture needs to be placed in the public directory.
+ * When in dom mode, html to render can be passed directly into the content
+   field. Use '' for wrapping
+
+Related links support the following types of images, which can be selected
+through the icon attribute:
+
+
+
+If you need to customize the icon, you can pass in an object with svg attribute,
+and the value of svg is the content of the custom icon, for example:
+
+
+
+
+nextPageText#
+
+ * Type: string
+ * Default: Next Page
+
+Text for the next page. for example:
+
+
+
+
+locales#
+
+ * Type: Array<LocaleConfig>
+ * Default: undefined
+
+I18n config. This config is an array, and every item of it is LocaleConfig, and
+the types are as follows:
+
+
+
+LocaleConfig contains many of the same configuration options as the theme
+config, but the former will have a higher priority.
+
+
+darkMode#
+
+ * Type: boolean
+ * Default: true
+
+Whether a Dark/Light mode toggle button appears. for example:
+
+
+
+You can also specify the default theme mode through inject global variable into
+html template, for example:
+
+
+
+
+hideNavbar#
+
+ * Type: "always" | "auto" | "never"
+ * Default: never
+
+Control the behavior of the hidden navigation bar. By default, the navigation
+bar will always display. You can set it to auto to automatically hide when the
+page scrolls down, or set it to always to hidden it all the time.
+
+For example:
+
+
+
+
+enableContentAnimation#
+
+ * Type: boolean
+ * Default: false
+
+Whether there is animation effect when switching between pages. It is
+implemented with View Transition API. For example:
+
+> The animation is not configurable for now.
+
+
+
+
+enableAppearanceAnimation#
+
+ * Type: boolean
+ * Default: false
+
+Whether there is animation effect when switching between light and dark theme.
+It is implemented with View Transition API. For example:
+
+> The animation is not configurable for now.
+
+
+
+
+search#
+
+ * Type: boolean
+ * Default: true
+
+Whether to display the search box. For example:
+
+
+
+
+sourceCodeText#
+
+ * Type: string
+ * Default: Source
+
+The text of the source code button. For example:
+
+
+
+
+enableScrollToTop#
+
+ * Type: boolean
+ * Default: false
+
+Enable scroll to top button on documentation. For example:
+
+
+
+
+localeRedirect#
+
+ * Type: 'auto' | 'never'
+ * Default: 'auto'
+
+Whether to redirect to the locale closest to window.navigator.language when the
+user visits the site, the default is auto, which means that the user will be
+redirected on the first visit. If you set it to never, the user will not be
+redirected. For example:
+
+
+
+
+---
+url: /api/core/flow-document.md
+---
+
+#
+
+流程数据文档 (固定布局), 存储流程的所有节点数据
+
+> API Detail
+
+DANGER
+
+对节点的操作最好通过 ctx.operation 进行操作, 这样才能绑定到 redo/undo
+
+root#
+
+获取画布的根节点，所有节点都挂在根节点下边
+
+originTree#
+
+画布真实的节点树
+
+renderTree#
+
+画布渲染时的节点树，为了提升性能，渲染的树会随着节点分支折叠而变化，并非真实的树
+
+getAllNodes#
+
+获取所有节点数据
+
+getNode#
+
+通过指定 id 获取节点
+
+getNodeRegistry#
+
+获取节点的定义, 节点定义可以根据业务自己扩展配置项
+
+fromJSON/toJSON#
+
+导入和导出数据
+
+registerFlowNodes#
+
+注册节点的配置项目, 支持继承
+
+addNode#
+
+添加节点
+
+addFromNode#
+
+添加到指定节点的后边
+
+addBlock#
+
+为指定节点添加分支节点
+
+removeNode#
+
+删除节点
+
+onNodeCreate/onNodeUpdate/onNodeDispose#
+
+节点创建/更新/销毁事件, 返回事件的注销函数
+
+traverse#
+
+从指定节点遍历所有子节点, 默认根节点
+
+toString#
+
+返回节点结构的字符串快照
+
+
+
+---
+url: /api/core/flow-node-entity.md
+---
+
+#
+
+节点实体，WorkflowNodeEntity 为节点别名用于自由布局节点, 节点实体采用 ECS 架构, 为 Entity
+
+> API Detail
+
+Properties#
+
+* id: string 节点 id
+* flowNodeType: string | number 节点类型
+* version number 节点版本，可以用于判断节点状态是否更新
+
+Accessors#
+
+* document: FlowDocument | WorkflowDocument 文档链接
+
+* bounds: Rectangle 获取节点的 x，y，width，height, 等价于 transform.bounds
+
+* blocks: FlowNodeEntity\[] 获取子节点, 包含折叠的子节点, 等价于 collapsedChildren
+
+* collapsedChildren: FlowNodeEntity\[] 获取子节点, 包含折叠的子节点
+
+* allCollapsedChildren: FlowNodeEntity\[] 获取所有子节点，包括所有折叠的子节点
+
+* children: FlowNodeEntity\[] 获取子节点, 不包含折叠的子节点
+
+* pre: FlowNodeEntity | undefined 获取上一个节点
+
+* next: FlowNodeEntity | undefined 获取下一个节点
+
+* parent: FlowNodeEntity | undefined 获取父节点
+
+* originParent: FlowNodeEntity | undefined 获取原始父节点, 这个用于固定布局分支的第一个节点(orderIcon)
+  找到整个虚拟分支
+
+* allChildren: FlowNodeEntity\[] 获取所有子节点, 不包含折叠的子节点
+
+* transform: FlowNodeTransformData 获取节点的 transform 矩阵数据
+
+* renderData: FlowNodeRenderData 获取节点的渲染数据, 包含渲染状态等
+
+Methods#
+
+getExtInfo#
+
+获取节点的扩展信息, 可以通过 updateExtInfo 更新扩展信息
+
+updateExtInfo#
+
+更新扩展数据, 更新不会记录到 redo/undo, 如果需要记录，请实现 history 服务
+
+getNodeRegistry#
+
+获取节点注册器, 等价于 ctx.document.getNodeRegistry(node.flowNodeType)
+
+getData#
+
+等价于 ECS 架构 里获取 Entity 的 Component
+
+addData#
+
+等价于 ECS 架构 里添加 Entity 的 Component
+
+getService#
+
+节点访问 IOC 服务
+
+dispose#
+
+节点从画布中销毁
+
+onDispose#
+
+节点销毁事件
+
+toJSON#
+
+导出节点数据
+
+节点数据基本结构:
+
+* id: string 节点唯一标识, 必须保证唯一
+* meta: object 节点的 ui 配置信息，如自由布局的 position 信息放这里
+* type: string | number 节点类型，会和 nodeRegistries 中的 type 对应
+* data: object 节点表单数据, 业务可自定义
+* blocks: array 节点的分支, 采用 block 更贴近 Gramming
+
+
+
+---
+url: /api/core/workflow-document.md
+---
+
+#
+
+自由布局文档数据，继承自 FlowDocument
+
+> API Detail
+
+TIP
+
+由于历史原因， 带 Workflow 前缀的都代表自由布局
+
+linesManager#
+
+自由布局线条管理，见 WorkflowLinesManager
+
+createWorkflowNodeByType#
+
+根据节点类型创建自由布局节点
+
+onContentChange#
+
+监听自由布局画布数据变化
+
+
+
+---
+url: /api/core/workflow-lines-manager.md
+---
+
+#
+
+自由布局线条管理, 目前挂在自由布局 document 下边
+
+> API Detail
+
+getAllLines#
+
+获取所有线条的实体
+
+createLine#
+
+创建线条
+
+toJSON#
+
+导出线条数据
+
+onAvailableLinesChange#
+
+监听所有线条的连线变化
+
+
+
+---
+url: /api/core/workflow-line-entity.md
+---
+
+#
+
+自由布局线条实体
+
+> API Detail
+
+
+
+---
+url: /api/core/playground.md
+---
+
+#
+
+画布实例
+
+> API Detail
+
+
+
+
+config#
+
+画布配置, 提供 zoom、scroll 等状态
+
+> API Detail
+
+
+Properties#
+
+ * zoom number 当前缩放比例
+
+ * scrollData { scrollX: number, scrollY: number } 当前滚动位置
+
+ * readonlyOrDisabled 画布是否为 readonly 或 disabled 状态
+
+ * readonly
+
+ * disabled
+
+
+fitView#
+
+节点适应画布窗口, 需要传入节点的 bounds
+
+
+
+
+scrollToView#
+
+指定节点位置并滚动到画布可见区域, 如果位置已经在可见区域则不会滚动，除非加上 scrollToCenter 强制滚动
+
+
+
+
+zoomin#
+
+放大画布
+
+
+zoomout#
+
+缩小画布
+
+
+getPoseFromMouseEvent#
+
+将浏览器鼠标位置转成画布坐标系
+
+
+
+
+scroll#
+
+滚动画布, 需要传入滚动位置, 以及是否平滑滚动, 滚动时间
+
+
+
+
+getViewport#
+
+获取当前画布的视窗大小
+
+
+
+
+---
+url: /api/hooks/use-client-context.md
+---
+
+#
+
+提供在 react 内部访问画布的上下文, 目前固定布局和 自由布局有一定区别
+
+固定布局#
+
+* Return: FixedLayoutPluginContext
+
+自由布局#
+
+* Return: FreeLayoutPluginContext
+
+
+
+---
+url: /api/hooks/use-node-render.md
+---
+
+#
+
+提供节点渲染相关的方法, 返回结果的 form 等价于 getNodeForm
+
+固定布局#
+
+* Return: NodeRenderReturnType
+
+自由布局#
+
+* Return: NodeRenderReturnType
+
+
+
+---
+url: /api/hooks/use-playground-tools.md
+---
+
+#
+
+画布工具方法
+
+固定布局#
+
+* Return: PlaygroundTools
+
+自由布局#
+
+* Return: PlaygroundTools
+
+
+
+---
+url: /api/hooks/use-refresh.md
+---
+
+#
+
+Source Code#
+
+Usage#
+
+
+
+---
+url: /api/hooks/use-service.md
+---
+
+#
+
+获取底层 IOC 的所有单例模块
+
+自定义 Service#
+
+
+
+---
+url: /api/components/editor-renderer.md
+---
+
+#
+
+画布渲染组件，需要 配合 FixedLayoutEditorProvider 或 FreeLayoutEditorProvider 使用
+
+
+
+---
+url: /api/components/fixed-layout-editor-provider.md
+---
+
+#
+
+固定布局画布配置器，支持 ref
+
+
+
+---
+url: /api/components/fixed-layout-editor.md
+---
+
+#
+
+固定布局画布, 等价于 FixedLayoutEditorProvider 和 EditorRenderer 的组合
+
+
+
+---
+url: /api/components/free-layout-editor-provider.md
+---
+
+#
+
+自由布局画布配置器，支持 ref
+
+
+
+---
+url: /api/components/free-layout-editor.md
+---
+
+#
+
+自由布局画布, 等价于 FreeLayoutEditorProvider 和 EditorRenderer 的组合
+
+
+
+---
+url: /api/components/workflow-node-renderer.md
+---
+
+#
+
+自由布局节点容器
+
+Usage#
+
+
+
+---
+url: /api/services/clipboard-service.md
+---
+
+#
+
+剪贴板服务
+
+> API Detail
+
+
+
+---
+url: /api/services/command-service.md
+---
+
+#
+
+指令服务，需要和 Shortcuts 一起使用
+
+> API Detail
+
+
+
+---
+url: /api/services/flow-operation-service.md
+---
+
+#
+
+节点操作服务, 目前用于固定布局，自由布局现阶段可通过 WorkflowDocument 直接操作, 后续也会抽象出 operation
+
+> API Detail
+
+Interface#
+
+
+
+---
+url: /api/services/history-service.md
+---
+
+HistoryService#
+
+> API Detail
+
+Redo/Undo#
+
+渲染历史记录#
+
+
+
+---
+url: /api/services/selection-service.md
+---
+
+#
+
+用于控制选择的节点
+
+> API Detail
+
+Usage#
+
+
+
+---
+url: /api/utils/disposable-collection.md
+---
+
+#
+
+Usage#
+
+Source Code#
+
+https://github.com/bytedance/flowgram.ai/blob/main/packages/common/utils/src/dis
+posable.ts
+
+
+
+---
+url: /api/utils/disposable.md
+---
+
+#
+
+Interface#
+
+Source Code#
+
+https://github.com/bytedance/flowgram.ai/blob/main/packages/common/utils/src/dis
+posable.ts
+
+
+
+---
+url: /api/utils/emitter.md
+---
+
+#
+
+事件模块
+
+Usage#
+
+Source Code#
+
+https://github.com/bytedance/flowgram.ai/blob/main/packages/common/utils/src/eve
+nt.ts
+
+
+
+---
+url: /api/utils/get-node-form.md
+---
+
+#
+
+获取节点的表单能力，需要开启 节点引擎才能使用
+
+> API Detail
+
+Usage#
+
+Return Inteface#
+
+
+
+---
+url: /guide/advanced/custom-plugin.md
+---
+
+#
+
+插件的生命周期说明#
+
+创建插件#
+
+添加插件#
+
+
+
+---
+url: /guide/advanced/custom-service.md
+---
+
+#
+
+业务中需要抽象出单例服务便于插件化管理
+
+
+
+---
+url: /guide/advanced/fixed-layout/composite-nodes.md
+---
+
+#
+
+复合节点由多个节点组合，并支持自定义线条，如 分支节点、Loop 节点、TryCatch 节点:
+
+使用#
+
+内置的复合节点#
+
+
+
+---
+url: /guide/advanced/fixed-layout/load.md
+---
+
+#
+
+画布的数据通过 FlowDocument 来存储
+
+画布数据格式#
+
+画布文档数据采用树形结构，支持嵌套
+
+文档数据基本结构:
+
+* nodes array 节点列表, 支持嵌套
+
+节点数据基本结构:
+
+* id: string 节点唯一标识, 必须保证唯一
+* meta: object 节点的 ui 配置信息，如自由布局的 position 信息放这里
+* type: string | number 节点类型，会和 nodeRegistries 中的 type 对应
+* data: object 节点表单数据
+* blocks: array 节点的分支, 采用 block 更贴近 Gramming
+
+加载#
+
+* 通过 initialData 加载
+
+* 通过 ref 动态加载
+
+* 动态 reload 数据
+
+监听变化并自动保存#
+
+
+
+---
+url: /guide/advanced/fixed-layout/node.md
+---
+
+#
+
+节点通过 FlowNodeEntity 定义
+
+节点数据#
+
+通过 node.toJSON() 可以获取
+
+基本结构:
+
+* id: string 节点唯一标识, 必须保证唯一
+* meta: object 节点的 ui 配置信息，如自由布局的 position 信息放这里
+* type: string | number 节点类型，会和 nodeRegistries 中的 type 对应
+* data: object 节点表单数据, 业务可自定义
+* blocks: array 节点的分支, 采用 block 更贴近 Gramming
+
+节点定义#
+
+声明节点可以用于确定节点的类型及渲染方式
+
+当前渲染节点获取#
+
+通过 useNodeRender 获取节点相关方法
+
+创建节点#
+
+通过 FlowOperationService 创建
+
+* 添加节点
+
+* 在指定节点之后添加
+
+* 添加分支节点 （用于条件分支）
+
+删除节点#
+
+更新节点 data 数据#
+
+* 通过 useNodeRender 或 getNodeForm 获取节点的 data 数据
+
+* 通过 Field 更新表单数据, 详细见 表单的使用
+
+更新节点的 extInfo 数据#
+
+extInfo 用于存储 一些 ui 状态, 如果未开启节点引擎，节点的 data 数据会默认存到 extInfo 里
+
+
+
+---
+url: /guide/advanced/form-materials.md
+---
+
+#
+
+如何使用？#
+
+通过包引用使用#
+
+官方表单物料可以直接通过包引用使用：
+
+通过 CLI 添加物料源代码使用#
+
+如果业务对组件有定制诉求（如：更改文案、样式、业务逻辑），推荐 通过 CLI 将物料源代码添加到项目中进行定制：
+
+运行后 CLI 会提示用户选择要添加到项目中的物料:
+
+使用者也可以直接在 CLI 中添加指定物料的源代码:
+
+CLI 运行成功后，相关物料会自动添加到当前项目下的 src/form-materials 目录下
+
+注意事项
+
+1. 官方物料目前底层基于 Semi Design 实现，业务如果有底层组件库的诉求，可以通过 CLI 复制源码进行替换
+2. 一些物料会依赖一些第三方 npm 库，这些库会在 CLI 运行时自动安装
+3. 一些物料会依赖另外一些官方物料，这些被依赖的物料源代码在 CLI 运行时会一起被添加到项目中去
+
+当前支持的 Component 物料#
+
+TypeSelector#
+
+VariableSelector#
+
+JsonSchemaEditor#
+
+DynamicValueInput#
+
+ConditionRow#
+
+当前支持的 Effect 物料#
+
+provideBatchInput#
+
+autoRenameRef#
+
+
+
+---
+url: /guide/advanced/form.md
+---
+
+#
+
+
+术语#
+
+
+快速开始#
+
+
+开启节点引擎#
+
+> API Detail
+
+
+
+
+配置表单#
+
+formMeta 是节点表单唯一配置入口，配置在每个节点的NodeRegistry 上。
+
+> node-registries.ts
+
+
+
+> 表单写法的基础例子
+
+
+渲染表单#
+
+> base-node.tsx
+
+
+
+
+核心概念#
+
+
+FormMeta#
+
+在 NodeRegistry 中，我们通过formMeta 来配置节点表单, 它遵循以下API。
+
+> FormMeta API
+
+这里特别说明, 节点表单与通用表单有一个很大的区别，它的数据逻辑（如校验、数据变更后的副作用等）需要在表单不渲染的情况下依然生效，我们称
+。所以这些数据逻辑需要配置在formMeta 中的非render 字段中，保证不渲染情况下节点引擎也可以调用到这些逻辑,
+而通用表单引擎（如react-hook-form）则没有这个限制, 校验可以直接写在react组件中。
+
+
+FormMeta.render (渲染)#
+
+render 字段用于配置表单的渲染逻辑
+
+render: (props: FormRenderProps<any>) => React.ReactElement;
+
+> FormRenderProps
+
+返回的 react 组件可使用以下表单组件和模型：
+
+Field (组件)#
+
+Field 是表单字段的 React 高阶组件，封装了表单字段的通用逻辑，如数据与状态的注入，组件的刷新等。其核心必填参数为 name,
+用于声明表单项的路径，在一个表单中具有唯一性。
+
+> Field Props API
+
+Field 的渲染部分，支持三种写法，如下:
+
+
+
+
+
+> FieldRenderProps API
+
+Field (模型)#
+
+Field 实例通常通过render props 传入（如上例子），或通过 useCurrentField hook
+获取。它包含表单字段在渲染层面的常见API。 注意: Field 是一个渲染模型，仅提供一般组件需要的API, 如 value onChange onFocus
+onBlur，如果是数据相关的API 请使用 Form 模型实例，如 form.setValueIn(name, value) 设置某字段的值。
+
+> Field 模型 API
+
+FieldArray (组件)#
+
+FieldArray 是数组类型字段的 React 高阶组件，封装了数组类型字段的通用逻辑，如数据与状态的注入，组件的刷新，以及数组项的遍历等。其核心必填参数为
+name, 用于声明该表单项的路径，在一个表单中具有唯一性。
+
+FieldArray 的基础用法可以参照以下例子:
+
+> 数组例子
+
+FieldArray (模型)#
+
+FieldArray 继承于 Field ，是数组类型字段在渲染层的模型，除了包含渲染层的常见API，还包含数组的基本操作如 FieldArray.map,
+FieldArray.remove, FieldArray.append 等。API 的使用方法也可见上述数组例子。
+
+> FieldArray 模型 API
+
+Form(组件)#
+
+Form 组件是表单的最外层高阶组件，上述 Field FieldArray 等能力仅在该高阶组件下可以使用。节点表单的渲染已经将<Form />
+封装到了引擎内部，所以用户无需关注，可以直接在render 返回的 react 组件中直接使用
+Field。但如果用户需要独立使用表单引擎，或者在节点之外独立再渲染一次表单，需要自行在表单内容外包上Form组件。
+
+Form(模型)#
+
+Form 实例可通过render 函数的入参获得， 也可通过 hook useForm 获取，见例子。它是表单核心模型门面，用户可以通过Form
+实例操作表单数据、监听变更、触发校验等。
+
+> Form 模型 API
+
+
+校验#
+
+基于FormMeta章节中提到的"数据与渲染分离"概念，校验逻辑需配置在 FormMeta 全局, 并通过路径匹配方式声明校验逻辑所作用的表单项，如下例子。
+
+路径支持模糊匹配，见路径章节。
+
+
+
+校验时机#
+
+validateTrigger 建议配置 ValidateTrigger.onChange 即数据变更时校验，如果配置
+ValidateTrigger.onBlur, 校验只会在组件blur事件触发时触发。那么当节点表单不渲染的情况下，就算是数据变更了，也不会触发校验。
+
+主动触发校验#
+
+ 1. 主动触发整个表单的校验
+
+
+
+ 2. 主动触发单个表单项校验
+
+
+
+name 不传则默认获取当前 <Field /> 标签下的 Field 的 validate, 通过传 name 可获取 <Form /> 下任意 Field。
+
+
+路径#
+
+ 1. 表单路径以.为层级分隔符， 如 a.b.c 指向数据 {a:{b:{c:1}}} 下的 1
+ 2. 路径支持模糊匹配，在校验和副作用配置中会使用到。如下例子。通常在数组场景中使用较多。
+
+
+副作用 (effect)#
+
+副作用是节点表单特有的概念，指在节点数据发生变更时需要执行的副作用。同样，遵循 "数据与渲染分离" 的原则，副作用和校验相似，也配置在 FormMeta 全局。
+
+ * 通过 key value 形式配置，key 表示表单项路径匹配规则，支持模糊匹配，value 为作用在该路径上的effect。
+
+ * value 为数组，即支持一个表单项有多个effect。
+
+
+
+
+
+Effect 相关 API
+
+副作用时机#
+
+
+联动#
+
+> 联动例子
+
+
+hooks#
+
+
+节点表单内#
+
+以下hook 可在节点表单内部使用
+
+useCurrentField#
+
+() => Field
+
+该 hook 需要在Field 标签内部使用
+
+
+
+> Field 模型 API
+
+useCurrentFieldState#
+
+() => FieldState
+
+该 hook 需要在Field 标签内部使用
+
+
+
+> FieldState API
+
+useFieldValidate#
+
+(name?: FieldName) => () => Promise<void>
+
+如果需要主动触发字段的校验，可以使用该hook 获取到 Field 的 validate 函数。
+
+name 为 Field 的路径，不传则默认获取当前 <Field /> 下的validate
+
+
+
+useForm#
+
+() => Form
+
+用于获取 Form 实例。
+
+注意，该hook 在 render 函数第一层不生效，仅在 render 函数内的 react 组件内部才可使用。render 函数的入参中已经传入了
+form: Form, 可以直接使用。
+
+ 1. 在 render 函数第一层直接使用 props.form
+
+
+
+ 2. 在组件内部可使用 useForm
+
+
+
+useWatch#
+
+<TValue = FieldValue>(name: FieldName) => TValue
+
+该 hook 和上述 useForm 相似, 在 render 函数返回组件的第一层不生效，仅在封装过的组件内部可用。如果需要在 render
+根级别使用，可以对 render 返回的内容做一层组件封装。
+
+
+
+
+节点表单外#
+
+以下 hook 用于在节点表单外部，如画布全局、相邻节点上需要去监听某个节点表单的数据或状态。通常需要传入 node: FlowNodeEntity 作为参数
+
+useWatchFormValues#
+
+监听 node 内整个表单的值
+
+<TFormValues = any>(node: FlowNodeEntity) => TFormValues | undefined
+
+
+
+useWatchFormValueIn#
+
+监听 node 内某个表单项的值
+
+<TValue = any>(node: FlowNodeEntity，name: string) => TFormValues | undefined
+
+
+
+useWatchFormState#
+
+监听 node 内表单的状态
+
+(node: FlowNodeEntity) => FormState | undefined
+
+
+
+useWatchFormErrors#
+
+监听 node 内表单的 Errors
+
+(node: FlowNodeEntity) => Errors | undefined
+
+
+
+useWatchFormWarnings#
+
+监听 node 内表单的 Warnings
+
+(node: FlowNodeEntity) => Warnings | undefined
+
+
+
+
+---
+url: /guide/advanced/free-layout/line.md
+---
+
+#
+
+* WorkflowLinesManager 管理所有的线条
+
+* WorkflowNodeLinesData 节点上连接的线条管理
+
+* WorkflowLineEntity 线条实体
+
+获取所有线条的实体#
+
+创建/删除线条#
+
+导出线条数据#
+
+线条基本结构:
+
+* sourceNodeID: string 开始节点 id
+* targetNodeID: string 目标节点 id
+* sourcePortID?: string | number 开始端口 id, 缺省则采用开始节点的默认端口
+* targetPortID?: string | number 目标端口 id, 缺省则采用目标节点的默认端口
+
+获取当前节点的输入/输出节点或线条#
+
+线条配置#
+
+我们提供丰富的线条配置参数, 给 FreeLayoutEditorProvider, 详细见 FreeLayoutProps
+
+1.自定义颜色#
+
+2.让单个输出端口只能连一条线#
+
+3.连接到空白地方添加节点#
+
+代码见自由布局最佳实践
+
+在线条上添加 Label#
+
+代码见自由布局最佳实践
+
+节点监听自身的连线变化并刷新#
+
+监听所有线条的连线变化#
+
+这个场景用于当希望在外部组件监听线条连接情况
+
+
+
+---
+url: /guide/advanced/free-layout/load.md
+---
+
+#
+
+画布的数据通过 WorkflowDocument 来存储
+
+画布数据#
+
+文档数据基本结构:
+
+* nodes array 节点列表, 支持嵌套
+* edges array 边列表
+
+节点数据基本结构:
+
+* id: string 节点唯一标识, 必须保证唯一
+* meta: object 节点的 ui 配置信息，如自由布局的 position 信息放这里
+* type: string | number 节点类型，会和 nodeRegistries 中的 type 对应
+* data: object 节点表单数据, 业务可自定义
+* blocks: array 节点的分支, 采用 block 更贴近 Gramming, 目前会存子画布的节点
+* edges: array 子画布的边数据
+
+边数据基本结构:
+
+* sourceNodeID: string 开始节点 id
+* targetNodeID: string 目标节点 id
+* sourcePortID?: string | number 开始端口 id, 缺省则采用开始节点的默认端口
+* targetPortID?: string | number 目标端口 id, 缺省则采用目标节点的默认端口
+
+加载#
+
+* 通过 initialData 加载
+
+* 通过 ref 动态加载
+
+* 动态 reload 所有数据
+
+监听变化并自动保存#
+
+
+
+---
+url: /guide/advanced/free-layout/node.md
+---
+
+#
+
+节点通过 FlowNodeEntity 定义
+
+节点数据#
+
+通过 node.toJSON() 可以获取
+
+基本结构:
+
+* id: string 节点唯一标识, 必须保证唯一
+* meta: object 节点的 ui 配置信息，如自由布局的 position 信息放这里
+* type: string | number 节点类型，会和 nodeRegistries 中的 type 对应
+* data: object 节点表单数据, 业务可自定义
+* blocks: array 节点的分支, 采用 block 更贴近 Gramming 自由布局布局场景会用在子画布的子节点
+* edges: array 子画布的边数据
+
+节点定义#
+
+在自由布局场景，节点定义用于声明节点的初始化位置/大小，端口，表单渲染等, 详细见 声明节点
+
+当前渲染节点获取#
+
+通过 useNodeRender 获取节点相关方法
+
+创建节点#
+
+* 通过 WorkflowDocument 创建
+
+* 通过 WorkflowDragService 创建, 见自由布局基础用法
+
+删除节点#
+
+通过 node.dispose 删除节点
+
+更新节点 data 数据#
+
+* 通过 useNodeRender 或 getNodeForm 获取节点的 data 数据
+
+* 通过 Field 更新表单数据, 详细见 表单的使用
+
+更新节点的 extInfo 数据#
+
+extInfo 用于存储 一些 ui 状态, 如果未开启节点引擎，节点的 data 数据会默认存到 extInfo 里
+
+
+
+---
+url: /guide/advanced/free-layout/port.md
+---
+
+#
+
+ * WorkflowNodePortsData 管理节点的所有端口信息
+
+ * WorkflowPortEntity 端口实例
+
+ * WorkflowPortRender 端口渲染组件
+
+
+定义端口#
+
+ * 静态端口
+
+节点声明添加 defaultPorts , 如 { type: 'input' }, 则会在节点左侧加入输入端口
+
+
+
+ * 动态端口
+
+节点声明添加 dynamicPorts , 当设置为 true 则会到节点dom 上寻找 data-port-id 和 data-port-type 属性的
+dom 作为端口
+
+
+
+
+
+
+端口渲染#
+
+端口最终通过 WorkflowPortRender 组件渲染，支持自定义 style, 或者业务基于源码重新实现该组件, 参考 自由布局最佳实践 - 节点渲染
+
+
+
+
+获取端口数据#
+
+
+
+
+---
+url: /guide/advanced/free-layout/sub-canvas.md
+---
+
+#
+
+详细代码见 自由布局最佳实践
+
+添加子画布插件#
+
+定义子画布节点#
+
+
+
+---
+url: /guide/advanced/history.md
+---
+
+#
+
+Undo/Redo 是 FlowGram.AI 的一个插件，在 @flowgram.ai/fixed-layout-editor 和
+@flowgram.ai/free-layout-editor 两种模式的编辑器中均有提供该功能。
+
+1. 快速开始#
+
+> Demo Detail
+
+1.1. 开启 history#
+
+使用 Undo/Redo 功能前需要先引入编辑器，以固定布局编辑器为例。
+
+1. package.json 添加依赖
+
+开启之后将获得以下能力：
+
+1.2. 关闭 history#
+
+如果某些系统触发的数据变更不希望被undo redo监听到，可以主动关掉 历史服务 操作完数据再重新启动
+
+1.3. Undo/Redo 调用#
+
+一般 Undo/Redo 会在界面上提供两个按钮入口，点击了能触发 Undo 和 Redo，按钮本身需要有是否可以 Undo/Redo 的状态。
+
+2. 功能扩展#
+
+2.1. 操作注册#
+
+操作通过 operationMetas 去注册操作
+
+OperationMeta 核心定义如下
+
+* type 是操作的唯一标识
+* inverse 是一个函数，该函数返回当前操作的逆操作
+* apply 是操作被触发的时候执行的逻辑
+
+假设我要做增删节点支持 Undo/Redo 的功能，我就需要添加两个操作
+
+2.2. 操作合并#
+
+operationMeta 支持 shouldMerge 来自定义合并策略，如果频繁触发的操作可以进行合并
+
+shouldMerge 返回
+
+* 返回 false 代表不合并
+* 返回 true 代表合并进一个操作栈元素
+* 返回 Operation 代表合并成一个操作
+
+以下示例是一个合并 500ms 内对同一个字段编辑进行合并
+
+2.3. 操作执行#
+
+1. 单操作执行
+
+通过 pushOperation 触发, 如下示例使用方在业务中触发刚刚定义的操作
+
+2. 批量执行 通过 transact 调用的函数中所有执行的操作都会被合并进一个栈元素， undo/redo 的时候会被一起执行
+   如下是实现了一个批量删除的例子：
+
+2.4. 撤销重做#
+
+1. 撤销重做 撤销执行 history.undo 方法 重做执行 history.redo 方法
+
+2. 监听撤销重做 监听 undoRedoService.onChange 的 onChange 事件即可 如下是一个 undo/redo
+   触发后路由对应操作的uri（选中对应节点或表单项）
+
+2.5. 操作历史#
+
+1. 查看刷新 可以通过 HistoryStack.items 获得历史记录， 通过监听 HistoryStack.onChange 事件来刷新界面
+
+2. 持久化 持久化是通过 history-storage 插件实现
+
+* databaseName： 数据库名称
+* resourceStorageLimit： 资源存储限制数量
+
+引入 @flowgram.ai/history-storage 包后，可使用该插件
+
+通过 useStorageHistoryItems 查询数据库列表
+
+3. API 列表#
+
+3.1. OperationMeta#
+
+操作元数据，用以定义一个操作
+
+3.2. Operation#
+
+操作数据，通过 type 和 OperationMeta 关联
+
+3.3. OperationService#
+
+onApply 想监听某个触发的操作可以使用onApply
+
+3.4. HistoryService#
+
+History 模块核心 API 暴露的Service
+
+3.5. UndoRedoService#
+
+管理 UndoRedo 栈的服务
+
+3.6. HistoryStack#
+
+历史栈，监听所有 push undo redo 操作，并记录到栈里面
+
+3.7. HistoryDatabase#
+
+持久化数据库操作
+
+
+
+---
+url: /guide/advanced/minimap.md
+---
+
+#
+
+EditorProps#
+
+缩略图组件#
+
+
+
+---
+url: /guide/advanced/shortcuts.md
+---
+
+#
+
+自定义快捷键#
+
+通过 CommandService 调用快捷键#
+
+
+
+---
+url: /guide/advanced/variable/basic.md
+---
+
+#
+
+业务背景#
+
+在 Workflow 编排中，节点与节点之间需要传递信息。为了实现这一点，我们使用变量来存储和管理这些信息。
+
+一个变量由三个主要部分组成：
+
+1. 唯一标识符：变量的名字，用于区分不同的变量，以便在程序中可以准确地引用和使用它。如：userName 或 totalAmount。
+2. 值：变量存储的数据。值可以是多种类型，比如数字（如 42）、字符串（如 "Hello!"）、布尔值（如 true）等。
+3. 类型：变量可以存储的数据种类。类型决定了变量可以接受什么样的值。例如，一个变量可以是整数、浮点数、字符串或布尔值等。
+
+下面是一个流程编排的例子：WebSearch 节点获取到知识，通过 natural\_language\_desc 传递到 LLM 节点进行分析
+
+什么是变量引擎？#
+
+变量引擎是 Flowgram 提供的一个可选内置功能，可以帮助 Workflow 设计时更高效地实现变量信息编排。它可以实现以下功能：
+
+开启变量引擎#
+
+> API Detail
+
+
+
+---
+url: /guide/advanced/variable/variable-consume.md
+---
+
+#
+
+在节点内获取变量树#
+
+获取变量列表#
+
+获取 Object 类型变量的下钻#
+
+获取 Array 类型变量的下钻#
+
+直接使用 VariableSelector 官方物料#
+
+详见: 官方表单物料
+
+VariableSelector 组件用于选择单个变量
+
+通过包引用使用：
+
+通过 CLI 复制源代码使用：
+
+
+
+---
+url: /guide/advanced/variable/variable-output.md
+---
+
+#
+
+输出节点变量#
+
+FlowNodeVariableData 输出变量#
+
+Flowgram 基于 ECS (Entity-Component-System) 来实现节点信息的管理。
+
+其中 FlowNodeVariableData 是节点 FlowNodeEntity 上的一个 Component，专门用于处理节点上输出的 变量信息。
+
+下面的 Demo 展示了：如何拿到 FlowNodeVariableData, 并且通过 FlowNodeVariableData 实现在节点上输出变量
+
+详见: > Demo Detail
+
+一个节点设置多个输出变量#
+
+更多用法，详见：Class: FlowNodeVariableData
+
+表单副作用设置输出变量#
+
+输出全局变量#
+
+获取全局变量作用域#
+
+全局作用域可以在 Plugin 中通过 ctx 获取：
+
+也可以在画布中的 React 组件内，通过 useService 获取全局作用域：
+
+全局作用域输出变量#
+
+GlobalScope 输出变量的 API 和 FlowNodeVariableData 类似:
+
+详见：Class: GlobalScope
+
+
+
+---
+url: /guide/advanced/without-form.md
+---
+
+#
+
+当节点引擎不开启，节点的 data 数据会存在 node.getExtInfo 中, 如下
+
+
+
+---
+url: /guide/concepts/canvas-engine.md
+---
+
+#
+
+Playground#
+
+画布引擎底层会提供一套自己的坐标系, 主要由 Playground 驱动
+
+Layer#
+
+P.S.
+
+* 渲染层在底层建立了一套自己的坐标系，基于这个坐标系实现模拟滚动、缩放等逻辑，在算viewport时候节点也需要转换到该坐标系上
+
+* 渲染按画布被拆分成多个层 (Layer)，分层设计是基于ECS的数据切割思想，不同 Layer 只监听自己想要的数据，独立渲染不干扰，Layer
+  可以理解为ECS的 System，即最终Entity数据消费的地方
+
+* Layer 实现了类mobx的observer响应式动态依赖收集，数据更新会触发 autorun或render
+
+* Layer 生命周期
+
+Layer的定位其实和 Unity 游戏引擎 提供的 MonoBehaviour 类似， Unity
+游戏引擎的脚本扩展都是基于这个，可以认为是最核心的设计，底层也是基于 C# 提供的反射 (Reflection) 能力的依赖注入
+
+* Layer 的响应式更新
+
+FlowNodeEntity#
+
+* 节点是一颗树, 包含子节点 (blocks) 和父亲节点, 节点采用 ECS 架构
+
+FlowNodeTransformData 节点的位置及大小数据#
+
+FlowNodeRenderData 节点内容渲染数据#
+
+FlowDocument#
+
+
+
+---
+url: /guide/concepts/ecs.md
+---
+
+#
+
+为什么需要 ECS#
+
+ECS （Entity-Component-System）
+
+适合解耦大的数据对象，常用于游戏，游戏的每个角色（Entity）数据都非常庞大，需要拆分成如物理引擎相关数据、皮肤相关、角色属性等 (多个
+Component)，供不同的子系统（System）消费。流程的数据结构复杂，很适合用ECS做拆解
+
+方案对比#
+
+我们对比两个数据方案：
+
+1. ReduxStore 方案#
+
+优点：
+
+* 中心化数据管理使用简单
+
+缺点：
+
+* 中心化数据管理无法精确更新，带来性能瓶颈
+* 扩展性差，节点新增一个数据，都耦合到一个 大JSON 里
+
+2. ECS 方案#
+
+备注：
+
+* NodeData 对应的是 ECS - Component
+* Layer 对应 ECS - System
+
+优点：
+
+* 节点数据拆开来单独控制渲染，性能可做到精确更新
+* 扩展性强，新增一个节点数据，则新增一个 XXXData + XXXLayer
+
+缺点：
+
+* 有一定学习成本
+
+
+
+---
+url: /guide/concepts/index.md
+---
+
+#
+
+* CanvasEngine：画布引擎负责绘制“点-线”构成的图, 保障大规模节点时的流畅性
+* NodeEngine: 节点引擎提供 渲染、校验、数据修改等表单能力
+* VariableEngine: 变量引擎引入作用域模型, 抽象各业务场景的变量
+* Material: 物料库包含默认 ICON 等 UI, 业务接入后可覆盖扩展
+
+
+
+---
+url: /guide/concepts/ioc.md
+---
+
+#
+
+为什么需要 IOC#
+
+几个概念
+
+* 控制反转： Inversion of Control，
+  是面向对象中的一种设计原则，可以用来降低代码模块之间的耦合度，其中最常见的方式叫做依赖注入（Dependency Injection，简称DI）
+* 领域逻辑：Domain Logic，也可以叫 业务逻辑（Business Logic），这些业务逻辑与特定的产品功能相关
+* 面向切面编程：AOP （Aspect-Oriented Programming），最核心的设计原则是将软件系统拆分为公用逻辑 (横切，有贯穿的意味) 和
+  领域逻辑 （纵切）的多个个方面 (Aspect)，横切部分可以被所有的 纵切 部分 “按需消费”
+
+回答这个问题之前先了解切面编程，切面编程目的是将领域逻辑的粒度拆的更细，横切部分可被纵切 “按需消费” ，横切和纵切的连接也叫 织入 (Weaving)，而
+IOC 就是扮演 Weaving 注入到纵切的角色
+
+理想的切面编程
+
+IOC是切面编程的一种手段，引入后，底层模块可以以接口形式暴露给外部注册，带来的好处：
+
+* 实现微内核 + 插件化的设计，实现插件的可插拔按需消费
+* 可以让包拆得更干净，实现 feature 式的拆包
+
+
+
+---
+url: /guide/concepts/node-engine.md
+---
+
+#
+
+节点引擎 NodeEngine
+是一个流程节点逻辑的书写框架，让业务专注于业务自身的渲染与数据逻辑，无需关注画布以及节点间联动的底层api。与此同时，节点引擎沉淀了最佳的节点书写范式，帮助业务
+解决流程业务中可能遇到的各种问题， 如数据逻辑与渲染耦合等。
+节点引擎是可选启用的。如果你不存在以下这些复杂的节点逻辑，可以选择不启用节点引擎，自己维护节点数据与渲染。复杂节点逻辑如：1）节点不渲染也能校验或触发数据副作用
+；2）节点间联动丰富；3）redo/undo; 等等。
+
+基础概念#
+
+FlowNodeEntity 流程节点模型。
+
+FlowNodeRegistry 流程节点的静态配置。
+
+FormMeta 节点引擎的静态配置。 配置在 FlowNodeRegistry 中的 formMeta 字段。
+
+Form 节点引擎中的表单。它维护节点的数据并提供渲染、校验、副作用等能力。他的模型 FormModel 提供节点数据的访问和修改及触发校验等能力。
+
+Field 节点表单中的某个渲染字段。注意， Form 已经提供了数据层的逻辑，Field 更多是一个渲染层的模型，它尽在表单字段渲染后才存在。
+
+validate 表单校验。通常有对单个字段的校验也有整体表单校验。
+
+effect 表单数据的副作用。通常指在表单数据发生一些事件时要触发特定逻辑。
+如在某字段的数据变更时要同步一些信息到某个store，这个可以被称为一个effect。
+
+FormPlugin 表单插件。可以配置在formMeta 中，插件可以对表单进行一系列深度操作。如变量插件。
+
+
+
+---
+url: /guide/concepts/reactflow.md
+---
+
+#
+
+Reactflow 是很优秀的开源项目，架构及代码清晰，但偏流程渲染引擎的底层架构
+(Node、Edge、Handle)，需要在上层开发大量功能才能适配复杂场景(如 固定布局，需要对数据建模写布局算法), 高级功能收费。
+
+相比 Reactflow，FlowGram 的目标是提供流程编辑一整套开箱即用的解决方案。
+
+* 下边是 Reactflow 官方提供的 pro 收费能力
+
+付费功能                          FLOWGRAM 是否支持   未来计划支持
+分组                            支持\
+redo/undo                     支持\
+copy/paste                    支持\
+HelpLines 辅助线                 支持\
+自定义节点及形状                      支持\
+自定义线条                         支持\
+AutoLayout，自动布局整理             支持\
+ForceLayout，节点排斥效果            不支持             No
+Expand/Collapse               支持\
+Collaborative 多人协同            不支持             Yes
+WorkflowBuilder 相当于固定布局完整案例   支持
+
+* Reactflow 事件都是绑定在原子化的 dom 节点上，且内置，交互定制成本高，需要理解它的源码才能深度开发，如下，在画布缩放很小时候无法选到点位
+
+
+
+---
+url: /guide/concepts/variable-engine.md
+---
+
+#
+
+整体设计#
+
+架构分层#
+
+架构分层
+
+变量引擎设计上遵循 DIP（依赖反转）原则，按照 代码稳定性、抽象层次 以及和 业务的远近 分为三层：
+
+* 变量抽象层：变量架构中抽象层次最高，代码也最为稳定的部分
+* 变量实现层：变量架构中变动较大，不同业务之间通常存在调整的部分
+* 变量业务层：变量架构中提供给业务的 Facade ，与画布引擎、节点引擎联动的部分
+
+术语表#
+
+🌟 作用域（Scope）#
+
+⭐️⭐️⭐️ 定义：
+
+一种约定的空间，空间内 通过 AST 来描述变量声明和消费情况
+
+* 约定的空间：空间是什么，完全由业务定义
+* 在低代码设计态中，可以是一个节点、一个组件、一个右侧面板...
+* 在一段代码中，可以是一行 Statement、一段代码块、一个函数、一个文件...
+
+作用域的空间是什么？可以由不同的业务来划定。
+
+🌟 抽象语法树（AST）#
+
+定义：
+
+⭐️⭐️⭐️ 一种协议，通过树的形式，组合 AST 节点，实现对变量信息的显式/隐式 CRUD
+
+* AST 节点：AST 中可响应式的协议节点
+* 显式 CRUD，如：业务显示设定一个变量的变量类型
+* 隐式 CRUD，如：业务声明一个变量，变量会根据其初始化参数自动推导变量类型
+
+作用域里面的变量、类型、表达式、结构体 等等变量信息... 本质上都是 AST 节点的组合
+
+* 变量 -> VariableDeclaration 节点
+* 表达式 -> Expression 节点
+* 类型 -> TypeNode 节点
+* 结构体 -> StructDeclaration 节点
+
+参考链接：https://ts-ast-viewer.com/
+
+变量（Variable）#
+
+定义：
+
+一种用于声明新变量的 AST 节点，通过唯一标识符 指向一个 在特定集合范围内变动的值
+
+* 在特定集合范围内变动的值：变量的值必须在 变量类型 描述的范围内
+* 唯一标识符：变量必须有一个唯一的 Key 值
+
+JavaScript中的变量，唯一 Key + 指向一个变动的值
+
+变量类型（Variable Type）#
+
+定义：
+
+⭐️⭐️⭐️ 一种 AST 节点，用于约束一个变量，被约束的变量值只能在预先设定的集合范围内变动
+
+* 一个变量可以绑定一个变量类型
+
+变量引擎的形象理解#
+
+想像这样一个变量引擎的世界：
+
+* 通过一个个 作用域 来划定出一个个 国家
+* 每个国家包含三大公民：声明、类型、表达式
+* 国家与国家之间通过 作用域链 来实现交流
+
+
+
+---
+url: /guide/contact-us.md
+---
+
+#
+
+* Issues: Issues
+* Discord: https://discord.gg/SwDWdrgA9f
+* Lark: 通过 注册飞书 并扫描下边的二维码加入飞书群
+
+
+
+---
+url: /guide/getting-started/create-fixed-layout-simple.md
+---
+
+#
+
+本案例可通过 npx @flowgram.ai/create-app@latest fixed-layout-simple 安装，完整代码及效果见：
+
+文件结构:
+
+1. 画布入口#
+
+* FixedLayoutEditorProvider: 画布配置器, 内部会生成 react-context 供子组件消费
+* EditorRenderer: 为最终渲染的画布，可以包装在其他组件下边方便定制画布位置
+
+2. 配置画布#
+
+画布配置采用声明式，提供 数据、渲染、事件、插件相关配置
+
+3. 配置数据#
+
+画布文档数据采用树形结构，支持嵌套
+
+文档数据基本结构:
+
+* nodes array 节点列表, 支持嵌套
+
+节点数据基本结构:
+
+* id: string 节点唯一标识, 必须保证唯一
+* meta: object 节点的 ui 配置信息，如自由布局的 position 信息放这里
+* type: string | number 节点类型，会和 nodeRegistries 中的 type 对应
+* data: object 节点表单数据
+* blocks: array 节点的分支, 采用 block 更贴近 Gramming
+
+4. 声明节点#
+
+声明节点可以用于确定节点的类型及渲染方式
+
+5. 渲染节点#
+
+渲染节点用于添加样式、事件及表单渲染的位置
+
+6. 添加工具#
+
+工具主要用于控制画布缩放等操作, 工具汇总在 usePlaygroundTools 中, 而 useClientContext 用于获取画布的上下文,
+里边包含画布的核心模块如 history
+
+7. 效果#
+
+
+
+---
+url: /guide/getting-started/create-free-layout-simple.md
+---
+
+#
+
+本案例可通过 npx @flowgram.ai/create-app@latest free-layout-simple 安装，完整代码及效果见：
+
+文件结构:
+
+1. 画布入口#
+
+* FreeLayoutEditorProvider: 画布配置器, 内部会生成 react-context 供子组件消费
+* EditorRenderer: 为最终渲染的画布，可以包装在其他组件下边方便定制画布位置
+
+2. 配置画布#
+
+画布配置采用声明式，提供 数据、渲染、事件、插件相关配置
+
+3. 配置数据#
+
+画布文档数据采用树形结构，支持嵌套
+
+文档数据基本结构:
+
+* nodes array 节点列表, 支持嵌套
+* edges array 边列表
+
+节点数据基本结构:
+
+* id: string 节点唯一标识, 必须保证唯一
+* meta: object 节点的 ui 配置信息，如自由布局的 position 信息放这里
+* type: string | number 节点类型，会和 nodeRegistries 中的 type 对应
+* data: object 节点表单数据, 业务可自定义
+* blocks: array 节点的分支, 采用 block 更贴近 Gramming, 目前会存子画布的节点
+* edges: array 子画布的边数据
+
+边数据基本结构:
+
+* sourceNodeID: string 开始节点 id
+* targetNodeID: string 目标节点 id
+* sourcePortID?: string | number 开始端口 id, 缺省则采用开始节点的默认端口
+* targetPortID?: string | number 目标端口 id, 缺省则采用目标节点的默认端口
+
+4. 声明节点#
+
+声明节点可以用于确定节点的类型及渲染方式
+
+5. 渲染节点#
+
+渲染节点用于添加样式、事件及表单渲染的位置
+
+6. 添加工具#
+
+工具主要用于控制画布缩放等操作, 工具汇总在 usePlaygroundTools 中, 而 useClientContext 用于获取画布的上下文,
+里边包含画布的核心模块如 history
+
+7. 效果#
+
+
+
+---
+url: /guide/getting-started/install.md
+---
+
+#
+
+通过 npx 安装#
+
+通过 npm 安装#
+
+
+
+---
+url: /guide/question.md
+---
+
+#
+
+运行报报错#
+
+如何修改节点的数据#
+
+是否支持 vue#
+
+#
+
+
+
+---
+url: /index.md
+---
+
+
+
