@@ -45,7 +45,7 @@ export default defineConfig({
       },
     },
   },
-  ssg: true,
+  ssg: false,
   // locales 为一个对象数组
   locales: [
     {
