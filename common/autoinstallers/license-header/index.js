@@ -1,3 +1,8 @@
+/**
+*  Copyright (c) 2025 bytedance
+*  SPDX-License-Identifier: MIT
+*/
+
 //  Copyright (c) 2025 bytedance
 //  SPDX-License-Identifier: MIT
 
@@ -130,7 +135,9 @@ addLicenseHeader(
     header,
     {
         includeExts: ['.js', '.ts', '.tsx', '.jsx', '.mjs', '.cjs', '.scss', '.less', '.prisma', '.styl'], // 只处理这些扩展名的文件
-        commentLinePrefix: '// ', // JS/TS 使用双斜杠注释
+        commentPrefix: '/**',
+        commentLinePrefix: ' *', // JS/TS 使用双斜杠注释
+        commentSuffix: '*/',
         force: false // 不强制覆盖已有 License
     }
 );
