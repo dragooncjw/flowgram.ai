@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { resetLayoutOperationMeta } from './reset-layout';
 import { moveChildNodesOperationMeta } from './move-child-nodes';
 import { dragNodesOperationMeta } from './drag-nodes';

@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { ITask } from '../task';
 import { IExecutor } from '../executor';
 import { INode } from '../document';

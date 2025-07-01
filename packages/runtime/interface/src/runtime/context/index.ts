@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { IVariableStore } from '@runtime/variable';
 import { IStatusCenter } from '@runtime/status';
 import { ISnapshotCenter } from '@runtime/snapshot';

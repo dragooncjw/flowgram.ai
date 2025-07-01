@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { isNil } from 'lodash-es';
 import { ChatOpenAI } from '@langchain/openai';
 import { SystemMessage, HumanMessage, BaseMessageLike } from '@langchain/core/messages';

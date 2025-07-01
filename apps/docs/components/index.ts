@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 export { PreviewEditor } from './preview-editor';
 export { FixedFeatureOverview } from './fixed-feature-overview';
 export { FreeFeatureOverview } from './free-feature-overview';

@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { describe, expect, it } from 'vitest';
 
 import { getIn, isEmptyArray, isNaN, isPromise, shallowSetIn } from '../src/utils';

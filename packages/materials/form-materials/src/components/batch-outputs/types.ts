@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { IFlowRefValue } from '../../typings';
 
 export type ValueType = Record<string, IFlowRefValue | undefined>;

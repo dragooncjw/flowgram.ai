@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import React, { useCallback, useEffect, useContext, useMemo, useRef, useState } from 'react';
 
 import { useObserve } from '@flowgram.ai/reactive';

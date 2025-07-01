@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 /* eslint-disable complexity */
 import { inject, injectable } from 'inversify';
 import { type IPoint } from '@flowgram.ai/utils';

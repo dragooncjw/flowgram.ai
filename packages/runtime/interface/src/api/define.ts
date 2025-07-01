@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { ValidationDefine } from './validation';
 import { FlowGramAPIDefines } from './type';
 import { TaskRunDefine } from './task-run';

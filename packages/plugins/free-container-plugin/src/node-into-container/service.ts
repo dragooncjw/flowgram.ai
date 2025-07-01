@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 /* eslint-disable @typescript-eslint/no-non-null-assertion -- no need */
 import { throttle } from 'lodash';
 import { inject, injectable } from 'inversify';

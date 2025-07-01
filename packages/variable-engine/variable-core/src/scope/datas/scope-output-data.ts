@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { VariableTable } from '../variable-table';
 import { IVariableTable } from '../types';
 import { type Scope } from '../scope';

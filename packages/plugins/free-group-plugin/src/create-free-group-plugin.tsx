@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { ShortcutsRegistry } from '@flowgram.ai/shortcuts-plugin';
 import { FlowRendererRegistry } from '@flowgram.ai/renderer';
 import { WorkflowDocument } from '@flowgram.ai/free-layout-core';

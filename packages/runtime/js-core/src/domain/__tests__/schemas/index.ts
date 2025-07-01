@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { twoLLMSchema } from './two-llm';
 import { loopSchema } from './loop';
 import { branchSchema } from './branch';

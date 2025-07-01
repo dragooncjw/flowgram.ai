@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { find, mergeWith } from 'lodash';
 import { FormFeedback, FormPathService } from '@flowgram.ai/form-core';
 import { FormValidateReturn } from '@flowgram.ai/form/src/types';

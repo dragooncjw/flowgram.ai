@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { inject, optional } from 'inversify';
 import { Scope, ScopeChain } from '@flowgram.ai/variable-core';
 import { FlowDocument, type FlowVirtualTree } from '@flowgram.ai/document';

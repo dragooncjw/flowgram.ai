@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { customAlphabet } from 'nanoid';
 import { inject, injectable, optional, postConstruct } from 'inversify';
 import { Emitter, type IPoint } from '@flowgram.ai/utils';

@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { WorkflowDocument } from '@flowgram.ai/free-layout-core';
 import { PositionSchema, startTween, TransformData } from '@flowgram.ai/core';
 

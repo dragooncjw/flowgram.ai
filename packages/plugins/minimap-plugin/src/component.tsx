@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import React, { CSSProperties, useEffect, useRef, useState } from 'react';
 
 import { MinimapInactiveStyle } from './type';

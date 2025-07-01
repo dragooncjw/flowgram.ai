@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { BaseVariableField, VariableEngine } from '@flowgram.ai/variable-core';
 import { type ASTNode, ASTNodeJSON } from '@flowgram.ai/variable-core';
 import { FlowNodeEntity } from '@flowgram.ai/document';

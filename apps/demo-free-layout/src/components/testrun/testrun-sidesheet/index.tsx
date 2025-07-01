@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { FC, useEffect, useState } from 'react';
 
 import { WorkflowInputs, WorkflowOutputs } from '@flowgram.ai/runtime-interface';

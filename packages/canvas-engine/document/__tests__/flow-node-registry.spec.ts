@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { beforeEach, describe, expect, it } from 'vitest';
 
 import { createDocumentContainer } from './flow-document-container.mock';

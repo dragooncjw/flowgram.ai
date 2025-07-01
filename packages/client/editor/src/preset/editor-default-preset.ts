@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 import { interfaces } from 'inversify';
 import { FlowRendererContainerModule, FlowRendererRegistry } from '@flowgram.ai/renderer';
 import { createReduxDevToolPlugin } from '@flowgram.ai/redux-devtool-plugin';

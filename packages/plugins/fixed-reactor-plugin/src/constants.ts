@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 export const RENDER_REACTOR_PORT_KEY = 'render-reactor-port';
 export const RENDER_REACTOR_COLLAPSE_KEY = 'render-reactor-collapse';
 
