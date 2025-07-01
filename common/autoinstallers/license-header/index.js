@@ -131,35 +131,3 @@ addLicenseHeader(
         force: false
     }
 );
-
-addLicenseHeader(
-    src,
-    header,
-    {
-      includeExts: [".sql"],
-      commentLinePrefix: "-- ",
-      force: false,
-    }
-  );
-
-addLicenseHeader(
-    src,
-    header,
-    {
-      includeExts: [".pug"],
-      commentLinePrefix: "//- ",
-      force: false,
-    }
-  );
-
-addLicenseHeader(
-  src,
-  header,
-  {
-    includeExts: [".vue", '.svelte'],
-    commentLinePrefix: "",
-    commentPrefix: "<!-- ",
-    commentSuffix: " -->",
-    force: false,
-  }
-);
