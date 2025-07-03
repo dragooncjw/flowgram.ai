@@ -11,6 +11,8 @@ const ignoreFile = fs.readFileSync(path.join(__dirname, "../../../.gitignore"), 
   encoding: "utf-8",
 });
 ig.add(ignoreFile);
+// ignore cli install demos
+ig.add(['.next', 'doc_build']);
 
 const src = path.resolve(__dirname, '../../../');
 
