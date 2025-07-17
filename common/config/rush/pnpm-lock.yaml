@@ -948,7 +948,7 @@ importers:
         specifier: ^7.52.7
         version: 7.52.8(@types/node@18.19.68)
       '@rsbuild/core':
-        specifier: 1.3.16
+        specifier: ^1.2.16
         version: 1.3.16
       '@rslib/core':
         specifier: 0.6.8
@@ -960,10 +960,10 @@ importers:
         specifier: ^3.0.4
         version: 3.0.4
       '@types/node':
-        specifier: ^18.11.17
+        specifier: ^18
         version: 18.19.68
       typescript:
-        specifier: ^5.8.2
+        specifier: ^5.0.4
         version: 5.8.3
       vfile:
         specifier: ^6.0.3
