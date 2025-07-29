@@ -64,7 +64,7 @@ export class FlowNodeRenderData extends EntityData<FlowNodeRenderSchema> {
   }
 
   getExtInfo(): Record<string, any> | undefined {
-    return this.data.extInfo;
+    return this.data.extInfo || ({} as Record<string, any>);
   }
 
   constructor(entity: FlowNodeEntity) {
