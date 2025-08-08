@@ -19,7 +19,7 @@
     "start": "vite",
     "build": "exit 0",
     "clean": "rimraf dist",
-    "build:production": "vite build",
+    "build:prod": "vite build",
     "lint": "eslint ./src --cache",
     "lint:fix": "eslint ./src --fix",
     "test": "exit",
