@@ -50,6 +50,16 @@ jobs:
         run: |
           rm -rf docs
           mv apps/docs/doc_build docs
+      # - name: Upload artifact
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: docs
+      #     name: github-pages
+      # 添加 nodejs 部署
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
         with:
