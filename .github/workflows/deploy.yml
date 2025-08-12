@@ -56,8 +56,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-      - name: print path
-        run: pwd
+      - name: Print File Counts
+        run: find ./apps/docs/doc_build -type f | wc -l
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
         with:
