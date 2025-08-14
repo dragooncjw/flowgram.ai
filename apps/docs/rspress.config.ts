@@ -12,7 +12,7 @@ import { pluginLess } from '@rsbuild/plugin-less';
 
 export default defineConfig({
   root: path.join(__dirname, 'src'),
-  base: '/flowgram.ai/',
+  base: '/',
   title: 'FlowGram.AI',
   globalStyles: path.join(__dirname, './global.less'),
   builderConfig: {
