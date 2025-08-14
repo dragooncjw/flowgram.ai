@@ -96,7 +96,7 @@ jobs:
             "rewrites": [
               {
                 "source": "/(.*)",
-                "destination": "https://dragooncjw.github.io/flowgram.ai/"
+                "destination": "https://dragooncjw.github.io/flowgram.ai/$1"
               }
             ],
             "headers": [
