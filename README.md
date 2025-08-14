@@ -13,6 +13,8 @@ our name.
 [![@flowgram.ai/editor](https://img.shields.io/npm/dm/%40flowgram.ai%2Fcore
 )](https://www.npmjs.com/package/@flowgram.ai/editor)
 
+[![](https://trendshift.io/api/badge/repositories/13877)](https://trendshift.io/repositories/13877)
+
 </div>
 
 ## 📖 Documentation
