@@ -95,7 +95,7 @@ jobs:
           echo '{
             "rewrites": [
               {
-                "source": "/(.*)",
+                "source": "/flowgram.ai/(.*)",
                 "destination": "https://dragooncjw.github.io/flowgram.ai/$1"
               }
             ],
