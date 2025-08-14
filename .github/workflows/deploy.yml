@@ -89,6 +89,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # 重新下载资源
+      - name: Download Pages artifact
+        uses: actions/download-pages-artifact@v1
+        with:
+          name: github-pages
+          path: ./docs
+
       - name: Create Vercel Proxy Config
         run: |
           echo '{
