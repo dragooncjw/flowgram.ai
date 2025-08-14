@@ -91,12 +91,11 @@ jobs:
 
       - name: Create Vercel Proxy Config
         run: |
-          mkdir -p ./apps/docs/doc_build
           echo '{
             "rewrites": [
               {
                 "source": "/(.*)",
-                "destination": "https://<用户名>.github.io/<仓库名>/$1"
+                "destination": "https://dragooncjw.github.io/flowgram.ai/"
               }
             ]
           }' > ./apps/docs/doc_build/vercel.json
