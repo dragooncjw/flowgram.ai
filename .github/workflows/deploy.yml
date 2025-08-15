@@ -67,6 +67,17 @@ jobs:
         with:
           path: docs
           name: github-pages
+      - name: Push build to artifacts repo
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git clone git@github.com:dragooncjw/flowgram-docs.git build-repo
+          rm -rf build-repo/*
+          cp -r docs/* build-repo/
+          cd build-repo
+          git add .
+          git commit -m "Update build $(date)"
+          git push origin main
 
   deploy-pages:
     permissions:
@@ -89,25 +100,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Create Vercel Proxy Config
-        run: |
-          mkdir -p ./docs
-          echo '{
-            "rewrites": [
-              {
-                "source": "/flowgram.ai/(.*)",
-                "destination": "https://dragooncjw.github.io/flowgram.ai/$1"
-              }
-            ],
-            "headers": [
-              {
-                "source": "/(.*)",
-                "headers": [
-                  { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-                ]
-              }
-            ]
-          }' > ./docs/vercel.json
+      - name: Download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: github-pages
+          path: build
 
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
@@ -116,5 +113,5 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: ./docs
-          prod: true
+          vercel-args: '--prebuilt'
+          working-directory: build
