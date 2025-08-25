@@ -28,6 +28,7 @@ import {
   createRuntimePlugin,
   createContextMenuPlugin,
   createVariablePanelPlugin,
+  createDragCopyPlugin,
 } from '../plugins';
 import { defaultFormMeta } from '../nodes/default-form-meta';
 import { WorkflowNodeType } from '../nodes';
@@ -372,6 +373,7 @@ export function useEditorProps(
          * 变量面板插件
          */
         createVariablePanelPlugin({}),
+        createDragCopyPlugin(),
       ],
     }),
     []
