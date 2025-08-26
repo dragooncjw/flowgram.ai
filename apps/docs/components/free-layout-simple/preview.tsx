@@ -30,8 +30,15 @@ export const FreeLayoutSimplePreview = () => {
     'minimap.tsx': minimapCode,
   };
   return (
-    <PreviewEditor files={files} previewStyle={{ height: 500 }} editorStyle={{ height: 500 }}>
-      <FreeLayoutSimple />
-    </PreviewEditor>
+    <div
+      style={{
+        zIndex: 1,
+        position: 'relative',
+      }}
+    >
+      <PreviewEditor files={files} previewStyle={{ height: 500 }} editorStyle={{ height: 500 }}>
+        <FreeLayoutSimple />
+      </PreviewEditor>
+    </div>
   );
 };
