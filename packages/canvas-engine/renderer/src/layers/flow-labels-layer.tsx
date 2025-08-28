@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-import { throttle } from 'lodash';
+import { throttle } from 'lodash-es';
 import { inject, injectable } from 'inversify';
 import { domUtils } from '@flowgram.ai/utils';
 import {

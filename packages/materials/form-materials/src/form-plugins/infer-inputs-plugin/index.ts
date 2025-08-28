@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { get, set } from 'lodash';
+import { get, set } from 'lodash-es';
 import { defineFormPluginCreator, getNodePrivateScope, getNodeScope } from '@flowgram.ai/editor';
 
 import { FlowValueUtils } from '@/shared';

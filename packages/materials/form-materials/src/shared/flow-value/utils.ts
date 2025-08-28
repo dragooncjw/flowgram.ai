@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { isArray, isObject, isPlainObject, uniq } from 'lodash';
+import { isArray, isObject, isPlainObject, uniq } from 'lodash-es';
 import { IJsonSchema, JsonSchemaUtils } from '@flowgram.ai/json-schema';
 import { Scope } from '@flowgram.ai/editor';
 

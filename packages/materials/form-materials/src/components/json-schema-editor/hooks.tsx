@@ -5,7 +5,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-import { difference, omit } from 'lodash';
+import { difference, omit } from 'lodash-es';
 import { produce } from 'immer';
 import { IJsonSchema, type JsonSchemaTypeManager, useTypeManager } from '@flowgram.ai/json-schema';
 

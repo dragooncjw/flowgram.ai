@@ -5,7 +5,7 @@
 
 import React, { useMemo } from 'react';
 
-import { isPlainObject, last } from 'lodash';
+import { isPlainObject, last } from 'lodash-es';
 import {
   type ArrayType,
   ASTMatch,

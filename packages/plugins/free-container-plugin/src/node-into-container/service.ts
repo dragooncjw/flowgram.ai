@@ -4,7 +4,7 @@
  */
 
 /* eslint-disable @typescript-eslint/no-non-null-assertion -- no need */
-import { throttle } from 'lodash';
+import { throttle } from 'lodash-es';
 import { inject, injectable } from 'inversify';
 import { type Disposable, DisposableCollection, Emitter } from '@flowgram.ai/utils';
 import {

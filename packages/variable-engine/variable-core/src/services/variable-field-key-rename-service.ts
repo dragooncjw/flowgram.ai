@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { difference } from 'lodash';
+import { difference } from 'lodash-es';
 import { inject, injectable, postConstruct, preDestroy } from 'inversify';
 import { DisposableCollection, Emitter } from '@flowgram.ai/utils';
 
@@ -78,7 +78,7 @@ export class VariableFieldKeyRenameService {
 
   notifyFieldsDispose(prev?: BaseVariableField[], next?: BaseVariableField[]) {
     const removedFields = difference(prev || [], next || []);
-    removedFields.forEach(_field => this.disposeInListEmitter.fire(_field));
+    removedFields.forEach((_field) => this.disposeInListEmitter.fire(_field));
   }
 
   @postConstruct()
@@ -86,15 +86,15 @@ export class VariableFieldKeyRenameService {
     this.toDispose.pushAll([
       this.variableEngine.onGlobalEvent<VariableDeclarationListChangeAction>(
         'VariableListChange',
-        _action => {
+        (_action) => {
           this.handleFieldListChange(_action.ast, _action.payload?.prev, _action.payload?.next);
-        },
+        }
       ),
       this.variableEngine.onGlobalEvent<ObjectPropertiesChangeAction>(
         'ObjectPropertiesChange',
-        _action => {
+        (_action) => {
           this.handleFieldListChange(_action.ast, _action.payload?.prev, _action.payload?.next);
-        },
+        }
       ),
     ]);
   }

@@ -4,7 +4,7 @@
  */
 
 /* eslint-disable @typescript-eslint/naming-convention */
-import { cloneDeep } from 'lodash';
+import { cloneDeep } from 'lodash-es';
 import { injectable, inject, optional } from 'inversify';
 import { DisposableCollection, Disposable } from '@flowgram.ai/utils';
 import { HistoryService } from '@flowgram.ai/history';

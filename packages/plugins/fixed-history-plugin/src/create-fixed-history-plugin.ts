@@ -3,15 +3,15 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { isEqual } from 'lodash';
+import { isEqual } from 'lodash-es';
 import { interfaces } from 'inversify';
+import { bindContributions } from '@flowgram.ai/utils';
+import { HistoryContainerModule, OperationService } from '@flowgram.ai/history';
+import { OperationContribution } from '@flowgram.ai/history';
 import { FlowNodeFormData } from '@flowgram.ai/form-core';
 import { FlowOperationBaseService } from '@flowgram.ai/document';
 import { FlowDocument } from '@flowgram.ai/document';
 import { definePluginCreator } from '@flowgram.ai/core';
-import { bindContributions } from '@flowgram.ai/utils';
-import { HistoryContainerModule, OperationService } from '@flowgram.ai/history';
-import { OperationContribution } from '@flowgram.ai/history';
 
 import { FixedHistoryPluginOptions } from './types';
 import { FixedHistoryService } from './services/fixed-history-service';
@@ -68,7 +68,7 @@ export const createFixedHistoryPlugin = definePluginCreator<FixedHistoryPluginOp
       fixedFormDataService.setCache(formData, '/', data.data);
 
       formData.formModel.onInitialized(() => {
-        formData.onDetailChange(event => {
+        formData.onDetailChange((event) => {
           let { path, initialized } = event;
 
           if (path !== '/') {

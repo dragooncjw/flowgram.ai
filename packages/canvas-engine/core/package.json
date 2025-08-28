@@ -32,7 +32,7 @@
     "@tweenjs/tween.js": "^18",
     "clsx": "^1.1.1",
     "inversify": "^6.0.1",
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "nanoid": "^4.0.2",
     "reflect-metadata": "~0.2.2"
   },
@@ -41,7 +41,7 @@
     "@flowgram.ai/ts-config": "workspace:*",
     "@testing-library/react": "^12",
     "@testing-library/react-hooks": "^8.0.1",
-    "@types/lodash": "^4.14.137",
+    "@types/lodash-es": "^4.17.12",
     "@types/node": "^18",
     "@types/react": "^18",
     "@types/react-dom": "^18",

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { intersection } from 'lodash';
+import { intersection } from 'lodash-es';
 
 import { ASTNodeFlags } from '../flags';
 import { type BaseExpression } from '../expression';
@@ -15,8 +15,8 @@ import { getAllChildren } from './helpers';
 // 获取所有子 AST 引用的变量
 export function getAllRefs(ast: ASTNode): BaseVariableField[] {
   return getAllChildren(ast)
-    .filter(_child => _child.flags & ASTNodeFlags.Expression)
-    .map(_child => (_child as BaseExpression).refs)
+    .filter((_child) => _child.flags & ASTNodeFlags.Expression)
+    .map((_child) => (_child as BaseExpression).refs)
     .flat()
     .filter(Boolean) as BaseVariableField[];
 }
@@ -29,11 +29,11 @@ export function getAllRefs(ast: ASTNode): BaseVariableField[] {
  */
 export function checkRefCycle(
   curr: BaseExpression,
-  refNodes: (BaseVariableField | undefined)[],
+  refNodes: (BaseVariableField | undefined)[]
 ): boolean {
   // 作用域没有成环，则不可能成环
   if (
-    intersection(curr.scope.coverScopes, refNodes.map(_ref => _ref?.scope).filter(Boolean))
+    intersection(curr.scope.coverScopes, refNodes.map((_ref) => _ref?.scope).filter(Boolean))
       .length === 0
   ) {
     return false;
@@ -47,7 +47,7 @@ export function checkRefCycle(
     const currNode = queue.shift()!;
     visited.add(currNode);
 
-    for (const ref of getAllRefs(currNode).filter(_ref => !visited.has(_ref))) {
+    for (const ref of getAllRefs(currNode).filter((_ref) => !visited.has(_ref))) {
       queue.push(ref);
     }
   }

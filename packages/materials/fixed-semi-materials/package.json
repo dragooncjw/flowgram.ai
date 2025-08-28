@@ -30,13 +30,13 @@
     "@douyinfe/semi-illustrations": "^2.80.0",
     "@douyinfe/semi-ui": "^2.80.0",
     "@flowgram.ai/fixed-layout-editor": "workspace:*",
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "nanoid": "^4.0.2"
   },
   "devDependencies": {
     "@flowgram.ai/eslint-config": "workspace:*",
     "@flowgram.ai/ts-config": "workspace:*",
-    "@types/lodash": "^4.14.137",
+    "@types/lodash-es": "^4.17.12",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/styled-components": "^5",

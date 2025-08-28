@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { find, mergeWith } from 'lodash';
+import { find, mergeWith } from 'lodash-es';
 import { FormFeedback, FormPathService } from '@flowgram.ai/form-core';
 import { FormValidateReturn } from '@flowgram.ai/form/src/types';
 import { type FieldModel, FieldName } from '@flowgram.ai/form';

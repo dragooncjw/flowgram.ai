@@ -6,7 +6,7 @@
 import React from 'react';
 
 import { nanoid } from 'nanoid';
-import { debounce } from 'lodash';
+import { debounce } from 'lodash-es';
 import { inject, injectable, optional, named } from 'inversify';
 import {
   Disposable,

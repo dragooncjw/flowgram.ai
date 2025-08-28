@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { xor } from 'lodash';
+import { xor } from 'lodash-es';
 
 import { parseTypeJsonOrKind } from '../utils/helpers';
 import { ASTNodeJSON, ASTKind, ASTNodeJSONOrKind, type GlobalEventActionType } from '../types';

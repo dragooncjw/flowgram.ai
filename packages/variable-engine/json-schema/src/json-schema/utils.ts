@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { get } from 'lodash';
+import { get } from 'lodash-es';
 import {
   ASTFactory,
   ASTKind,

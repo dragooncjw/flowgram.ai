@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { omit } from 'lodash';
+import { omit } from 'lodash-es';
 import { inject, injectable, multiInject, optional, postConstruct } from 'inversify';
 import { type Disposable, Emitter } from '@flowgram.ai/utils';
 import { type EntityData, type EntityDataRegistry, EntityManager } from '@flowgram.ai/core';

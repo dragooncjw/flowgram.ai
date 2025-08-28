@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { debounce } from 'lodash';
+import { debounce } from 'lodash-es';
 import { inject, injectable } from 'inversify';
 import { Disposable, DisposableCollection, IPoint, Rectangle } from '@flowgram.ai/utils';
 import { FlowNodeEntity, FlowNodeTransformData } from '@flowgram.ai/document';

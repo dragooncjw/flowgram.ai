@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { set, uniqBy } from 'lodash';
+import { set, uniqBy } from 'lodash-es';
 import { JsonSchemaUtils } from '@flowgram.ai/json-schema';
 import {
   ASTFactory,

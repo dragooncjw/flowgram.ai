@@ -5,7 +5,7 @@
 
 import React, { useLayoutEffect } from 'react';
 
-import { isEqual, last } from 'lodash';
+import { isEqual, last } from 'lodash-es';
 import {
   BaseVariableField,
   Disposable,

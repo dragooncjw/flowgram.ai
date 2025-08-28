@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { omit } from 'lodash';
+import { omit } from 'lodash-es';
 import { injectable } from 'inversify';
 
 import { POST_CONSTRUCT_AST_SYMBOL } from './utils/inversify';

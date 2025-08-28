@@ -17,7 +17,7 @@ import {
   switchMap,
   tap,
 } from 'rxjs';
-import { flatten } from 'lodash';
+import { flatten } from 'lodash-es';
 import { shallowEqual } from 'fast-equals';
 import { Disposable } from '@flowgram.ai/utils';
 import { Emitter } from '@flowgram.ai/utils';

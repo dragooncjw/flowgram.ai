@@ -5,7 +5,7 @@
 
 import React, { useMemo } from 'react';
 
-import { isPlainObject } from 'lodash';
+import { isPlainObject } from 'lodash-es';
 import { useScopeAvailable } from '@flowgram.ai/editor';
 
 import { FlowValueUtils } from '@/shared';

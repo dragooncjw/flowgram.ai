@@ -4,12 +4,12 @@
  */
 
 /* eslint-disable @typescript-eslint/naming-convention */
-import { cloneDeep, get, isEqual, set } from 'lodash';
+import { cloneDeep, get, isEqual, set } from 'lodash-es';
 import { injectable, inject } from 'inversify';
+import { HistoryService } from '@flowgram.ai/history';
+import { WorkflowDocument } from '@flowgram.ai/free-layout-core';
 import { FlowNodeFormData, type DetailChangeEvent } from '@flowgram.ai/form-core';
 import { type FlowNodeEntity } from '@flowgram.ai/document';
-import { WorkflowDocument } from '@flowgram.ai/free-layout-core';
-import { HistoryService } from '@flowgram.ai/history';
 
 import { FreeOperationType, type IHandler } from '../types';
 import { HistoryEntityManager } from '../history-entity-manager';
@@ -67,7 +67,7 @@ export class ChangeNodeDataHandler implements IHandler<ChangeNodeDataEvent> {
           },
           uri: this._config.getNodeURI(node.id),
         },
-        { noApply: true },
+        { noApply: true }
       );
     }
 

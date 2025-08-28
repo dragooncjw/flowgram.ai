@@ -158,7 +158,7 @@ function App({ data }) {
 
 ```tsx pure
 import { FixedLayoutEditorProvider, FixedLayoutPluginContext, EditorRenderer } from '@flowgram.ai/fixed-layout-editor'
-import { debounce } from 'lodash'
+import { debounce } from 'lodash-es'
 
 function App() {
   const ref = useRef<FixedLayoutPluginContext | undefined>();
