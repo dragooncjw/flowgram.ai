@@ -51,7 +51,7 @@ export class FlowLinesLayer extends Layer {
   /**
    * 可视区域变化
    */
-  onViewportChange = throttle(() => {
+  onViewportChange: ReturnType<typeof throttle> = throttle(() => {
     this.render();
   }, 100);
 
