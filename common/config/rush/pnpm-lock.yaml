@@ -1042,7 +1042,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       nanoid:
@@ -1070,9 +1070,9 @@ importers:
       '@testing-library/react-hooks':
         specifier: ^8.0.1
         version: 8.0.1(@types/react@18.3.16)(react-dom@18.3.1)(react@18.3.1)
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/node':
         specifier: ^18
         version: 18.19.68
@@ -1109,7 +1109,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       nanoid:
@@ -1125,9 +1125,9 @@ importers:
       '@flowgram.ai/ts-config':
         specifier: workspace:*
         version: link:../../../config/ts-config
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@vitest/coverage-v8':
         specifier: ^0.32.0
         version: 0.32.4(vitest@0.34.6)
@@ -1161,7 +1161,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       react:
@@ -1180,9 +1180,9 @@ importers:
       '@flowgram.ai/ts-config':
         specifier: workspace:*
         version: link:../../../config/ts-config
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -1301,7 +1301,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       react:
@@ -1326,9 +1326,9 @@ importers:
       '@testing-library/react-hooks':
         specifier: ^8.0.1
         version: 8.0.1(@types/react@18.3.16)(react-dom@18.3.1)(react@18.3.1)
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -1426,9 +1426,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -1502,9 +1502,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -1593,9 +1593,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -1654,9 +1654,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -1709,9 +1709,9 @@ importers:
       '@flowgram.ai/ts-config':
         specifier: workspace:*
         version: link:../../../config/ts-config
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/node':
         specifier: ^18
         version: 18.19.68
@@ -1751,7 +1751,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       nanoid:
@@ -1767,9 +1767,9 @@ importers:
       '@flowgram.ai/ts-config':
         specifier: workspace:*
         version: link:../../../config/ts-config
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@vitest/coverage-v8':
         specifier: ^0.32.0
         version: 0.32.4(vitest@0.34.6)
@@ -1809,7 +1809,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       nanoid:
@@ -1825,9 +1825,9 @@ importers:
       '@flowgram.ai/ts-config':
         specifier: workspace:*
         version: link:../../../config/ts-config
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@vitest/coverage-v8':
         specifier: ^0.32.0
         version: 0.32.4(vitest@0.34.6)
@@ -1871,9 +1871,9 @@ importers:
       '@testing-library/react-hooks':
         specifier: ^8.0.1
         version: 8.0.1(@types/react@18.3.16)(react-dom@16.8.6)(react@16.14.0)
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -2011,7 +2011,7 @@ importers:
       '@flowgram.ai/fixed-layout-editor':
         specifier: workspace:*
         version: link:../../client/fixed-layout-editor
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       nanoid:
@@ -2024,9 +2024,9 @@ importers:
       '@flowgram.ai/ts-config':
         specifier: workspace:*
         version: link:../../../config/ts-config
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -2069,7 +2069,7 @@ importers:
       antd:
         specifier: ^5.25.4
         version: 5.26.0(react-dom@18.3.1)(react@18.3.1)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       nanoid:
@@ -2082,9 +2082,9 @@ importers:
       '@flowgram.ai/ts-config':
         specifier: workspace:*
         version: link:../../../config/ts-config
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/node':
         specifier: ^18
         version: 18.19.68
@@ -2160,7 +2160,7 @@ importers:
       inquirer:
         specifier: ^9.2.7
         version: 9.3.7
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       nanoid:
@@ -2182,9 +2182,9 @@ importers:
       '@types/inquirer':
         specifier: 9.0.7
         version: 9.0.7
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/node':
         specifier: ^18
         version: 18.19.68
@@ -2239,7 +2239,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       nanoid:
@@ -2261,9 +2261,9 @@ importers:
       '@flowgram.ai/ts-config':
         specifier: workspace:*
         version: link:../../../config/ts-config
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -2306,7 +2306,7 @@ importers:
       fast-equals:
         specifier: ^2.0.0
         version: 2.0.4
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       nanoid:
@@ -2328,9 +2328,9 @@ importers:
       '@testing-library/react':
         specifier: ^12
         version: 12.1.5(@types/react@18.3.16)(react-dom@18.3.1)(react@18.3.1)
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -2367,7 +2367,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       react:
@@ -2389,9 +2389,9 @@ importers:
       '@flowgram.ai/ts-config':
         specifier: workspace:*
         version: link:../../../config/ts-config
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -2434,7 +2434,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       nanoid:
@@ -2456,9 +2456,9 @@ importers:
       '@flowgram.ai/ts-config':
         specifier: workspace:*
         version: link:../../../config/ts-config
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -2602,7 +2602,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       reflect-metadata:
@@ -2615,9 +2615,9 @@ importers:
       '@flowgram.ai/ts-config':
         specifier: workspace:*
         version: link:../../../config/ts-config
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@vitest/coverage-v8':
         specifier: ^0.32.0
         version: 0.32.4(vitest@0.34.6)
@@ -2657,7 +2657,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       reflect-metadata:
@@ -2673,9 +2673,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -2742,7 +2742,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       reflect-metadata:
@@ -2758,9 +2758,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -2830,7 +2830,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       reflect-metadata:
@@ -2846,9 +2846,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -2906,7 +2906,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       react:
@@ -2925,9 +2925,9 @@ importers:
       '@flowgram.ai/ts-config':
         specifier: workspace:*
         version: link:../../../config/ts-config
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -2986,9 +2986,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -3056,9 +3056,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -3116,7 +3116,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       reflect-metadata:
@@ -3132,9 +3132,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -3189,7 +3189,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       reflect-metadata:
@@ -3205,9 +3205,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -3262,7 +3262,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       reflect-metadata:
@@ -3278,9 +3278,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -3396,7 +3396,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       reflect-metadata:
@@ -3412,9 +3412,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -3467,9 +3467,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -3534,9 +3534,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -3588,7 +3588,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       reflect-metadata:
@@ -3604,9 +3604,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -3677,9 +3677,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -3737,7 +3737,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       reflect-metadata:
@@ -3753,9 +3753,9 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -4177,7 +4177,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       nanoid:
@@ -4199,9 +4199,9 @@ importers:
       '@flowgram.ai/ts-config':
         specifier: workspace:*
         version: link:../../../config/ts-config
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
@@ -4238,7 +4238,7 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.0(reflect-metadata@0.2.2)
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       nanoid:
@@ -4263,9 +4263,9 @@ importers:
       '@flowgram.ai/ts-config':
         specifier: workspace:*
         version: link:../../../config/ts-config
-      '@types/lodash':
-        specifier: ^4.14.137
-        version: 4.17.13
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.16
