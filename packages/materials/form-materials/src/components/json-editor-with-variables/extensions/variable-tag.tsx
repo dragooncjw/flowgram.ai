@@ -5,7 +5,6 @@
 
 import React, { useLayoutEffect } from 'react';
 
-import { createRoot, Root } from 'react-dom/client';
 import { isEqual, last } from 'lodash-es';
 import {
   BaseVariableField,

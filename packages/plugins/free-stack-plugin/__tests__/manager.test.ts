@@ -4,7 +4,7 @@
  */
 
 import { it, expect, beforeEach, describe, vi } from 'vitest';
-import { debounce } from 'lodash';
+import { debounce } from 'lodash-es';
 import { interfaces } from 'inversify';
 import {
   delay,
