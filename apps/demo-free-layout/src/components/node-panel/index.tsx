@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 
 import { NodePanelRenderProps } from '@flowgram.ai/free-node-panel-plugin';
 import { Popover } from '@douyinfe/semi-ui';
@@ -15,6 +15,7 @@ import './index.less';
 export const NodePanel: FC<NodePanelRenderProps> = (props) => {
   const { onSelect, position, onClose, containerNode, panelProps = {} } = props;
   const { enableNodePlaceholder } = panelProps;
+  const ref = useRef<HTMLDivElement>(null);
 
   return (
     <Popover
@@ -22,6 +23,7 @@ export const NodePanel: FC<NodePanelRenderProps> = (props) => {
       visible={true}
       onVisibleChange={(v) => (v ? null : onClose())}
       content={<NodeList onSelect={onSelect} containerNode={containerNode} />}
+      getPopupContainer={() => ref.current || document.body}
       placement="right"
       popupAlign={{ offset: [30, 0] }}
       overlayStyle={{
@@ -29,6 +31,7 @@ export const NodePanel: FC<NodePanelRenderProps> = (props) => {
       }}
     >
       <div
+        ref={ref}
         style={
           enableNodePlaceholder
             ? {
