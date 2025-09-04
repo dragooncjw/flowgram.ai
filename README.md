@@ -13,6 +13,8 @@ our name.
 [![@flowgram.ai/editor](https://img.shields.io/npm/dm/%40flowgram.ai%2Fcore
 )](https://www.npmjs.com/package/@flowgram.ai/editor)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/bytedance/flowgram.ai)
+[![掘金](https://img.shields.io/badge/掘金-FFFFFF?logo=juejin&logoColor=%23007FFF)](https://juejin.cn/column/7479814468601315362)
+
 
 [![](https://trendshift.io/api/badge/repositories/13877)](https://trendshift.io/repositories/13877)
 
