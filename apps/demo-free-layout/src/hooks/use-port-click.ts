@@ -33,6 +33,7 @@ export const usePortClick = () => {
   const linesManager = useService(WorkflowLinesManager);
 
   const onPortClick = useCallback(async (e: React.MouseEvent, port: WorkflowPortEntity) => {
+    if (port.portType === 'input') return;
     const mousePos = playground.config.getPosFromMouseEvent(e);
     const containerNode = port.node.parent;
     // open node selection panel - 打开节点选择面板
