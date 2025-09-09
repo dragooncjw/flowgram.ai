@@ -23,7 +23,7 @@ export const NodePanel: FC<NodePanelRenderProps> = (props) => {
       visible={true}
       onVisibleChange={(v) => (v ? null : onClose())}
       content={<NodeList onSelect={onSelect} containerNode={containerNode} />}
-      getPopupContainer={() => ref.current || document.body}
+      getPopupContainer={containerNode ? () => ref.current || document.body : undefined}
       placement="right"
       popupAlign={{ offset: [30, 0] }}
       overlayStyle={{
