@@ -22,7 +22,6 @@ const _types: string[] = [
   "effects",
   "plugins",
   "shared",
-  "typings",
   "validate",
   "form-plugins",
   "hooks",
