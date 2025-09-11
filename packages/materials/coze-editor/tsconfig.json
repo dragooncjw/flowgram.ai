@@ -2,7 +2,6 @@
   "extends": "@flowgram.ai/ts-config/tsconfig.flow.path.json",
   "compilerOptions": {
     "jsx": "react",
-    "moduleResolution": "bundler",
     "rootDir": "./src",
     "outDir": "./dist/types",
   },

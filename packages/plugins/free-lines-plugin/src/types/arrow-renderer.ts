@@ -6,7 +6,7 @@
 import React from 'react';
 
 import { type IPoint } from '@flowgram.ai/utils';
-import { LinePointLocation } from '@flowgram.ai/free-layout-core/src';
+import { LinePointLocation } from '@flowgram.ai/free-layout-core';
 import { type WorkflowLineEntity } from '@flowgram.ai/free-layout-core';
 
 /**
