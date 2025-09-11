@@ -91,7 +91,7 @@
     "@types/node": "^18",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@types/inquirer": "9.0.7",
+    "@types/inquirer": "^9.0.9",
     "@types/styled-components": "^5",
     "eslint": "^8.54.0",
     "react": "^18",
