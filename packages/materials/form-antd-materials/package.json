@@ -31,7 +31,7 @@
     "@flowgram.ai/editor": "workspace:*",
     "antd": "^5.25.4",
     "lodash-es": "^4.17.21",
-    "nanoid": "^4.0.2"
+    "nanoid": "^5.0.9"
   },
   "devDependencies": {
     "@flowgram.ai/eslint-config": "workspace:*",

@@ -33,7 +33,7 @@
     "classnames": "^2.5.1",
     "server-only": "^0.0.1",
     "styled-components": "^5",
-    "nanoid": "^4.0.2",
+    "nanoid": "^5.0.9",
     "@ant-design/icons": "5.x",
     "@flowgram.ai/free-layout-editor": "workspace:*",
     "@flowgram.ai/free-snap-plugin": "workspace:*",

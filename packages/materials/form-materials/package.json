@@ -78,7 +78,7 @@
     "@flowgram.ai/json-schema": "workspace:*",
     "@flowgram.ai/coze-editor": "workspace:*",
     "lodash-es": "^4.17.21",
-    "nanoid": "^4.0.2",
+    "nanoid": "^5.0.9",
     "immer": "~10.1.1",
     "@codemirror/view": "~6.38.0",
     "@codemirror/state": "~6.5.2",

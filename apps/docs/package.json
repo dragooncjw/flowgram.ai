@@ -35,7 +35,7 @@
     "@flowgram.ai/free-lines-plugin": "workspace:*",
     "@flowgram.ai/history": "workspace:*",
     "styled-components": "^5",
-    "nanoid": "^4.0.2",
+    "nanoid": "^5.0.9",
     "@douyinfe/semi-ui": "^2.80.0",
     "@douyinfe/semi-icons": "^2.80.0",
     "typedoc": "0.24.8",

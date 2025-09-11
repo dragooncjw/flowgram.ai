@@ -31,7 +31,7 @@
     "@douyinfe/semi-ui": "^2.80.0",
     "@flowgram.ai/fixed-layout-editor": "workspace:*",
     "lodash-es": "^4.17.21",
-    "nanoid": "^4.0.2"
+    "nanoid": "^5.0.9"
   },
   "devDependencies": {
     "@flowgram.ai/eslint-config": "workspace:*",
