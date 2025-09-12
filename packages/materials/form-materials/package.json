@@ -98,7 +98,7 @@
     "react-dom": "^18",
     "styled-components": "^5",
     "typescript": "^5.8.3",
-    "vitest": "^0.34.6",
+    "vitest": "^3.2.4",
     "@rslib/core": "~0.12.4",
     "cross-env": "~7.0.3",
     "@rsbuild/plugin-react": "^1.1.1",

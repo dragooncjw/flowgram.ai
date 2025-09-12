@@ -52,7 +52,7 @@
     "styled-components": "^5",
     "tsup": "^8.0.1",
     "typescript": "^5.8.3",
-    "vitest": "^0.34.6"
+    "vitest": "^3.2.4"
   },
   "peerDependencies": {
     "react": ">=16.8",
