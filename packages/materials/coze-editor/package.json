@@ -99,8 +99,8 @@
     "watch": "npm run build:fast -- --dts-resolve --watch --ignore-watch dist"
   },
   "dependencies": {
-    "@coze-editor/editor": "0.1.0-alpha.5a549c",
-    "@coze-editor/code-language-typescript": "0.1.0-alpha.5a549c",
+    "@coze-editor/editor": "0.1.0-alpha.1bed7f",
+    "@coze-editor/code-language-typescript": "0.1.0-alpha.1bed7f",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
