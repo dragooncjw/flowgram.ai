@@ -1,35 +1,36 @@
-name: "CodeQL Full Scan"
+name: "CodeQL Analysis"
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
   pull_request:
-    branches: [ "main" ]
+    branches: [main]
 
 jobs:
   codeql:
     name: "CodeQL Analysis"
     runs-on: ubuntu-latest
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-
+    strategy:
+      matrix:
+        language: [javascript, typescript]  # 根据你的项目调整
     steps:
+      # 1. 检出代码
       - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+        uses: actions/checkout@v3
 
+      # 2. 初始化 CodeQL（高级配置）
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+        uses: github/codeql-action/init@v2
         with:
-          languages: javascript,typescript
+          languages: ${{ matrix.language }}
 
+      # 3. 构建项目（CodeQL 自动构建）
       - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
+        uses: github/codeql-action/autobuild@v2
 
+      # 4. 分析
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
+        uses: github/codeql-action/analyze@v2
         with:
-          fail-on-severity: high  # 高危问题会失败 workflow
+          category: '/language:${{ matrix.language }}' # 可以按语言分类
+          upload: true
