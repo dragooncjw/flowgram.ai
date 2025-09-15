@@ -1,5 +1,6 @@
-name: "CodeQL Analysis"
+name: "CodeQL"
 
+# 在 push 和 PR 触发
 on:
   push:
     branches: [main]
@@ -8,29 +9,27 @@ on:
 
 jobs:
   codeql:
-    name: "CodeQL Analysis"
+    name: Analyze code
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        language: [javascript, typescript]  # 根据你的项目调整
+
     steps:
-      # 1. 检出代码
+      # 1. 拉取代码
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # 2. 初始化 CodeQL（高级配置）
+      # 2. 初始化 CodeQL（默认 setup）
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
+        uses: github/codeql-action/init@v3
         with:
-          languages: ${{ matrix.language }}
+          languages: javascript, typescript  # 可按需修改
 
-      # 3. 构建项目（CodeQL 自动构建）
+      # 3. 自动构建项目（CodeQL 会尝试自动探测构建命令）
       - name: Autobuild
-        uses: github/codeql-action/autobuild@v2
+        uses: github/codeql-action/autobuild@v3
 
-      # 4. 分析
+      # 4. 执行 CodeQL 分析
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
+        uses: github/codeql-action/analyze@v3
         with:
-          category: '/language:${{ matrix.language }}' # 可以按语言分类
-          upload: true
+          # 可选：如果希望扫描失败阻塞 PR，这里默认就会失败
+          category: "/language:javascript"
