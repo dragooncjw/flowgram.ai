@@ -1,0 +1,37 @@
+name: "CodeQL"
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    # 这里是需要阻塞的分支
+    branches: [main]
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 检出代码
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. 初始化 CodeQL（默认 setup）
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: javascript, typescript # 根据你的项目语言调整
+          # queries: 默认使用官方提供的 queries，不加 queries 参数即可
+
+      # 3. 自动构建项目
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v2
+
+      # 4. 分析并上传结果到 Security 页面
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
+        with:
+          upload: true
