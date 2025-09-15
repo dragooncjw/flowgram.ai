@@ -5,7 +5,14 @@
 
 import { useEffect } from 'react';
 
-import { TestRunFormMeta } from '../testrun-form/type';
+import { TestRunFormMeta, TestRunFormMetaItem } from '../testrun-form/type';
+
+const getDefaultValue = (meta: TestRunFormMetaItem) => {
+  if (['object', 'array', 'map'].includes(meta.type) && typeof meta.defaultValue === 'string') {
+    return JSON.parse(meta.defaultValue);
+  }
+  return meta.defaultValue;
+};
 
 export const useSyncDefault = (params: {
   formMeta: TestRunFormMeta;
@@ -19,7 +26,7 @@ export const useSyncDefault = (params: {
     formMeta.map((meta) => {
       // If there is no value in values but there is a default value, trigger onChange once
       if (!(meta.name in values) && meta.defaultValue !== undefined) {
-        formMetaValues = { ...formMetaValues, [meta.name]: meta.defaultValue };
+        formMetaValues = { ...formMetaValues, [meta.name]: getDefaultValue(meta) };
       }
     });
     setValues({

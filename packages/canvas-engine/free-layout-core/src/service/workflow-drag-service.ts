@@ -276,7 +276,7 @@ export class WorkflowDragService {
         const targetNode = event.currentTarget as HTMLDivElement;
         domNode = cloneNode ? cloneNode(e) : (targetNode.cloneNode(true) as HTMLDivElement);
         const bounds = targetNode.getBoundingClientRect();
-        startPos = { x: bounds.left, y: bounds.top };
+        startPos = { x: bounds.left + window.scrollX, y: bounds.top + window.scrollY };
         domUtils.setStyle(domNode, {
           zIndex: 1000,
           position: 'absolute',

@@ -9,8 +9,8 @@ import {
   type IJsonSchema,
 } from '@flowgram.ai/json-schema';
 
+import { type ConstantRendererProps, type JsonSchemaTypeRegistry } from './types';
 import { useTypeManager, JsonSchemaTypePresetProvider } from './react';
-import { ConstantRendererProps, type JsonSchemaTypeRegistry } from './manager';
 import { createTypePresetPlugin } from './create-type-preset-plugin';
 
 export {

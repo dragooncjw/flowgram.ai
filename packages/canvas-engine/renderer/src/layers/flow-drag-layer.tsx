@@ -150,15 +150,16 @@ export class FlowDragLayer extends Layer<FlowDragOptions> {
 
       if (this.containerRef.current) {
         const dragNode = this.containerRef.current.children?.[0];
+        const clientBounds = this.playgroundConfigEntity.getClientBounds();
         const dragBlockX =
           event.clientX -
           (this.pipelineNode.offsetLeft || 0) -
-          this.playgroundConfigEntity.config.clientX -
+          clientBounds.x -
           (dragNode.clientWidth - this.dragOffset.x) * scale;
         const dragBlockY =
           event.clientY -
           (this.pipelineNode.offsetTop || 0) -
-          this.playgroundConfigEntity.config.clientY -
+          clientBounds.y -
           (dragNode.clientHeight - this.dragOffset.y) * scale;
 
         // 获取节点状态是节点类型还是分支类型

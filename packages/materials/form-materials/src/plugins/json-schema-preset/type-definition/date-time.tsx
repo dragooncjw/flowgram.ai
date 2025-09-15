@@ -10,7 +10,9 @@ import { format } from 'date-fns';
 import { type DatePickerProps } from '@douyinfe/semi-ui/lib/es/datePicker';
 import { DatePicker } from '@douyinfe/semi-ui';
 
-import { type JsonSchemaTypeRegistry } from '../manager';
+import { ConditionPresetOp } from '@/components/condition-context/op';
+
+import { type JsonSchemaTypeRegistry } from '../types';
 
 export const dateTimeRegistry: Partial<JsonSchemaTypeRegistry> = {
   type: 'date-time',
@@ -29,4 +31,14 @@ export const dateTimeRegistry: Partial<JsonSchemaTypeRegistry> = {
       value={props.value}
     />
   ),
+  conditionRule: {
+    [ConditionPresetOp.EQ]: { type: 'date-time' },
+    [ConditionPresetOp.NEQ]: { type: 'date-time' },
+    [ConditionPresetOp.GT]: { type: 'date-time' },
+    [ConditionPresetOp.GTE]: { type: 'date-time' },
+    [ConditionPresetOp.LT]: { type: 'date-time' },
+    [ConditionPresetOp.LTE]: { type: 'date-time' },
+    [ConditionPresetOp.IS_EMPTY]: null,
+    [ConditionPresetOp.IS_NOT_EMPTY]: null,
+  },
 };

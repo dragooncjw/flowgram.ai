@@ -12,31 +12,31 @@ import { TestSchemas } from '.';
 
 const container: IContainer = WorkflowRuntimeContainer.instance;
 
-describe('WorkflowRuntime end constant schema', () => {
+describe('WorkflowRuntime global variable schema', () => {
   it('should execute a workflow', async () => {
     const engine = container.get<IEngine>(IEngine);
     const { context, processing } = engine.invoke({
-      schema: TestSchemas.endConstantSchema,
+      schema: TestSchemas.globalVariableSchema,
       inputs: {},
     });
     expect(context.statusCenter.workflow.status).toBe(WorkflowStatus.Processing);
     const result = await processing;
     expect(context.statusCenter.workflow.status).toBe(WorkflowStatus.Succeeded);
     expect(result).toStrictEqual({
-      str: 'ABC',
-      num: 123.123,
-      int: 123,
-      bool: false,
-      obj: {
+      g_str: 'ABC',
+      g_num: 123.123,
+      g_int: 123,
+      g_bool: false,
+      g_obj: {
         key_str: 'value',
         key_int: 123,
         key_bool: true,
       },
-      map: {
+      g_map: {
         key: 'value',
       },
-      arr_str: ['AAA', 'BBB', 'CCC'],
-      date: '2000-01-01T00:00:00.000Z',
+      g_arr_str: ['AAA', 'BBB', 'CCC'],
+      g_date: '2000-01-01T00:00:00.000Z',
     });
     const snapshots = snapshotsToVOData(context.snapshotCenter.exportAll());
     expect(snapshots).toStrictEqual([
@@ -44,24 +44,24 @@ describe('WorkflowRuntime end constant schema', () => {
       {
         nodeID: 'end_0',
         inputs: {
-          str: 'ABC',
-          num: 123.123,
-          int: 123,
-          bool: false,
-          obj: { key_str: 'value', key_int: 123, key_bool: true },
-          map: { key: 'value' },
-          arr_str: ['AAA', 'BBB', 'CCC'],
-          date: '2000-01-01T00:00:00.000Z',
+          g_str: 'ABC',
+          g_num: 123.123,
+          g_int: 123,
+          g_bool: false,
+          g_obj: { key_str: 'value', key_int: 123, key_bool: true },
+          g_arr_str: ['AAA', 'BBB', 'CCC'],
+          g_map: { key: 'value' },
+          g_date: '2000-01-01T00:00:00.000Z',
         },
         outputs: {
-          str: 'ABC',
-          num: 123.123,
-          int: 123,
-          bool: false,
-          obj: { key_str: 'value', key_int: 123, key_bool: true },
-          map: { key: 'value' },
-          arr_str: ['AAA', 'BBB', 'CCC'],
-          date: '2000-01-01T00:00:00.000Z',
+          g_str: 'ABC',
+          g_num: 123.123,
+          g_int: 123,
+          g_bool: false,
+          g_obj: { key_str: 'value', key_int: 123, key_bool: true },
+          g_arr_str: ['AAA', 'BBB', 'CCC'],
+          g_map: { key: 'value' },
+          g_date: '2000-01-01T00:00:00.000Z',
         },
         data: {},
       },

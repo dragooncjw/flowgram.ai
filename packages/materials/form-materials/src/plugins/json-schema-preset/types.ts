@@ -5,6 +5,8 @@
 
 import { JsonSchemaTypeRegistry as OriginJsonSchemaTypeRegistry } from '@flowgram.ai/json-schema';
 
+import { IConditionRule, IConditionRuleFactory } from '@/components/condition-context/types';
+
 export interface ConstantRendererProps<Value = any> {
   value?: Value;
   onChange?: (value: Value) => void;
@@ -16,4 +18,9 @@ export interface JsonSchemaTypeRegistry<Value = any> extends OriginJsonSchemaTyp
    * Render Constant Input
    */
   ConstantRenderer: React.FC<ConstantRendererProps<Value>>;
+
+  /**
+   * Condition Rules
+   */
+  conditionRule?: IConditionRule | IConditionRuleFactory;
 }

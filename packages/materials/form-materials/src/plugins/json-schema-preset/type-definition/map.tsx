@@ -13,14 +13,14 @@ import { CodeEditorMini } from '@/components/code-editor-mini';
 
 import { type JsonSchemaTypeRegistry } from '../types';
 
-export const objectRegistry: Partial<JsonSchemaTypeRegistry> = {
-  type: 'object',
+export const mapRegistry: Partial<JsonSchemaTypeRegistry> = {
+  type: 'map',
   ConstantRenderer: (props) => (
     <CodeEditorMini
       value={props.value}
       onChange={(v) => props.onChange?.(v)}
       languageId="json"
-      placeholder={I18n.t('Please Input Object')}
+      placeholder={I18n.t('Please Input Map')}
       readonly={props.readonly}
     />
   ),

@@ -7,19 +7,6 @@ import { IJsonSchema } from '@flowgram.ai/json-schema';
 
 import { IFlowConstantRefValue } from '@/shared';
 
-export interface OpConfig {
-  label: string;
-  abbreviation: string;
-  // When right is not a value, display this text
-  rightDisplay?: string;
-}
-
-export type OpConfigs = Record<string, OpConfig>;
-
-export type IRule = Partial<Record<string, string | null>>;
-
-export type IRules = Record<string, IRule>;
-
 export interface DBConditionRowValueType {
   left?: string;
   schema?: IJsonSchema;

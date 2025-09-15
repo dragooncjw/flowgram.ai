@@ -5,10 +5,12 @@
 
 import { validateInputsSchema } from './validate-inputs';
 import { twoLLMSchema } from './two-llm';
+import { startDefaultSchema } from './start-default';
 import { loopBreakContinueSchema } from './loop-break-continue';
 import { loopSchema } from './loop';
 import { llmRealSchema } from './llm-real';
 import { httpSchema } from './http';
+import { globalVariableSchema } from './global-variable';
 import { endConstantSchema } from './end-constant';
 import { codeSchema } from './code';
 import { branchTwoLayersSchema } from './branch-two-layers';
@@ -27,4 +29,6 @@ export const TestSchemas = {
   httpSchema,
   codeSchema,
   endConstantSchema,
+  startDefaultSchema,
+  globalVariableSchema,
 };

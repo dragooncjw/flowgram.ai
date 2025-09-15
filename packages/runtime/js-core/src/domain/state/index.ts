@@ -16,7 +16,7 @@ import {
   WorkflowVariableType,
   IFlowTemplateValue,
   IJsonSchema,
-  IFlowConstantValue,
+  WorkflowSchema,
 } from '@flowgram.ai/runtime-interface';
 
 import { uuid, WorkflowRuntimeType } from '@infra/utils';
@@ -30,7 +30,8 @@ export class WorkflowRuntimeState implements IState {
     this.id = uuid();
   }
 
-  public init(): void {
+  public init(schema?: WorkflowSchema): void {
+    this.setGlobalVariable(schema?.globalVariable);
     this.executedNodes = new Set();
   }
 
@@ -49,18 +50,18 @@ export class WorkflowRuntimeState implements IState {
 
   public setNodeOutputs(params: { node: INode; outputs: WorkflowOutputs }): void {
     const { node, outputs } = params;
-    const outputsDeclare = node.declare.outputs;
-    // TODO validation service type check, deeply compare input & schema
-    if (!outputsDeclare) {
+    const outputsDeclare = node.declare.outputs as IJsonSchema<'object'>;
+    if (outputsDeclare?.type !== 'object' || !outputsDeclare.properties) {
       return;
     }
-    Object.entries(outputs).forEach(([key, value]) => {
-      const typeInfo = outputsDeclare.properties?.[key];
-      if (!typeInfo) {
+    Object.entries(outputsDeclare.properties).forEach(([key, typeInfo]) => {
+      if (!key || !typeInfo) {
         return;
       }
       const type = typeInfo.type as WorkflowVariableType;
       const itemsType = typeInfo.items?.type as WorkflowVariableType;
+      const defaultValue = this.parseJSONContent(typeInfo.default, type);
+      const value = outputs[key] ?? defaultValue;
       // create variable
       this.variableStore.setVariable({
         nodeID: node.id,
@@ -152,7 +153,7 @@ export class WorkflowRuntimeState implements IState {
 
   public parseFlowValue<T = unknown>(params: {
     flowValue: IFlowValue;
-    declareType?: WorkflowVariableType;
+    declareType: WorkflowVariableType;
   }): IVariableParseResult<T> | null {
     const { flowValue, declareType } = params;
     if (!flowValue?.type) {
@@ -160,7 +161,7 @@ export class WorkflowRuntimeState implements IState {
     }
     // constant
     if (flowValue.type === 'constant') {
-      const value = this.parseContentValue<T>(flowValue, declareType);
+      const value = this.parseJSONContent<T>(flowValue.content, declareType);
       const type = declareType ?? WorkflowRuntimeType.getWorkflowType(value);
       if (isNil(value) || !type) {
         return null;
@@ -190,22 +191,44 @@ export class WorkflowRuntimeState implements IState {
     this.executedNodes.add(node.id);
   }
 
-  private parseContentValue<T = unknown>(
-    flowValue: IFlowConstantValue,
-    declareType?: WorkflowVariableType
+  private parseJSONContent<T = unknown>(
+    jsonContent: string | unknown,
+    declareType: WorkflowVariableType
   ): T {
     const JSONTypes = [
       WorkflowVariableType.Object,
       WorkflowVariableType.Array,
       WorkflowVariableType.Map,
     ];
-    if (declareType && JSONTypes.includes(declareType) && typeof flowValue.content === 'string') {
+    if (declareType && JSONTypes.includes(declareType) && typeof jsonContent === 'string') {
       try {
-        return JSON.parse(flowValue.content) as T;
+        return JSON.parse(jsonContent) as T;
       } catch (e) {
-        return flowValue.content as T;
+        return jsonContent as T;
       }
     }
-    return flowValue.content as T;
+    return jsonContent as T;
+  }
+
+  private setGlobalVariable(globalVariableDeclare: IJsonSchema | undefined): void {
+    if (globalVariableDeclare?.type !== 'object' || !globalVariableDeclare.properties) {
+      return;
+    }
+    Object.entries(globalVariableDeclare.properties).forEach(([key, typeInfo]) => {
+      if (!key || !typeInfo) {
+        return;
+      }
+      const type = typeInfo.type as WorkflowVariableType;
+      const itemsType = typeInfo.items?.type as WorkflowVariableType;
+      const defaultValue = this.parseJSONContent(typeInfo.default, type);
+      // create variable
+      this.variableStore.setVariable({
+        nodeID: 'global',
+        key,
+        value: defaultValue,
+        type,
+        itemsType,
+      });
+    });
   }
 }

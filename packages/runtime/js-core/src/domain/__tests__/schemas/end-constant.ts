@@ -59,7 +59,7 @@ export const endConstantSchema: WorkflowSchema = {
           },
           map: {
             type: 'constant',
-            content: '{ "key": "value" }',
+            content: '{"key": "value"}',
           },
           arr_str: {
             type: 'constant',

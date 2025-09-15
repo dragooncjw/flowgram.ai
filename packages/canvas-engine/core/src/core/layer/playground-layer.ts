@@ -9,7 +9,7 @@ import { Disposable, domUtils, PositionSchema } from '@flowgram.ai/utils';
 import { Gesture } from '../utils/use-gesture';
 import { PlaygroundGesture } from '../utils/playground-gesture';
 import { MouseTouchEvent, PlaygroundDrag } from '../utils';
-import { type PipelineDimension, PipelineLayerPriority } from '../pipeline';
+import { PipelineLayerPriority } from '../pipeline';
 import { ProtectWheelArea } from '../../common/protect-wheel-area';
 import { observeEntity } from '../../common';
 import { Layer, LayerOptions } from './layer';
@@ -69,8 +69,6 @@ export class PlaygroundLayer extends Layer<PlaygroundLayerOptions> {
     scrollX: 0,
     scrollY: 0,
   };
-
-  private size?: PipelineDimension;
 
   private cursorStyle: HTMLStyleElement = document.createElement('style');
 
@@ -398,26 +396,6 @@ export class PlaygroundLayer extends Layer<PlaygroundLayerOptions> {
       });
       this.toDispose.push(this.currentGesture);
     }
-  }
-
-  /**
-   * 监听 resize
-   * @param size
-   */
-  onResize(size: PipelineDimension): void {
-    this.size = { ...size };
-    this.updateSizeWithRulerConfig();
-  }
-
-  updateSizeWithRulerConfig(): void {
-    const { size } = this;
-    if (!size) return;
-    this.config.updateConfig({
-      width: size.width,
-      height: size.height,
-      clientX: size.clientX,
-      clientY: size.clientY,
-    });
   }
 
   protected handleScrollEvent(event: WheelEvent): void {

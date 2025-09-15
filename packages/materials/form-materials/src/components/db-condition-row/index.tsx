@@ -6,14 +6,27 @@
 import React, { useMemo } from 'react';
 
 import { I18n } from '@flowgram.ai/editor';
-import { Input } from '@douyinfe/semi-ui';
+import { Button, Icon, Input, Select } from '@douyinfe/semi-ui';
+import { IconChevronDownStroked } from '@douyinfe/semi-icons';
 
+import { useTypeManager } from '@/plugins';
 import { InjectDynamicValueInput } from '@/components/dynamic-value-input';
+import {
+  useCondition,
+  type ConditionOpConfigs,
+  type IConditionRule,
+} from '@/components/condition-context';
 
-import { DBConditionOptionType, DBConditionRowValueType, IRules, OpConfigs } from './types';
-import { UIContainer, UILeft, UIOperator, UIRight, UIValues } from './styles';
-import { useOp } from './hooks/use-op';
-import { useLeft } from './hooks/use-left';
+import { DBConditionOptionType, DBConditionRowValueType } from './types';
+import {
+  UIContainer,
+  UILeft,
+  UIOperator,
+  UIOptionLabel,
+  UIRight,
+  UISelect,
+  UIValues,
+} from './styles';
 
 interface PropTypes {
   value?: DBConditionRowValueType;
@@ -22,8 +35,8 @@ interface PropTypes {
   options?: DBConditionOptionType[];
   readonly?: boolean;
   ruleConfig?: {
-    ops?: OpConfigs;
-    rules?: IRules;
+    ops?: ConditionOpConfigs;
+    rules?: Record<string, IConditionRule>;
   };
 }
 
@@ -42,26 +55,65 @@ export function DBConditionRow({
 }: PropTypes) {
   const { left, operator, right } = value || {};
 
-  const { rule, renderDBOptionSelect } = useLeft({
-    left,
-    options,
-    onChange: (leftKey) => onChange({ ...value, left: leftKey }),
-    readonly,
-    userRules: ruleConfig.rules,
+  const typeManager = useTypeManager();
+
+  const leftSchema = useMemo(
+    () => options?.find((item) => item.value === left)?.schema,
+    [left, options]
+  );
+
+  const { opConfig, rule, opOptionList, targetSchema } = useCondition({
+    leftSchema,
+    operator,
+    ruleConfig,
   });
 
-  const { renderOpSelect, opConfig } = useOp({
-    rule,
-    op: operator,
-    onChange: (v) => onChange({ ...value, operator: v }),
-    readonly,
-    userOps: ruleConfig.ops,
-  });
+  const renderDBOptionSelect = () => (
+    <UISelect
+      disabled={readonly}
+      size="small"
+      style={{ width: '100%' }}
+      value={left}
+      onChange={(v) =>
+        onChange({
+          ...value,
+          left: v as string,
+        })
+      }
+      optionList={
+        options?.map((item) => ({
+          label: (
+            <UIOptionLabel>
+              <Icon size="small" svg={typeManager.getDisplayIcon(item.schema)} />
+              {item.label}
+            </UIOptionLabel>
+          ),
+          value: item.value,
+        })) || []
+      }
+    />
+  );
 
-  const targetSchema = useMemo(() => {
-    const targetType: string | null = rule?.[operator || ''] || null;
-    return targetType ? { type: targetType, extra: { weak: true } } : null;
-  }, [rule, opConfig]);
+  const renderOpSelect = () => (
+    <Select
+      style={{ height: 22 }}
+      disabled={readonly}
+      size="small"
+      value={operator}
+      optionList={opOptionList}
+      onChange={(v) => {
+        onChange({
+          ...value,
+          operator: v as string,
+        });
+      }}
+      triggerRender={({ value }) => (
+        <Button size="small" disabled={!rule}>
+          {opConfig?.abbreviation || <IconChevronDownStroked size="small" />}
+        </Button>
+      )}
+    />
+  );
 
   return (
     <UIContainer style={style}>
