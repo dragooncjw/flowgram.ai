@@ -38,6 +38,7 @@ jobs:
           git fetch origin main
           git diff --name-only origin/main...HEAD >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
+          echo $GITHUB_OUTPUT
 
       # 5️⃣ Perform CodeQL analysis only on changed files
       - name: Run CodeQL Analysis
