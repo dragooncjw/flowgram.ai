@@ -13,26 +13,22 @@ jobs:
     permissions:
       actions: read
       contents: read
-      security-events: write   # 必须上传结果
+      security-events: write
 
     steps:
-      # 1️⃣ Checkout
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 全量扫描需要完整历史
+          fetch-depth: 0
 
-      # 2️⃣ Initialize CodeQL
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
           languages: javascript,typescript
 
-      # 3️⃣ Autobuild (可选)
       - name: Autobuild
         uses: github/codeql-action/autobuild@v3
 
-      # 4️⃣ Run CodeQL analysis
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         with:
