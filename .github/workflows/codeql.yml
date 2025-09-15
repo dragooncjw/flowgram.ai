@@ -1,49 +1,39 @@
-name: "CodeQL PR Scan (Incremental)"
+name: "CodeQL Full Scan"
 
 on:
+  push:
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
 jobs:
   codeql:
-    name: "CodeQL Scan"
+    name: "CodeQL Analysis"
     runs-on: ubuntu-latest
     permissions:
       actions: read
       contents: read
-      security-events: write   # ⚠️ 上传结果必须
+      security-events: write   # 必须上传结果
 
     steps:
       # 1️⃣ Checkout
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 必须 fetch 完整历史，才能比较 diff
+          fetch-depth: 0  # 全量扫描需要完整历史
 
       # 2️⃣ Initialize CodeQL
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
-          languages: javascript
+          languages: javascript,typescript
 
-      # 3️⃣ Autobuild (optional for JS/TS, usually not needed)
+      # 3️⃣ Autobuild (可选)
       - name: Autobuild
         uses: github/codeql-action/autobuild@v3
 
-      # 4️⃣ Compute changed files in PR
-      - name: Get PR changed files
-        id: files
-        run: |
-          echo "changed_files<<EOF" >> $GITHUB_OUTPUT
-          git fetch origin main
-          git diff --name-only origin/main...HEAD >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-          echo $GITHUB_OUTPUT
-
-      # 5️⃣ Perform CodeQL analysis only on changed files
-      - name: Run CodeQL Analysis
+      # 4️⃣ Run CodeQL analysis
+      - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         with:
-          # CodeQL 官方不支持行级 diff，只能按文件
-          paths: ${{ steps.files.outputs.changed_files }}
-          fail-on-severity: high  # 高危问题将导致 workflow 失败
+          fail-on-severity: high  # 高危问题会失败 workflow
