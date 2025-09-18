@@ -23,7 +23,7 @@ features:
   - title: Feishu Base
     details: <div class="rspress-doc" style="height&#58 180px; min-height&#58 0px"><img class="medium-zoom-image" style="border-radius&#58 8px;" src="https://flowgram.ai/ref-bitable-en.png"/></div>
   - title: nndeploy
-    details: <div class="rspress-doc" style="height&#58 180px; min-height&#58 0px"><img class="medium-zoom-image" style="border-radius&#58 8px;" src="/ref-nndeploy.png"/></div>
+    details: <div class="rspress-doc" style="height&#58 180px; min-height&#58 0px"><img class="medium-zoom-image" style="border-radius&#58 8px;" src="https://flowgram.ai/ref-nndeploy.png"/></div>
   - title: Certimate
-    details: <div class="rspress-doc" style="height&#58 180px; min-height&#58 0px"><img class="medium-zoom-image" style="border-radius&#58 8px;" src="/ref-certimate.png"/></div>
+    details: <div class="rspress-doc" style="height&#58 180px; min-height&#58 0px"><img class="medium-zoom-image" style="border-radius&#58 8px;" src="https://flowgram.ai/ref-certimate.png"/></div>
 ---
