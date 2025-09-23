@@ -30,7 +30,6 @@
     "@flowgram.ai/utils": "workspace:*",
     "@phosphor/messaging": "^1.3.0",
     "@tweenjs/tween.js": "^18",
-    "clsx": "^1.1.1",
     "inversify": "^6.0.1",
     "lodash-es": "^4.17.21",
     "nanoid": "^5.0.9",

@@ -41,7 +41,6 @@
     "@flowgram.ai/free-lines-plugin": "workspace:*",
     "@flowgram.ai/free-stack-plugin": "workspace:*",
     "@flowgram.ai/history": "workspace:*",
-    "@flowgram.ai/minimap-plugin": "workspace:*",
     "@flowgram.ai/select-box-plugin": "workspace:*",
     "@flowgram.ai/utils": "workspace:*",
     "clsx": "^1.1.1",

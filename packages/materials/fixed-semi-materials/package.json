@@ -27,7 +27,6 @@
   },
   "dependencies": {
     "@douyinfe/semi-icons": "^2.80.0",
-    "@douyinfe/semi-illustrations": "^2.80.0",
     "@douyinfe/semi-ui": "^2.80.0",
     "@flowgram.ai/fixed-layout-editor": "workspace:*",
     "lodash-es": "^4.17.21",

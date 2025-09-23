@@ -36,10 +36,8 @@
     "@flowgram.ai/core": "workspace:*",
     "@flowgram.ai/variable-core": "workspace:*",
     "@flowgram.ai/utils": "workspace:*",
-    "fast-equals": "^2.0.0",
     "inversify": "^6.0.1",
     "lodash-es": "^4.17.21",
-    "nanoid": "^5.0.9",
     "reflect-metadata": "~0.2.2"
   },
   "devDependencies": {

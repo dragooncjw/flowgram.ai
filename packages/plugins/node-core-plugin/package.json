@@ -30,8 +30,6 @@
     "@flowgram.ai/document": "workspace:*",
     "@flowgram.ai/form-core": "workspace:*",
     "@flowgram.ai/node": "workspace:*",
-    "@flowgram.ai/renderer": "workspace:*",
-    "@flowgram.ai/utils": "workspace:*",
     "inversify": "^6.0.1",
     "reflect-metadata": "~0.2.2"
   },

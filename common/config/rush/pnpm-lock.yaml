@@ -1090,9 +1090,6 @@ importers:
       '@tweenjs/tween.js':
         specifier: ^18
         version: 18.6.4
-      clsx:
-        specifier: ^1.1.1
-        version: 1.2.1
       inversify:
         specifier: ^6.0.1
         version: 6.2.2(reflect-metadata@0.2.2)
@@ -1377,9 +1374,6 @@ importers:
       '@testing-library/react':
         specifier: ^12
         version: 12.1.5(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@testing-library/react-hooks':
-        specifier: ^8.0.1
-        version: 8.0.1(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
@@ -1407,9 +1401,6 @@ importers:
 
   ../../packages/client/editor:
     dependencies:
-      '@flowgram.ai/background-plugin':
-        specifier: workspace:*
-        version: link:../../plugins/background-plugin
       '@flowgram.ai/core':
         specifier: workspace:*
         version: link:../../canvas-engine/core
@@ -1422,9 +1413,6 @@ importers:
       '@flowgram.ai/form-core':
         specifier: workspace:*
         version: link:../../node-engine/form-core
-      '@flowgram.ai/group-plugin':
-        specifier: workspace:*
-        version: link:../../plugins/group-plugin
       '@flowgram.ai/history':
         specifier: workspace:*
         version: link:../../common/history
@@ -1616,9 +1604,6 @@ importers:
       '@flowgram.ai/history':
         specifier: workspace:*
         version: link:../../common/history
-      '@flowgram.ai/minimap-plugin':
-        specifier: workspace:*
-        version: link:../../plugins/minimap-plugin
       '@flowgram.ai/select-box-plugin':
         specifier: workspace:*
         version: link:../../plugins/select-box-plugin
@@ -2108,9 +2093,6 @@ importers:
       '@douyinfe/semi-icons':
         specifier: ^2.80.0
         version: 2.86.0(react@18.3.1)
-      '@douyinfe/semi-illustrations':
-        specifier: ^2.80.0
-        version: 2.86.0(react@18.3.1)
       '@douyinfe/semi-ui':
         specifier: ^2.80.0
         version: 2.86.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2178,9 +2160,6 @@ importers:
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
-      nanoid:
-        specifier: ^5.0.9
-        version: 5.1.5
     devDependencies:
       '@flowgram.ai/eslint-config':
         specifier: workspace:*
@@ -2237,9 +2216,6 @@ importers:
         specifier: ~6.38.0
         version: 6.38.2
       '@douyinfe/semi-icons':
-        specifier: ^2.80.0
-        version: 2.86.0(react@18.3.1)
-      '@douyinfe/semi-illustrations':
         specifier: ^2.80.0
         version: 2.86.0(react@18.3.1)
       '@douyinfe/semi-ui':
@@ -2489,9 +2465,6 @@ importers:
       '@flowgram.ai/eslint-config':
         specifier: workspace:*
         version: link:../../../config/eslint-config
-      '@flowgram.ai/form':
-        specifier: workspace:*
-        version: link:../form
       '@flowgram.ai/ts-config':
         specifier: workspace:*
         version: link:../../../config/ts-config
@@ -2754,18 +2727,12 @@ importers:
       '@flowgram.ai/free-layout-core':
         specifier: workspace:*
         version: link:../../canvas-engine/free-layout-core
-      '@flowgram.ai/renderer':
-        specifier: workspace:*
-        version: link:../../canvas-engine/renderer
       '@flowgram.ai/utils':
         specifier: workspace:*
         version: link:../../common/utils
       inversify:
         specifier: ^6.0.1
         version: 6.2.2(reflect-metadata@0.2.2)
-      lodash-es:
-        specifier: ^4.17.21
-        version: 4.17.21
       reflect-metadata:
         specifier: ~0.2.2
         version: 0.2.2
@@ -2779,9 +2746,6 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash-es':
-        specifier: ^4.17.12
-        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.24
@@ -2833,18 +2797,9 @@ importers:
       '@flowgram.ai/free-layout-core':
         specifier: workspace:*
         version: link:../../canvas-engine/free-layout-core
-      '@flowgram.ai/free-lines-plugin':
-        specifier: workspace:*
-        version: link:../free-lines-plugin
       '@flowgram.ai/i18n':
         specifier: workspace:*
         version: link:../../common/i18n
-      '@flowgram.ai/renderer':
-        specifier: workspace:*
-        version: link:../../canvas-engine/renderer
-      '@flowgram.ai/shortcuts-plugin':
-        specifier: workspace:*
-        version: link:../shortcuts-plugin
       '@flowgram.ai/utils':
         specifier: workspace:*
         version: link:../../common/utils
@@ -2924,9 +2879,6 @@ importers:
       '@flowgram.ai/free-layout-editor':
         specifier: workspace:*
         version: link:../../client/free-layout-editor
-      '@flowgram.ai/free-lines-plugin':
-        specifier: workspace:*
-        version: link:../free-lines-plugin
       '@flowgram.ai/renderer':
         specifier: workspace:*
         version: link:../../canvas-engine/renderer
@@ -2939,9 +2891,6 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.2(reflect-metadata@0.2.2)
-      lodash-es:
-        specifier: ^4.17.21
-        version: 4.17.21
       reflect-metadata:
         specifier: ~0.2.2
         version: 0.2.2
@@ -2955,9 +2904,6 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash-es':
-        specifier: ^4.17.12
-        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.24
@@ -3067,9 +3013,6 @@ importers:
       '@flowgram.ai/renderer':
         specifier: workspace:*
         version: link:../../canvas-engine/renderer
-      '@flowgram.ai/select-box-plugin':
-        specifier: workspace:*
-        version: link:../select-box-plugin
       '@flowgram.ai/utils':
         specifier: workspace:*
         version: link:../../common/utils
@@ -3210,18 +3153,12 @@ importers:
       '@flowgram.ai/free-layout-core':
         specifier: workspace:*
         version: link:../../canvas-engine/free-layout-core
-      '@flowgram.ai/renderer':
-        specifier: workspace:*
-        version: link:../../canvas-engine/renderer
       '@flowgram.ai/utils':
         specifier: workspace:*
         version: link:../../common/utils
       inversify:
         specifier: ^6.0.1
         version: 6.2.2(reflect-metadata@0.2.2)
-      lodash-es:
-        specifier: ^4.17.21
-        version: 4.17.21
       reflect-metadata:
         specifier: ~0.2.2
         version: 0.2.2
@@ -3235,9 +3172,6 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash-es':
-        specifier: ^4.17.12
-        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.24
@@ -3277,18 +3211,12 @@ importers:
       '@flowgram.ai/free-layout-core':
         specifier: workspace:*
         version: link:../../canvas-engine/free-layout-core
-      '@flowgram.ai/renderer':
-        specifier: workspace:*
-        version: link:../../canvas-engine/renderer
       '@flowgram.ai/utils':
         specifier: workspace:*
         version: link:../../common/utils
       inversify:
         specifier: ^6.0.1
         version: 6.2.2(reflect-metadata@0.2.2)
-      lodash-es:
-        specifier: ^4.17.21
-        version: 4.17.21
       reflect-metadata:
         specifier: ~0.2.2
         version: 0.2.2
@@ -3302,9 +3230,6 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash-es':
-        specifier: ^4.17.12
-        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.24
@@ -3350,9 +3275,6 @@ importers:
       '@flowgram.ai/free-layout-core':
         specifier: workspace:*
         version: link:../../canvas-engine/free-layout-core
-      '@flowgram.ai/renderer':
-        specifier: workspace:*
-        version: link:../../canvas-engine/renderer
       '@flowgram.ai/utils':
         specifier: workspace:*
         version: link:../../common/utils
@@ -3487,9 +3409,6 @@ importers:
       '@flowgram.ai/node':
         specifier: workspace:*
         version: link:../../node-engine/node
-      '@flowgram.ai/utils':
-        specifier: workspace:*
-        version: link:../../common/utils
       inversify:
         specifier: ^6.0.1
         version: 6.2.2(reflect-metadata@0.2.2)
@@ -3597,15 +3516,9 @@ importers:
       '@flowgram.ai/core':
         specifier: workspace:*
         version: link:../../canvas-engine/core
-      '@flowgram.ai/form-core':
-        specifier: workspace:*
-        version: link:../../node-engine/form-core
       '@flowgram.ai/renderer':
         specifier: workspace:*
         version: link:../../canvas-engine/renderer
-      '@flowgram.ai/utils':
-        specifier: workspace:*
-        version: link:../../common/utils
       inversify:
         specifier: ^6.0.1
         version: 6.2.2(reflect-metadata@0.2.2)
@@ -3661,9 +3574,6 @@ importers:
       '@flowgram.ai/document':
         specifier: workspace:*
         version: link:../../canvas-engine/document
-      '@flowgram.ai/renderer':
-        specifier: workspace:*
-        version: link:../../canvas-engine/renderer
       '@flowgram.ai/utils':
         specifier: workspace:*
         version: link:../../common/utils
@@ -3731,12 +3641,6 @@ importers:
       '@flowgram.ai/node':
         specifier: workspace:*
         version: link:../../node-engine/node
-      '@flowgram.ai/renderer':
-        specifier: workspace:*
-        version: link:../../canvas-engine/renderer
-      '@flowgram.ai/utils':
-        specifier: workspace:*
-        version: link:../../common/utils
       inversify:
         specifier: ^6.0.1
         version: 6.2.2(reflect-metadata@0.2.2)
@@ -3807,9 +3711,6 @@ importers:
       inversify:
         specifier: ^6.0.1
         version: 6.2.2(reflect-metadata@0.2.2)
-      lodash-es:
-        specifier: ^4.17.21
-        version: 4.17.21
       reflect-metadata:
         specifier: ~0.2.2
         version: 0.2.2
@@ -3823,9 +3724,6 @@ importers:
       '@types/bezier-js':
         specifier: 4.1.3
         version: 4.1.3
-      '@types/lodash-es':
-        specifier: ^4.17.12
-        version: 4.17.12
       '@types/react':
         specifier: ^18
         version: 18.3.24
@@ -3976,12 +3874,6 @@ importers:
       '@flowgram.ai/core':
         specifier: workspace:*
         version: link:../../canvas-engine/core
-      '@flowgram.ai/document':
-        specifier: workspace:*
-        version: link:../../canvas-engine/document
-      '@flowgram.ai/utils':
-        specifier: workspace:*
-        version: link:../../common/utils
       inversify:
         specifier: ^6.0.1
         version: 6.2.2(reflect-metadata@0.2.2)
@@ -4019,12 +3911,6 @@ importers:
       '@flowgram.ai/document':
         specifier: workspace:*
         version: link:../../canvas-engine/document
-      '@flowgram.ai/free-layout-core':
-        specifier: workspace:*
-        version: link:../../canvas-engine/free-layout-core
-      '@flowgram.ai/utils':
-        specifier: workspace:*
-        version: link:../../common/utils
       '@flowgram.ai/variable-core':
         specifier: workspace:*
         version: link:../../variable-engine/variable-core
@@ -4099,9 +3985,6 @@ importers:
       uuid:
         specifier: ^9.0.0
         version: 9.0.1
-      zod:
-        specifier: ^3.24.4
-        version: 3.25.76
     devDependencies:
       '@flowgram.ai/eslint-config':
         specifier: workspace:*
@@ -4157,40 +4040,19 @@ importers:
       '@flowgram.ai/runtime-js':
         specifier: workspace:*
         version: link:../js-core
-      '@langchain/core':
-        specifier: ^0.3.58
-        version: 0.3.75(openai@5.20.2(ws@8.18.3)(zod@3.25.76))
-      '@langchain/openai':
-        specifier: 0.5.18
-        version: 0.5.18(@langchain/core@0.3.75(openai@5.20.2(ws@8.18.3)(zod@3.25.76)))(ws@8.18.3)
       '@trpc/server':
         specifier: ^10.27.1
         version: 10.45.2
       fastify:
         specifier: ^4.17.0
         version: 4.29.1
-      lodash-es:
-        specifier: ^4.17.21
-        version: 4.17.21
       trpc-openapi:
         specifier: ^1.2.0
         version: 1.2.0(@trpc/server@10.45.2)(@types/node@18.19.124)(zod@3.25.76)
-      tslib:
-        specifier: ^2.8.1
-        version: 2.8.1
-      ws:
-        specifier: ^8.0.0
-        version: 8.18.3
       zod:
         specifier: ^3.24.4
         version: 3.25.76
     devDependencies:
-      '@babel/eslint-parser':
-        specifier: ~7.19.1
-        version: 7.19.1(@babel/core@7.28.4)(eslint@8.57.1)
-      '@eslint/eslintrc':
-        specifier: ^3
-        version: 3.3.1
       '@flowgram.ai/eslint-config':
         specifier: workspace:*
         version: link:../../../config/eslint-config
@@ -4200,15 +4062,9 @@ importers:
       '@types/cors':
         specifier: ^2.8.13
         version: 2.8.19
-      '@types/lodash-es':
-        specifier: ^4.17.12
-        version: 4.17.12
       '@types/node':
         specifier: ^18
         version: 18.19.124
-      '@types/ws':
-        specifier: ^8.2.0
-        version: 8.18.1
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.10.0
         version: 6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.9.2))(eslint@8.57.1)(typescript@5.9.2)
@@ -4227,9 +4083,6 @@ importers:
       eslint-plugin-json:
         specifier: ^4.0.1
         version: 4.0.1
-      npm-run-all:
-        specifier: ^4.1.5
-        version: 4.1.5
       tsup:
         specifier: ^8.0.1
         version: 8.5.0(jiti@2.5.1)(postcss@8.5.6)(tsx@4.19.4)(typescript@5.9.2)(yaml@2.8.1)
@@ -4242,9 +4095,6 @@ importers:
       vitest:
         specifier: ^3.2.4
         version: 3.2.4(@types/debug@4.1.12)(@types/node@18.19.124)(jiti@2.5.1)(jsdom@26.1.0)(less@4.4.1)(lightningcss@1.30.1)(sass@1.92.1)(terser@5.44.0)(tsx@4.19.4)(yaml@2.8.1)
-      wait-port:
-        specifier: ^1.0.1
-        version: 1.1.0
 
   ../../packages/variable-engine/json-schema:
     dependencies:
@@ -4257,18 +4107,12 @@ importers:
       '@flowgram.ai/variable-core':
         specifier: workspace:*
         version: link:../variable-core
-      fast-equals:
-        specifier: ^2.0.0
-        version: 2.0.4
       inversify:
         specifier: ^6.0.1
         version: 6.2.2(reflect-metadata@0.2.2)
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
-      nanoid:
-        specifier: ^5.0.9
-        version: 5.1.5
       react:
         specifier: '>=16.8'
         version: 18.3.1
@@ -4385,9 +4229,6 @@ importers:
       '@flowgram.ai/free-layout-core':
         specifier: workspace:*
         version: link:../../canvas-engine/free-layout-core
-      '@flowgram.ai/utils':
-        specifier: workspace:*
-        version: link:../../common/utils
       '@flowgram.ai/variable-core':
         specifier: workspace:*
         version: link:../variable-core
@@ -7201,9 +7042,6 @@ packages:
   '@types/uuid@9.0.8':
     resolution: {integrity: sha512-jg+97EGIcY9AGHJJRaaPVgetKDsrTgbRjQ5Msgjh/DQKEFl0DtyRr/VCOyD1T2R1MNeWPK/u7JoGhlDZnKBAfA==}
 
-  '@types/ws@8.18.1':
-    resolution: {integrity: sha512-ThVF6DCVhA8kUGy+aazFQ4kXQ7E1Ty7A3ypFOe0IcJV8O/M511G99AW24irKrW56Wt44yG9+ij8FaqoBGkuBXg==}
-
   '@typescript-eslint/eslint-plugin@5.38.1':
     resolution: {integrity: sha512-ky7EFzPhqz3XlhS7vPOoMDaQnQMn+9o5ICR9CPr/6bw8HrFkzhMSxuA3gRfiJVvs7geYrSeawGJjZoZQKCOglQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -7697,10 +7535,6 @@ packages:
   ansi-sequence-parser@1.1.3:
     resolution: {integrity: sha512-+fksAx9eG3Ab6LDnLs3ZqZa8KVJ/jYnX+D4Qe1azX+LFGFAXqynCQLOdLpNYN/l9e7l6hMWwZbrnctqr6eSQSw==}
 
-  ansi-styles@3.2.1:
-    resolution: {integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==}
-    engines: {node: '>=4'}
-
   ansi-styles@4.3.0:
     resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
     engines: {node: '>=8'}
@@ -7945,10 +7779,6 @@ packages:
     resolution: {integrity: sha512-4zNhdJD/iOjSH0A05ea+Ke6MU5mmpQcbQsSOkgdaUMJ9zTlDTD/GYlwohmIE2u0gaxHYiVHEn1Fw9mZ/ktJWgw==}
     engines: {node: '>=18'}
 
-  chalk@2.4.2:
-    resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
-    engines: {node: '>=4'}
-
   chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
     engines: {node: '>=10'}
@@ -8031,15 +7861,9 @@ packages:
   collapse-white-space@2.1.0:
     resolution: {integrity: sha512-loKTxY1zCOuG4j9f6EPnuyyYkf58RnhhWTvRoZEokgB+WbdXehfjFviyOVYkqzEWz1Q5kRiZdBYS5SwxbQYwzw==}
 
-  color-convert@1.9.3:
-    resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
-
   color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
     engines: {node: '>=7.0.0'}
-
-  color-name@1.1.3:
-    resolution: {integrity: sha512-72fSenhMw2HZMTVHeCA9KCmpEIbzWiQsjN+BHcBbS9vr1mtt+vJjPdksIBNUmKAW8TFUDPJK5SUU3QhE9NEXDw==}
 
   color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
@@ -8071,10 +7895,6 @@ packages:
   commander@4.1.1:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
     engines: {node: '>= 6'}
-
-  commander@9.5.0:
-    resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
-    engines: {node: ^12.20.0 || >=14}
 
   compute-scroll-into-view@1.0.20:
     resolution: {integrity: sha512-UCB0ioiyj8CRjtrvaceBLqqhZCVP+1B8+NWQhmdsm0VXOJtobBCf1dBQmebCCo34qZmUwZfIH2MZLqNHazrfjg==}
@@ -8381,9 +8201,6 @@ packages:
     resolution: {integrity: sha512-dJ6oBr5SQ1VSd9qkk7ByRgb/1SH4JZjCHSW/mr63/QcXO9zLVxvJ6Oy13nio03rxpSnVDDjFor75SjVeZWPW/A==}
     hasBin: true
 
-  error-ex@1.3.2:
-    resolution: {integrity: sha512-7dFHNmqeFSEt2ZBsCriorKnn3Z2pj+fd9kmI6QoWw4//DL+icEBfc0U7qJCisqrTsKTjw4fNFy2pW9OqStD84g==}
-
   error-stack-parser@2.1.4:
     resolution: {integrity: sha512-Sk5V6wVazPhq5MhpO+AUxJn5x7XSXGl1R93Vn7i+zS15KDVxQijejNCrz8340/2bgLBjR9GtEG8ZVKONDjcqGQ==}
 
@@ -8459,10 +8276,6 @@ packages:
 
   escape-html@1.0.3:
     resolution: {integrity: sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow==}
-
-  escape-string-regexp@1.0.5:
-    resolution: {integrity: sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==}
-    engines: {node: '>=0.8.0'}
 
   escape-string-regexp@4.0.0:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
@@ -9024,9 +8837,6 @@ packages:
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
 
-  hosted-git-info@2.8.9:
-    resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
-
   html-encoding-sniffer@4.0.0:
     resolution: {integrity: sha512-Y22oTqIU4uuPgEemfz7NDJz6OeKf12Lsu+QC+s3BVpda64lTiMYCyGwg5ki4vFxkMwQdeZDl2adZoqUgdFuTgQ==}
     engines: {node: '>=18'}
@@ -9167,9 +8977,6 @@ packages:
   is-array-buffer@3.0.5:
     resolution: {integrity: sha512-DDfANUiiG2wC1qawP66qlTugJeL5HyzMpfr8lLK+jMQirGzNod0B12cFB/9q838Ru27sBwfw78/rdoU7RERz6A==}
     engines: {node: '>= 0.4'}
-
-  is-arrayish@0.2.1:
-    resolution: {integrity: sha512-zz06S8t0ozoDXMG+ube26zeCTNXcKIPJZJi8hBrF4idCLms4CG9QtK7qBl1boi5ODzFpjswb5JPmHCbMpjaYzg==}
 
   is-arrayish@0.3.4:
     resolution: {integrity: sha512-m6UrgzFVUYawGBh1dUsWR5M2Clqic9RVXC/9f8ceNlv2IcO9j9J/z8UoCLPqtsPBFNzEpfR3xftohbfqDx8EQA==}
@@ -9410,9 +9217,6 @@ packages:
   json-buffer@3.0.1:
     resolution: {integrity: sha512-4bV5BfR2mqfQTJm+V5tPPdf+ZpuhiIvTuAB5g8kcrXOZpTT/QwwVRWBywX1ozr6lEuPdbHxwaJlm9G6mI2sfSQ==}
 
-  json-parse-better-errors@1.0.2:
-    resolution: {integrity: sha512-mrqyZKfX5EhL7hvqcV6WG1yYjnjeuYDzDhhcAAUrq8Po85NBQBJP+ZDUT75qZQ98IkUoBqdkExkukOU7Ts2wrw==}
-
   json-parse-even-better-errors@2.3.1:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
 
@@ -9582,10 +9386,6 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  load-json-file@4.0.0:
-    resolution: {integrity: sha512-Kx8hMakjX03tiGTLAIdJ+lL0htKnXjEZN6hk/tozf/WOuYGdZBJrZ+rCJRbVCugsjB3jMLn9746NsQIf5VjBMw==}
-    engines: {node: '>=4'}
-
   load-tsconfig@0.2.5:
     resolution: {integrity: sha512-IXO6OCs9yg8tMKzfPZ1YmheJbZCiEsnBdcB03l0OcfK9prKnJb96siuHCr5Fl37/yo9DnKU+TLpxzTUspw9shg==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -9750,10 +9550,6 @@ packages:
 
   memoize-one@5.2.1:
     resolution: {integrity: sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==}
-
-  memorystream@0.3.1:
-    resolution: {integrity: sha512-S3UwM3yj5mtUSEfP41UZmt/0SCoVYUcU1rkXv+BQ5Ig8ndL4sPoJNBUJERafdPb5jjHJGuMgytgKvKIf58XNBw==}
-    engines: {node: '>= 0.10.0'}
 
   merge-descriptors@1.0.3:
     resolution: {integrity: sha512-gaNvAS7TZ897/rVaZ0nMtAyxNyi/pdbjbAwUpFQpN70GqnVfOiXpeUUMKRBmzXaSQ8DdTX4/0ms62r2K+hE6mQ==}
@@ -10034,17 +9830,9 @@ packages:
   node-releases@2.0.21:
     resolution: {integrity: sha512-5b0pgg78U3hwXkCM8Z9b2FJdPZlr9Psr9V2gQPESdGHqbntyFJKFW4r5TeWGFzafGY3hzs1JC62VEQMbl1JFkw==}
 
-  normalize-package-data@2.5.0:
-    resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
-
   normalize-path@3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
-
-  npm-run-all@4.1.5:
-    resolution: {integrity: sha512-Oo82gJDAVcaMdi3nuoKFavkIHBRVqQ1qvMb+9LHk/cF4P6B2m8aP04hGf7oL6wZ9BuGwX1onlLhpuoofSyoQDQ==}
-    engines: {node: '>= 4'}
-    hasBin: true
 
   npm-run-path@2.0.2:
     resolution: {integrity: sha512-lJxZYlT4DW/bRUtFh1MQIWqmLwQfAxnqWG4HhEdjMlkrJYnJn0Jrr2u3mgxqaWsdiBc76TYkTG/mhrnYTuzfHw==}
@@ -10175,10 +9963,6 @@ packages:
   parse-entities@4.0.2:
     resolution: {integrity: sha512-GG2AQYWoLgL877gQIKeRPGO1xF9+eG1ujIb5soS5gPvLQ1y2o8FL90w2QWNdf9I361Mpp7726c+lj3U0qK1uGw==}
 
-  parse-json@4.0.0:
-    resolution: {integrity: sha512-aOIos8bujGN93/8Ox/jPLh7RwVnPEysynVFE+fQZyg6jKELEHwzgKdLRFHUgXJL6kylijVSBC4BvN9OmsB48Rw==}
-    engines: {node: '>=4'}
-
   parse-node-version@1.0.1:
     resolution: {integrity: sha512-3YHlOa/JgH6Mnpr05jP9eDG254US9ek25LyIxZlDItp2iJtwyaXQb57lBYLdT3MowkUFYEV2XXNAYIPlESvJlA==}
     engines: {node: '>= 0.10'}
@@ -10216,10 +10000,6 @@ packages:
     resolution: {integrity: sha512-Xa4Nw17FS9ApQFJ9umLiJS4orGjm7ZzwUrwamcGQuHSzDyth9boKDaycYdDcZDuqYATXw4HFXgaqWTctW/v1HA==}
     engines: {node: '>=16 || 14 >=14.18'}
 
-  path-type@3.0.0:
-    resolution: {integrity: sha512-T2ZUsdZFHgA3u4e5PfPbjd7HDDpxPnQb5jN0SrDsjNSuVXHJqtwTnWqG0B1jZrgmJ/7lj1EmVIByWt1gxGkWvg==}
-    engines: {node: '>=4'}
-
   path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
@@ -10244,15 +10024,6 @@ packages:
   picomatch@4.0.3:
     resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
-
-  pidtree@0.3.1:
-    resolution: {integrity: sha512-qQbW94hLHEqCg7nhby4yRC7G2+jYHY4Rguc2bjw7Uug4GIJuu1tvf2uHaZv5Q8zdt+WKJ6qK1FOI6amaWUo5FA==}
-    engines: {node: '>=0.10'}
-    hasBin: true
-
-  pify@3.0.0:
-    resolution: {integrity: sha512-C3FsVNH1udSEX48gGX1xfvwTWfsYWj5U+8/uK15BGzIGrKoUpghX8hWZwa/OFnakBiiVNmBvemTJR5mcy7iPcg==}
-    engines: {node: '>=4'}
 
   pify@4.0.1:
     resolution: {integrity: sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==}
@@ -10729,10 +10500,6 @@ packages:
     resolution: {integrity: sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ==}
     engines: {node: '>=0.10.0'}
 
-  read-pkg@3.0.0:
-    resolution: {integrity: sha512-BLq/cCO9two+lBgiTYNqD6GdtK8s4NpaWrl6/rCO9w0TUS8oJl7cmToOZfRYllKTISY6nt1U7jQ53brmKqY6BA==}
-    engines: {node: '>=4'}
-
   readable-stream@3.6.2:
     resolution: {integrity: sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==}
     engines: {node: '>= 6'}
@@ -11056,10 +10823,6 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  shell-quote@1.8.3:
-    resolution: {integrity: sha512-ObmnIF4hXNg1BqhnHmgbDETF8dLPCggZWBjkQfhZpbszZnYur5DUljTcCHii5LC3J5E0yeO/1LIMyH+UvHQgyw==}
-    engines: {node: '>= 0.4'}
-
   shelljs@0.9.2:
     resolution: {integrity: sha512-S3I64fEiKgTZzKCC46zT/Ib9meqofLrQVbpSswtjFfAVDW+AZ54WTnAM/3/yENoxz/V1Cy6u3kiiEbQ4DNphvw==}
     engines: {node: '>=18'}
@@ -11146,18 +10909,6 @@ packages:
   space-separated-tokens@2.0.2:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==}
 
-  spdx-correct@3.2.0:
-    resolution: {integrity: sha512-kN9dJbvnySHULIluDHy32WHRUu3Og7B9sbY7tsFLctQkIqnMh3hErYgdMjTYuqmcXX+lK5T1lnUt3G7zNswmZA==}
-
-  spdx-exceptions@2.5.0:
-    resolution: {integrity: sha512-PiU42r+xO4UbUS1buo3LPJkjlO7430Xn5SVAhdpzzsPHsjbYVflnnFdATgabnLude+Cqu25p6N+g2lw/PFsa4w==}
-
-  spdx-expression-parse@3.0.1:
-    resolution: {integrity: sha512-cbqHunsQWnJNE6KhVSMsMeH5H/L9EpymbzqTQ3uLwNCLZ1Q481oWaofqH7nO6V07xlXwY6PhQdQ2IedWx/ZK4Q==}
-
-  spdx-license-ids@3.0.22:
-    resolution: {integrity: sha512-4PRT4nh1EImPbt2jASOKHX7PB7I+e4IWNLvkKFDxNhJlfjbYlleYQh285Z/3mPTHSAK/AvdMmw5BNNuYH8ShgQ==}
-
   split2@4.2.0:
     resolution: {integrity: sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==}
     engines: {node: '>= 10.x'}
@@ -11214,10 +10965,6 @@ packages:
 
   string.prototype.matchall@4.0.12:
     resolution: {integrity: sha512-6CC9uyBL+/48dYizRf7H7VAYCMCNTBeM78x/VTUe9bFEaxBepPJDa1Ow99LqI/1yF7kuy7Q3cQsYMrcjGUcskA==}
-    engines: {node: '>= 0.4'}
-
-  string.prototype.padend@3.1.6:
-    resolution: {integrity: sha512-XZpspuSB7vJWhvJc9DLSlrXl1mcA2BdoY5jjnS135ydXqLoqhs96JjDtCkjJEQHvfqZIp9hBuBMgI589peyx9Q==}
     engines: {node: '>= 0.4'}
 
   string.prototype.repeat@1.0.0:
@@ -11687,9 +11434,6 @@ packages:
   v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
 
-  validate-npm-package-license@3.0.4:
-    resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
-
   vfile-location@5.0.3:
     resolution: {integrity: sha512-5yXvWDEgqeiYiBe1lbxYF7UMAIm/IcopxMHrMQDq3nvKcjPKIhZklUKL+AE7J7uApI4kwe2snsK+eI6UTj9EHg==}
 
@@ -11814,11 +11558,6 @@ packages:
   w3c-xmlserializer@5.0.0:
     resolution: {integrity: sha512-o8qghlI8NZHU1lLPrpi2+Uq7abh4GGPpYANlalzWxyWteJOCsr/P+oPBA49TOLu5FTZO4d3F9MnWJfiMo4BkmA==}
     engines: {node: '>=18'}
-
-  wait-port@1.1.0:
-    resolution: {integrity: sha512-3e04qkoN3LxTMLakdqeWth8nih8usyg+sf1Bgdf9wwUkp05iuK1eSY/QpLvscT/+F/gA89+LpUmmgBtesbqI2Q==}
-    engines: {node: '>=10'}
-    hasBin: true
 
   watchpack@2.4.4:
     resolution: {integrity: sha512-c5EGNOiyxxV5qmTtAB7rbiXxi1ooX1pQKMLX/MIabJjRA0SJBQOjKF+KSVfHkr9U1cADPon0mRiVe/riyaiDUA==}
@@ -15272,10 +15011,6 @@ snapshots:
 
   '@types/uuid@9.0.8': {}
 
-  '@types/ws@8.18.1':
-    dependencies:
-      '@types/node': 18.19.124
-
   '@typescript-eslint/eslint-plugin@5.38.1(@typescript-eslint/parser@5.38.1(eslint@8.57.1)(typescript@5.9.2))(eslint@8.57.1)(typescript@5.9.2)':
     dependencies:
       '@typescript-eslint/parser': 5.38.1(eslint@8.57.1)(typescript@5.9.2)
@@ -15887,10 +15622,6 @@ snapshots:
 
   ansi-sequence-parser@1.1.3: {}
 
-  ansi-styles@3.2.1:
-    dependencies:
-      color-convert: 1.9.3
-
   ansi-styles@4.3.0:
     dependencies:
       color-convert: 2.0.1
@@ -16210,12 +15941,6 @@ snapshots:
       loupe: 3.2.1
       pathval: 2.0.1
 
-  chalk@2.4.2:
-    dependencies:
-      ansi-styles: 3.2.1
-      escape-string-regexp: 1.0.5
-      supports-color: 5.5.0
-
   chalk@4.1.2:
     dependencies:
       ansi-styles: 4.3.0
@@ -16285,15 +16010,9 @@ snapshots:
 
   collapse-white-space@2.1.0: {}
 
-  color-convert@1.9.3:
-    dependencies:
-      color-name: 1.1.3
-
   color-convert@2.0.1:
     dependencies:
       color-name: 1.1.4
-
-  color-name@1.1.3: {}
 
   color-name@1.1.4: {}
 
@@ -16322,8 +16041,6 @@ snapshots:
   commander@2.20.3: {}
 
   commander@4.1.1: {}
-
-  commander@9.5.0: {}
 
   compute-scroll-into-view@1.0.20: {}
 
@@ -16626,10 +16343,6 @@ snapshots:
       prr: 1.0.1
     optional: true
 
-  error-ex@1.3.2:
-    dependencies:
-      is-arrayish: 0.2.1
-
   error-stack-parser@2.1.4:
     dependencies:
       stackframe: 1.3.4
@@ -16817,8 +16530,6 @@ snapshots:
   escape-carriage@1.3.1: {}
 
   escape-html@1.0.3: {}
-
-  escape-string-regexp@1.0.5: {}
 
   escape-string-regexp@4.0.0: {}
 
@@ -17615,8 +17326,6 @@ snapshots:
 
   hookable@5.5.3: {}
 
-  hosted-git-info@2.8.9: {}
-
   html-encoding-sniffer@4.0.0:
     dependencies:
       whatwg-encoding: 3.1.1
@@ -17764,8 +17473,6 @@ snapshots:
       call-bind: 1.0.8
       call-bound: 1.0.4
       get-intrinsic: 1.3.0
-
-  is-arrayish@0.2.1: {}
 
   is-arrayish@0.3.4:
     optional: true
@@ -18006,8 +17713,6 @@ snapshots:
 
   json-buffer@3.0.1: {}
 
-  json-parse-better-errors@1.0.2: {}
-
   json-parse-even-better-errors@2.3.1: {}
 
   json-schema-ref-resolver@1.0.1:
@@ -18173,13 +17878,6 @@ snapshots:
   lilconfig@3.1.3: {}
 
   lines-and-columns@1.2.4: {}
-
-  load-json-file@4.0.0:
-    dependencies:
-      graceful-fs: 4.2.11
-      parse-json: 4.0.0
-      pify: 3.0.0
-      strip-bom: 3.0.0
 
   load-tsconfig@0.2.5: {}
 
@@ -18434,8 +18132,6 @@ snapshots:
   medium-zoom@1.1.0: {}
 
   memoize-one@5.2.1: {}
-
-  memorystream@0.3.1: {}
 
   merge-descriptors@1.0.3: {}
 
@@ -18849,26 +18545,7 @@ snapshots:
 
   node-releases@2.0.21: {}
 
-  normalize-package-data@2.5.0:
-    dependencies:
-      hosted-git-info: 2.8.9
-      resolve: 1.22.10
-      semver: 5.7.2
-      validate-npm-package-license: 3.0.4
-
   normalize-path@3.0.0: {}
-
-  npm-run-all@4.1.5:
-    dependencies:
-      ansi-styles: 3.2.1
-      chalk: 2.4.2
-      cross-spawn: 6.0.6
-      memorystream: 0.3.1
-      minimatch: 3.1.2
-      pidtree: 0.3.1
-      read-pkg: 3.0.0
-      shell-quote: 1.8.3
-      string.prototype.padend: 3.1.6
 
   npm-run-path@2.0.2:
     dependencies:
@@ -19013,11 +18690,6 @@ snapshots:
       is-decimal: 2.0.1
       is-hexadecimal: 2.0.1
 
-  parse-json@4.0.0:
-    dependencies:
-      error-ex: 1.3.2
-      json-parse-better-errors: 1.0.2
-
   parse-node-version@1.0.1: {}
 
   parse5@7.3.0:
@@ -19046,10 +18718,6 @@ snapshots:
       lru-cache: 10.4.3
       minipass: 7.1.2
 
-  path-type@3.0.0:
-    dependencies:
-      pify: 3.0.0
-
   path-type@4.0.0: {}
 
   pathe@2.0.3: {}
@@ -19063,10 +18731,6 @@ snapshots:
   picomatch@2.3.1: {}
 
   picomatch@4.0.3: {}
-
-  pidtree@0.3.1: {}
-
-  pify@3.0.0: {}
 
   pify@4.0.1:
     optional: true
@@ -19633,12 +19297,6 @@ snapshots:
 
   react@19.1.1: {}
 
-  read-pkg@3.0.0:
-    dependencies:
-      load-json-file: 4.0.0
-      normalize-package-data: 2.5.0
-      path-type: 3.0.0
-
   readable-stream@3.6.2:
     dependencies:
       inherits: 2.0.4
@@ -20082,8 +19740,6 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  shell-quote@1.8.3: {}
-
   shelljs@0.9.2:
     dependencies:
       execa: 1.0.0
@@ -20190,20 +19846,6 @@ snapshots:
 
   space-separated-tokens@2.0.2: {}
 
-  spdx-correct@3.2.0:
-    dependencies:
-      spdx-expression-parse: 3.0.1
-      spdx-license-ids: 3.0.22
-
-  spdx-exceptions@2.5.0: {}
-
-  spdx-expression-parse@3.0.1:
-    dependencies:
-      spdx-exceptions: 2.5.0
-      spdx-license-ids: 3.0.22
-
-  spdx-license-ids@3.0.22: {}
-
   split2@4.2.0: {}
 
   sprintf-js@1.0.3: {}
@@ -20271,13 +19913,6 @@ snapshots:
       regexp.prototype.flags: 1.5.4
       set-function-name: 2.0.2
       side-channel: 1.1.0
-
-  string.prototype.padend@3.1.6:
-    dependencies:
-      call-bind: 1.0.8
-      define-properties: 1.2.1
-      es-abstract: 1.24.0
-      es-object-atoms: 1.1.1
 
   string.prototype.repeat@1.0.0:
     dependencies:
@@ -20798,11 +20433,6 @@ snapshots:
 
   v8-compile-cache-lib@3.0.1: {}
 
-  validate-npm-package-license@3.0.4:
-    dependencies:
-      spdx-correct: 3.2.0
-      spdx-expression-parse: 3.0.1
-
   vfile-location@5.0.3:
     dependencies:
       '@types/unist': 3.0.3
@@ -20946,14 +20576,6 @@ snapshots:
   w3c-xmlserializer@5.0.0:
     dependencies:
       xml-name-validator: 5.0.0
-
-  wait-port@1.1.0:
-    dependencies:
-      chalk: 4.1.2
-      commander: 9.5.0
-      debug: 4.4.3(supports-color@5.5.0)
-    transitivePeerDependencies:
-      - supports-color
 
   watchpack@2.4.4:
     dependencies:

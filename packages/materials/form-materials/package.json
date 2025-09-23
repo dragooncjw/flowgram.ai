@@ -72,7 +72,6 @@
   },
   "dependencies": {
     "@douyinfe/semi-icons": "^2.80.0",
-    "@douyinfe/semi-illustrations": "^2.80.0",
     "@douyinfe/semi-ui": "^2.80.0",
     "@flowgram.ai/editor": "workspace:*",
     "@flowgram.ai/json-schema": "workspace:*",

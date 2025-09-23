@@ -40,7 +40,6 @@
   },
   "devDependencies": {
     "@flowgram.ai/eslint-config": "workspace:*",
-    "@flowgram.ai/form": "workspace:*",
     "@flowgram.ai/ts-config": "workspace:*",
     "@types/lodash-es": "^4.17.12",
     "@types/react": "^18",

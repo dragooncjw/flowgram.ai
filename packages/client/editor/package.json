@@ -26,12 +26,10 @@
     "watch": "npm run build:fast -- --dts-resolve --watch --ignore-watch dist"
   },
   "dependencies": {
-    "@flowgram.ai/background-plugin": "workspace:*",
     "@flowgram.ai/core": "workspace:*",
     "@flowgram.ai/document": "workspace:*",
     "@flowgram.ai/form": "workspace:*",
     "@flowgram.ai/form-core": "workspace:*",
-    "@flowgram.ai/group-plugin": "workspace:*",
     "@flowgram.ai/history": "workspace:*",
     "@flowgram.ai/history-node-plugin": "workspace:*",
     "@flowgram.ai/i18n-plugin": "workspace:*",

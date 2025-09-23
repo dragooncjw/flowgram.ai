@@ -199,6 +199,18 @@
 			"autoinstallerName": "rush-commands",
 			"shellCommand": "node common/autoinstallers/rush-commands/check-circular-dependency.mjs"
 		},
+		/**
+		 * 检查依赖关系
+		 * check dependencies
+	   */
+		{
+			"name": "dep-check",
+			"commandKind": "global",
+			"summary": "⭐️️ Auto check dependency",
+			"safeForSimultaneousRushProcesses": true,
+			"autoinstallerName": "dep-check",
+			"shellCommand": "node common/autoinstallers/dep-check/index.js"
+		},
 		{
 			"commandKind": "bulk",
 			"name": "test",
