@@ -24,7 +24,7 @@ const packages = rushConfig.projects.map((p) => p.projectFolder);
 // depcheck 配置
 const options = {
   ignorePatterns: ["node_modules", "dist", "build", "coverage"], // 忽略目录
-  ignoreMatches: ["typescript", "@types/*", "vitest", "inversify", "reflect-metadata", "@flowgram.ai/ts-config", "@flowgram.ai/eslint-config", "eslint", "@vitest/coverage-v8", "@testing-library/react"], // 忽略类型依赖
+  ignoreMatches: ["typescript", "@types/*", "vitest", "inversify", "reflect-metadata", "@flowgram.ai/ts-config", "@flowgram.ai/eslint-config", "eslint", "@vitest/coverage-v8", "@testing-library/react", "zod"], // 忽略类型依赖
 };
 
 // 异步检查未使用的依赖
