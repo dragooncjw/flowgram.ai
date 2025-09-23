@@ -3,8 +3,6 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React from 'react';
-
 import { MinimapRender } from '@flowgram.ai/minimap-plugin';
 
 export const Minimap = () => (

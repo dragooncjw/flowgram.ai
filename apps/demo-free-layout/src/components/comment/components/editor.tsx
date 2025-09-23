@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { type FC, type CSSProperties, useEffect, useRef, useState, useMemo } from 'react';
+import { type FC, type CSSProperties, useEffect, useRef } from 'react';
 
 import { usePlayground } from '@flowgram.ai/free-layout-editor';
 

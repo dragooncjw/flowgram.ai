@@ -47,7 +47,7 @@ export class CommentEditorModel {
   }
 
   /** 获取编辑器 DOM 节点 */
-  public get element(): HTMLTextAreaElement | null {
+  public get element(): HTMLTextAreaElement {
     return this.editor;
   }
 

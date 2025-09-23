@@ -21,8 +21,8 @@ import { DEFAULT_DEMO_REGISTRY } from '../node-registries';
 import { DEFAULT_INITIAL_DATA } from '../initial-data';
 
 interface EditorProps {
-  registries: FlowNodeRegistry[];
-  initialData: WorkflowJSON;
+  registries?: FlowNodeRegistry[];
+  initialData?: WorkflowJSON;
 }
 
 export const useEditorProps = ({

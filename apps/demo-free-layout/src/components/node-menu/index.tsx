@@ -24,7 +24,7 @@ import { CopyShortcut } from '../../shortcuts/copy';
 
 interface NodeMenuProps {
   node: WorkflowNodeEntity;
-  updateTitleEdit: (setEditing: boolean) => void;
+  updateTitleEdit?: (setEditing: boolean) => void;
   deleteNode: () => void;
 }
 
@@ -87,7 +87,7 @@ export const NodeMenu: FC<NodeMenuProps> = ({ node, deleteNode, updateTitleEdit 
   );
   const handleEditTitle = useCallback(
     (e: React.MouseEvent) => {
-      updateTitleEdit(true);
+      updateTitleEdit?.(true);
       e.stopPropagation(); // Disable clicking prevents the sidebar from opening
     },
     [updateTitleEdit]

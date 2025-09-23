@@ -22,7 +22,8 @@
     "build:prod": "next build",
     "start": "next start",
     "lint": "eslint ./src --cache",
-    "lint:fix": "eslint ./src --fix"
+    "lint:fix": "eslint ./src --fix",
+    "ts-check": "tsc --noEmit"
   },
   "dependencies": {
     "react": "^18",

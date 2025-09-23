@@ -3,23 +3,16 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { FC, useRef } from 'react';
+import { useRef } from 'react';
 
 import { NodePanelRenderProps as NodePanelRenderPropsDefault } from '@flowgram.ai/free-node-panel-plugin';
-import { WorkflowPortEntity } from '@flowgram.ai/free-layout-editor';
 import { Popover } from '@douyinfe/semi-ui';
 
 import { NodePlaceholder } from './node-placeholder';
 import { NodeList } from './node-list';
 import './index.less';
 
-interface NodePanelRenderProps extends NodePanelRenderPropsDefault {
-  panelProps: {
-    fromPort?: WorkflowPortEntity; // 从哪个端口添加 From which port to add
-    enableNodePlaceholder?: boolean;
-  };
-}
-export const NodePanel: FC<NodePanelRenderProps> = (props) => {
+export const NodePanel = (props: NodePanelRenderPropsDefault) => {
   const { onSelect, position, onClose, containerNode, panelProps = {} } = props;
   const { enableNodePlaceholder, fromPort } = panelProps;
   const ref = useRef<HTMLDivElement>(null);
