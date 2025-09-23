@@ -28,13 +28,14 @@ const options = {
 };
 
 // 异步检查未使用的依赖
-const checkUnusedDependencies = async (packagePath) => {
+const checkUnusedDependencies = async (packagePath): Promise<number> => {
+  let unUsedNum = 0;
   const packageJsonPath = path.join(packagePath, "package.json");
-  if (!fs.existsSync(packageJsonPath)) return;
+  if (!fs.existsSync(packageJsonPath)) return unUsedNum;
 
   if (packagePath.includes('/apps/') || packagePath.includes('/common/') || packagePath.includes('/config/')) {
     console.log('✅ skip apps & common & config')
-    return;
+    return unUsedNum;
   }
   console.log(`\n🔍 Checking unused dependencies in ${packagePath}...`);
   const result = await depcheck(packagePath, options);
@@ -42,26 +43,31 @@ const checkUnusedDependencies = async (packagePath) => {
   if (result.dependencies.length || result.devDependencies.length) {
     console.log(`🚨 Unused dependencies found in ${packagePath}:`);
     if (result.dependencies.length) {
+      unUsedNum += result.dependencies.length
       console.log(`  📦 Unused dependencies: ${result.dependencies.join(", ")}`);
     }
     if (result.devDependencies.length) {
+      unUsedNum += result.devDependencies.length
       console.log(`  📦 Unused devDependencies: ${result.devDependencies.join(", ")}`);
     }
   } else {
     console.log(`✅ No unused dependencies found in ${packagePath}`);
   }
+  return unUsedNum;
 };
 
 export async function runCheckDep(): Promise<void> {
   // 遍历所有 Rush 项目
   (async () => {
+    let unUsedNum = 0
     for (const pkgPath of packages) {
       const fullPath = pkgPath;
       if (fs.existsSync(path.join(fullPath, "package.json"))) {
-        await checkUnusedDependencies(fullPath);
+        const newNum = await checkUnusedDependencies(fullPath);
+        unUsedNum += newNum;
       }
     }
-    console.log("\n✅ Unused dependency check completed!");
+    console.log(`\n✅ Unused dependency check completed! find ${unUsedNum} Error`);
   })();
 }
 
