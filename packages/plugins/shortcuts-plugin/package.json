@@ -30,13 +30,13 @@
     "@flowgram.ai/document": "workspace:*",
     "@flowgram.ai/utils": "workspace:*",
     "inversify": "^6.0.1",
-    "reflect-metadata": "~0.2.2",
-    "styled-components": "^5"
+    "reflect-metadata": "~0.2.2"
   },
   "devDependencies": {
     "@flowgram.ai/eslint-config": "workspace:*",
     "@flowgram.ai/ts-config": "workspace:*",
     "@vitest/coverage-v8": "^3.2.4",
+    "styled-components": "^5",
     "eslint": "^8.54.0",
     "tsup": "^8.0.1",
     "typescript": "^5.8.3",

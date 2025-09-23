@@ -33,8 +33,7 @@
     "@flowgram.ai/variable-core": "workspace:*",
     "@flowgram.ai/variable-layout": "workspace:*",
     "inversify": "^6.0.1",
-    "reflect-metadata": "~0.2.2",
-    "styled-components": "^5"
+    "reflect-metadata": "~0.2.2"
   },
   "devDependencies": {
     "@flowgram.ai/eslint-config": "workspace:*",
