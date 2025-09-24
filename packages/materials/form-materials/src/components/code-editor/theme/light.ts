@@ -42,7 +42,7 @@ export const lightTheme: Extension = createTheme({
     gutterForeground: colors.foreground,
     gutterBorderColor: 'transparent',
     gutterBorderWidth: 0,
-    lineHighlight: '#efefef78',
+    lineHighlight: 'transparent',
     bracketColors: ['#F59E0B', '#8B5CF6', '#06B6D4'],
     tooltip: {
       backgroundColor: colors.dropdownBackground,
