@@ -47,7 +47,7 @@ export const darkTheme: Extension = createTheme({
     gutterForeground: colors.foreground,
     gutterBorderColor: 'transparent',
     gutterBorderWidth: 0,
-    lineHighlight: '#21262D',
+    lineHighlight: 'transparent',
     bracketColors: ['#FBBF24', '#A78BFA', '#7DD3FC'],
     tooltip: {
       backgroundColor: '#21262D',
