@@ -8,7 +8,12 @@ import { Emitter } from '@flowgram.ai/utils';
 import { EntityManager } from '@flowgram.ai/core';
 
 import { FlowGroupUtils } from './flow-group-service/flow-group-utils';
-import { FlowNodeBaseType, FlowOperationBaseService, LABEL_SIDE_TYPE } from '../typings';
+import {
+  FlowNodeBaseType,
+  FlowNodeJSON,
+  FlowOperationBaseService,
+  LABEL_SIDE_TYPE,
+} from '../typings';
 import { FlowDocument } from '../flow-document';
 import { FlowNodeEntity, FlowRendererStateEntity } from '../entities';
 import { FlowNodeRenderData } from '../datas';
@@ -78,6 +83,30 @@ export class FlowDragService {
    */
   dropBranch(): void {
     this.dropNode();
+  }
+
+  /**
+   * 移动并且创建节点
+   * Move and create node
+   */
+  dropCreateNode(json: FlowNodeJSON) {
+    const dropEntity = this.document.getNode(this.dropNodeId!);
+
+    if (!dropEntity) {
+      return;
+    }
+
+    if (json) {
+      const blocks = json.blocks ? json.blocks : undefined;
+      const node = this.operationService.addFromNode(dropEntity, {
+        ...json,
+        blocks,
+      });
+      this.onDropEmitter.fire({
+        dropNode: dropEntity,
+        dragNodes: [node],
+      });
+    }
   }
 
   /**
