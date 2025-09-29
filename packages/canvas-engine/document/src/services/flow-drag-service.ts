@@ -16,7 +16,6 @@ import {
 } from '../typings';
 import { FlowDocument } from '../flow-document';
 import { FlowNodeEntity, FlowRendererStateEntity } from '../entities';
-import { FlowNodeRenderData } from '../datas';
 
 /**
  * 拖拽相关操作
@@ -36,6 +35,7 @@ export class FlowDragService {
   protected onDropEmitter = new Emitter<{
     dropNode: FlowNodeEntity;
     dragNodes: FlowNodeEntity[];
+    dragJSON?: FlowNodeJSON;
   }>();
 
   readonly onDrop = this.onDropEmitter.event;
@@ -70,8 +70,7 @@ export class FlowDragService {
   }
 
   get dragging(): boolean {
-    const renderData = this.dragStartNode?.getData<FlowNodeRenderData>(FlowNodeRenderData)!;
-    return !!renderData?.dragging;
+    return !!this.renderState.dragging;
   }
 
   get labelSide(): LABEL_SIDE_TYPE | undefined {
@@ -89,7 +88,10 @@ export class FlowDragService {
    * 移动并且创建节点
    * Move and create node
    */
-  dropCreateNode(json: FlowNodeJSON) {
+  async dropCreateNode(
+    json: FlowNodeJSON,
+    onCreateNode?: (json: FlowNodeJSON, dropEntity: FlowNodeEntity) => Promise<FlowNodeEntity>
+  ) {
     const dropEntity = this.document.getNode(this.dropNodeId!);
 
     if (!dropEntity) {
@@ -97,14 +99,11 @@ export class FlowDragService {
     }
 
     if (json) {
-      const blocks = json.blocks ? json.blocks : undefined;
-      const node = this.operationService.addFromNode(dropEntity, {
-        ...json,
-        blocks,
-      });
+      const dragNodes = await onCreateNode?.(json, dropEntity);
       this.onDropEmitter.fire({
         dropNode: dropEntity,
-        dragNodes: [node],
+        dragNodes: dragNodes ? [dragNodes] : [],
+        dragJSON: json,
       });
     }
   }

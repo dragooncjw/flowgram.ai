@@ -19,6 +19,7 @@ interface FlowRendererState {
   nodeDragIds?: string[]; // 框选批量拖拽
   nodeDragIdsWithChildren?: string[]; // 批量拖拽（含子节点）
   dragLabelSide?: LABEL_SIDE_TYPE;
+  dragging?: boolean;
 }
 /**
  * 渲染相关的全局状态管理
@@ -46,6 +47,16 @@ export class FlowRendererStateEntity extends ConfigEntity<
   setNodeHovered(node: FlowNodeEntity | undefined): void {
     this.updateConfig({
       nodeHoveredId: node?.id,
+    });
+  }
+
+  get dragging() {
+    return this.config.dragging;
+  }
+
+  setDragging(dragging: boolean) {
+    this.updateConfig({
+      dragging,
     });
   }
 

@@ -2644,6 +2644,9 @@ importers:
       '@flowgram.ai/renderer':
         specifier: workspace:*
         version: link:../../canvas-engine/renderer
+      '@flowgram.ai/utils':
+        specifier: workspace:*
+        version: link:../../common/utils
       inversify:
         specifier: ^6.0.1
         version: 6.2.2(reflect-metadata@0.2.2)

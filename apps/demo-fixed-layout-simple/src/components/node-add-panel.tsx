@@ -8,9 +8,11 @@ import React from 'react';
 import { useStartDragNode } from '@flowgram.ai/fixed-layout-editor';
 
 import { nodeRegistries } from '../node-registries';
+import { useAddNode } from '../hooks/use-add-node';
 
 export const NodeAddPanel: React.FC = (props) => {
   const { startDrag } = useStartDragNode();
+  const { handleAdd } = useAddNode();
 
   return (
     <div className="demo-fixed-sidebar">
@@ -23,10 +25,11 @@ export const NodeAddPanel: React.FC = (props) => {
             onMouseDown={(e) => {
               e.stopPropagation();
               const nodeAddData = registry.onAdd();
-              startDrag(
+              return startDrag(
                 e,
                 {
-                  dragStartEntityProps: nodeAddData,
+                  dragJSON: nodeAddData,
+                  onCreateNode: async (json, dropNode) => handleAdd(json, dropNode),
                 },
                 {
                   disableDragScroll: true,

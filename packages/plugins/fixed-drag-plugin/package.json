@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@flowgram.ai/core": "workspace:*",
+    "@flowgram.ai/utils": "workspace:*",
     "@flowgram.ai/document": "workspace:*",
     "@flowgram.ai/renderer": "workspace:*",
     "inversify": "^6.0.1",
