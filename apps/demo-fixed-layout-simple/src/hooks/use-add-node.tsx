@@ -30,7 +30,16 @@ export const useAddNode = () => {
     return entity;
   };
 
+  const handleAddBranch = (addProps: FlowNodeJSON, dropNode: FlowNodeEntity) => {
+    const index = dropNode.index + 1;
+    const entity = flowOperationService.addBlock(dropNode.originParent!, addProps, {
+      index,
+    });
+    return entity;
+  };
+
   return {
     handleAdd,
+    handleAddBranch,
   };
 };

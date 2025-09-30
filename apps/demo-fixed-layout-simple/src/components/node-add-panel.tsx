@@ -5,6 +5,7 @@
 
 import React from 'react';
 
+import { nanoid } from 'nanoid';
 import { useStartDragNode } from '@flowgram.ai/fixed-layout-editor';
 
 import { nodeRegistries } from '../node-registries';
@@ -12,7 +13,7 @@ import { useAddNode } from '../hooks/use-add-node';
 
 export const NodeAddPanel: React.FC = (props) => {
   const { startDrag } = useStartDragNode();
-  const { handleAdd } = useAddNode();
+  const { handleAdd, handleAddBranch } = useAddNode();
 
   return (
     <div className="demo-fixed-sidebar">
@@ -41,6 +42,33 @@ export const NodeAddPanel: React.FC = (props) => {
           </div>
         );
       })}
+      <div
+        key={'branch'}
+        className="demo-fixed-card"
+        onMouseDown={(e) => {
+          e.stopPropagation();
+          return startDrag(
+            e,
+            {
+              dragJSON: {
+                id: `branch_${nanoid(5)}`,
+                type: 'block',
+                data: {
+                  title: 'New Branch',
+                  content: '',
+                },
+              },
+              isBranch: true,
+              onCreateNode: async (json, dropNode) => handleAddBranch(json, dropNode),
+            },
+            {
+              disableDragScroll: true,
+            }
+          );
+        }}
+      >
+        branch
+      </div>
     </div>
   );
 };

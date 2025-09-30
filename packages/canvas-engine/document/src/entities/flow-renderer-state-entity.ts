@@ -20,6 +20,7 @@ interface FlowRendererState {
   nodeDragIdsWithChildren?: string[]; // 批量拖拽（含子节点）
   dragLabelSide?: LABEL_SIDE_TYPE;
   dragging?: boolean;
+  isBranch?: boolean;
 }
 /**
  * 渲染相关的全局状态管理
@@ -57,6 +58,16 @@ export class FlowRendererStateEntity extends ConfigEntity<
   setDragging(dragging: boolean) {
     this.updateConfig({
       dragging,
+    });
+  }
+
+  get isBranch() {
+    return this.config.isBranch;
+  }
+
+  setIsBranch(isBranch: boolean) {
+    this.updateConfig({
+      isBranch,
     });
   }
 

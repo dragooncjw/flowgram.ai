@@ -266,7 +266,11 @@ export class FlowDragLayer extends Layer<FlowDragOptions> {
 
       if (activatedNodeId) {
         if (this.flowDragService.isDragBranch) {
-          this.flowDragService.dropBranch();
+          if (this.dragJSON) {
+            await this.flowDragService.dropCreateNode(this.dragJSON, this.onCreateNode);
+          } else {
+            this.flowDragService.dropBranch();
+          }
         } else {
           if (this.dragJSON) {
             await this.flowDragService.dropCreateNode(this.dragJSON, this.onCreateNode);
@@ -280,6 +284,7 @@ export class FlowDragLayer extends Layer<FlowDragOptions> {
       // 清空碰撞 id
       this.flowRenderStateEntity.setNodeDroppingId('');
       this.flowRenderStateEntity.setDragLabelSide();
+      this.flowRenderStateEntity.setIsBranch(false);
       this.dragStartEntity = undefined;
       this.dragEntities = [];
 
@@ -313,7 +318,13 @@ export class FlowDragLayer extends Layer<FlowDragOptions> {
    */
   async startDrag(
     e: { clientX: number; clientY: number },
-    { dragStartEntity: startEntityFromProps, dragEntities, dragJSON, onCreateNode }: StartDragProps,
+    {
+      dragStartEntity: startEntityFromProps,
+      dragEntities,
+      dragJSON,
+      isBranch,
+      onCreateNode,
+    }: StartDragProps,
     options?: {
       dragOffsetX?: number;
       dragOffsetY?: number;
@@ -328,6 +339,7 @@ export class FlowDragLayer extends Layer<FlowDragOptions> {
     this.disableDragScroll = Boolean(options?.disableDragScroll);
     this.dragJSON = dragJSON;
     this.onCreateNode = onCreateNode;
+    this.flowRenderStateEntity.setIsBranch(Boolean(isBranch));
 
     this.dragOffset.x = options?.dragOffsetX || DEFAULT_DRAG_OFFSET_X;
     this.dragOffset.y = options?.dragOffsetY || DEFAULT_DRAG_OFFSET_Y;

@@ -61,7 +61,7 @@ export class FlowDragService {
 
   // 是否在拖拽分支
   get isDragBranch(): boolean {
-    return this.dragStartNode?.isInlineBlock;
+    return this.renderState.isBranch || this.dragStartNode?.isInlineBlock;
   }
 
   // 拖拽的所有节点及其自节点
@@ -178,6 +178,10 @@ export class FlowDragService {
    * @param side 分支的前面还是后面
    */
   isDroppableBranch(node: FlowNodeEntity, side: LABEL_SIDE_TYPE = LABEL_SIDE_TYPE.NORMAL_BRANCH) {
+    // 外部添加拖拽标识，默认所有分支均可添加
+    if (this.renderState.isBranch) {
+      return true;
+    }
     // 拖拽的是分支
     if (this.isDragBranch) {
       if (
