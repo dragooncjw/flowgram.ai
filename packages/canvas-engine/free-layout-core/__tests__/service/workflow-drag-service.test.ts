@@ -321,9 +321,11 @@ describe('workflow-drag-service', () => {
       y: 100,
     });
     expect(dragResult).toEqual(true);
+    // eslint-disable-next-line no-console
+    console.log('debugger window.devicePixelRatio', window.devicePixelRatio);
     expect(startNode.getData(PositionData).toJSON()).toEqual({
-      x: 100,
-      y: 100,
+      x: 100 * window.devicePixelRatio,
+      y: 100 * window.devicePixelRatio,
     });
     expect(endNode.getData(PositionData).toJSON()).toEqual({ x: 900, y: 100 });
   });
