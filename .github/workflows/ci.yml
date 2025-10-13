@@ -26,6 +26,15 @@ jobs:
           node-version: 18
       # - name: Verify Change Logs
       #   run: node common/scripts/install-run-rush.js change --verify
+      - name: Cache Rush dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.pnpm-store
+            common/temp
+          key: ${{ runner.os }}-rush-${{ hashFiles('common/config/rush/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-rush-
       - name: Rush Install
         run: node common/scripts/install-run-rush.js install
       - name: Rush build
