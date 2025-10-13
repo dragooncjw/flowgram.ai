@@ -17,14 +17,38 @@ jobs:
         with:
           node-version: 18
 
+      - name: Cache Rush dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.pnpm-store
+            common/temp
+          key: ${{ runner.os }}-rush-${{ hashFiles('common/config/rush/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-rush-
+
       - name: Rush Install
         run: node common/scripts/install-run-rush.js install
 
       - name: Rush build
         run: node common/scripts/install-run-rush.js build
 
-      - name: Install Playwright Browsers
-        run: pushd e2e/fixed-layout && npx playwright install --with-deps --only-shell chromium && popd
+      # 缓存 Playwright 浏览器
+      - name: Cache Playwright browsers
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('e2e/fixed-layout/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
+      - name: Install Playwright browsers if missing
+        run: |
+          if [ ! -d "$HOME/.cache/ms-playwright" ]; then
+            pushd e2e/fixed-layout && npx playwright install --with-deps --only-shell chromium && popd
+          else
+            echo "Playwright browsers already cached, skipping install"
+          fi
 
       - name: Run E2E tests
         run: node common/scripts/install-run-rush.js e2e:test --verbose
