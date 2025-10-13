@@ -37,14 +37,18 @@ jobs:
       - name: Cache Playwright browsers
         uses: actions/cache@v3
         with:
-          path: /home/runner/.cache/ms-playwright
+          path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-${{ hashFiles('e2e/fixed-layout/package.json') }}
           restore-keys: |
             ${{ runner.os }}-playwright-
 
-      - name: Install Playwright Browsers
+      - name: Install Playwright browsers if missing
         run: |
-          pushd e2e/fixed-layout && npx playwright install --with-deps --only-shell chromium && popd
+          if [ ! -d "$HOME/.cache/ms-playwright" ]; then
+            pushd e2e/fixed-layout && npx playwright install --with-deps --only-shell chromium && popd
+          else
+            echo "Playwright browsers already cached, skipping install"
+          fi
 
       - name: Run E2E tests
         run: node common/scripts/install-run-rush.js e2e:test --verbose
