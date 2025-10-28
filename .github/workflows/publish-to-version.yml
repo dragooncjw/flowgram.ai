@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
         sdk-version:
-          description: '要升级到的 SDK 版本（非 app）'
+          description: '要升级到的 SDK 版本（e.g. 1.0.0）'
           required: true
           default: ''
 
