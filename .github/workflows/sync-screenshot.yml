@@ -1,6 +1,5 @@
 name: Sync Screenshot
-on:
-  workflow_dispatch
+on: workflow_dispatch
 
 concurrency:
   group: "manual-sync-screenshot"
@@ -17,7 +16,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 22
+          node-version: 18
 
       - name: Set Git user.name and user.email from trigger actor
         run: |

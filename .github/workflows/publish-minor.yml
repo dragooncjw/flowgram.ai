@@ -1,10 +1,9 @@
 name: Publish-Minor
-on:
-  workflow_dispatch
+on: workflow_dispatch
 
 concurrency:
   group: "main-branch-workflow" # 唯一标识符，确保只运行一个实例
-  cancel-in-progress: false     # 不取消正在运行的实例，后续触发需要等待当前实例完成
+  cancel-in-progress: false # 不取消正在运行的实例，后续触发需要等待当前实例完成
 
 jobs:
   build:
@@ -40,8 +39,8 @@ jobs:
           echo "The package output version is ${{ steps.get_version.outputs.version }}"
       - uses: actions/setup-node@v3
         with:
-          node-version: 22
-          registry-url: 'https://registry.npmjs.org/'
+          node-version: 18
+          registry-url: "https://registry.npmjs.org/"
       - name: Rush Install
         run: node common/scripts/install-run-rush.js install
       - name: Rush build
@@ -74,4 +73,3 @@ jobs:
         run: |
           git tag "v$NEW_VERSION"
           git push origin "v$NEW_VERSION"
-

@@ -1,6 +1,5 @@
 name: Deploy With Actions
-on:
-  workflow_dispatch
+on: workflow_dispatch
 
 concurrency:
   group: "main-deploy-branch-workflow"
@@ -26,8 +25,8 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 22
-          registry-url: 'https://registry.npmjs.org/'
+          node-version: 18
+          registry-url: "https://registry.npmjs.org/"
 
       - name: Rush Install
         run: node common/scripts/install-run-rush.js install -t @flowgram.ai/docs

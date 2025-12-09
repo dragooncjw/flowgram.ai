@@ -2,9 +2,9 @@ name: E2E Tests
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
   merge_group:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   e2e:
@@ -15,7 +15,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 22
+          node-version: 18
 
       - name: Rush Install
         run: node common/scripts/install-run-rush.js install
