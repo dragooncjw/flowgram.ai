@@ -23,7 +23,6 @@ import { useIsSidebar } from '@editor/hooks';
 import { FormContent, FormHeader, FormOutputs } from '@editor/form-components';
 
 export const renderForm = ({ form }: FormRenderProps<FlowNodeJSON>) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const isSidebar = useIsSidebar();
   if (isSidebar) {
     return (

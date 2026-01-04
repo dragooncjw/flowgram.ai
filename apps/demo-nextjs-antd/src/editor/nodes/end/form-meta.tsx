@@ -13,7 +13,6 @@ import { FormContent, FormHeader, FormOutputs, PropertiesEdit } from '@editor/fo
 import { defaultFormMeta } from '../default-form-meta';
 
 export const renderForm = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const isSidebar = useIsSidebar();
   if (isSidebar) {
     return (

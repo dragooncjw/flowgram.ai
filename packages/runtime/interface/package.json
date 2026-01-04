@@ -25,7 +25,9 @@
     "test": "exit 0",
     "test:cov": "exit 0",
     "ts-check": "tsc --noEmit",
-    "watch": "npm run build:fast -- --dts-resolve --watch --ignore-watch dist"
+    "watch": "npm run build:fast -- --dts-resolve --watch --ignore-watch dist",
+    "lint": "eslint ./src --cache",
+    "lint:fix": "eslint ./src --fix"
   },
   "dependencies": {
     "zod": "^3.24.4"
@@ -33,7 +35,7 @@
   "devDependencies": {
     "@flowgram.ai/eslint-config": "workspace:*",
     "@flowgram.ai/ts-config": "workspace:*",
-    "eslint": "^8.54.0",
+    "eslint": "^9.0.0",
     "tsup": "^8.0.1",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4"

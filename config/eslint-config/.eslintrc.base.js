@@ -3,22 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-// This is a workaround for https://github.com/eslint/eslint/issues/3458
-require('@rushstack/eslint-config/patch/modern-module-resolution');
-
 module.exports = {
-  parser: '@babel/eslint-parser',
-  extends: ['plugin:prettier/recommended'],
-  parserOptions: {
-    requireConfigFile: false,
-    babelOptions: {
-      babelrc: false,
-      configFile: false,
-      cwd: __dirname,
-      presets: ['@babel/preset-env', '@babel/preset-react'],
-    },
-  },
-  plugins: ['babel'],
   ignorePatterns: [
     '**/*.d.ts',
     '**/__mocks__',
@@ -44,7 +29,6 @@ module.exports = {
     '*.json',
   ],
   rules: {
-    // eslint-disable-next-line global-require
     'prettier/prettier': [
       'warn',
       {
@@ -57,8 +41,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.ts', '*.tsx'],
-      parser: '@typescript-eslint/parser',
+      files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
       settings: {
         'import/resolver': {
           node: {
@@ -66,14 +49,10 @@ module.exports = {
             extensions: ['.js', '.jsx', '.ts', '.tsx'],
           },
         },
+        react: {
+          version: 'detect',
+        },
       },
-      extends: [
-        'plugin:prettier/recommended',
-        'plugin:react/recommended',
-        'plugin:react/jsx-runtime',
-      ],
-      plugins: ['@typescript-eslint', 'import'],
-
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
@@ -110,50 +89,22 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'react/require-default-props': 'off',
         'no-dupe-class-members': 'off',
-        'react/self-closing-comp': [
-          'error',
-          {
-            component: true,
-            html: false,
-          },
-        ],
+        'react/self-closing-comp': ['error', { component: true, html: false }],
         'react/jsx-props-no-spreading': 'off',
         'no-console': ['error', { allow: ['warn', 'error'] }],
         'no-shadow': 'off',
         'class-methods-use-this': 'off',
         'default-param-last': 'off',
-        'prettier/prettier': [
-          'warn',
-          {
-            semi: true,
-            singleQuote: true,
-            printWidth: 100,
-            usePrettierrc: false,
-          },
-        ],
         'import/no-cycle': 'error',
-        'import/no-extraneous-dependencies': [
-          'error',
-          {
-            devDependencies: true,
-          },
-        ],
+        'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
         'import/no-relative-packages': 'error',
         'import/order': [
           'warn',
           {
             groups: ['builtin', 'external', ['internal', 'parent', 'sibling', 'index'], 'unknown'],
             pathGroups: [
-              {
-                pattern: 'react*',
-                group: 'builtin',
-                position: 'before',
-              },
-              {
-                pattern: '@/**',
-                group: 'internal',
-                position: 'before',
-              },
+              { pattern: 'react*', group: 'builtin', position: 'before' },
+              { pattern: '@/**', group: 'internal', position: 'before' },
               {
                 pattern: './*.+(css|sass|less|scss|pcss|styl)',
                 patternOptions: { dot: true, nocomment: true },
@@ -161,10 +112,7 @@ module.exports = {
                 position: 'after',
               },
             ],
-            alphabetize: {
-              order: 'desc' /* sort in ascending order. Options: ['ignore', 'asc', 'desc'] */,
-              caseInsensitive: true /* ignore case. Options: [true, false] */,
-            },
+            alphabetize: { order: 'desc', caseInsensitive: true },
             pathGroupsExcludedImportTypes: ['builtin'],
             'newlines-between': 'always',
           },

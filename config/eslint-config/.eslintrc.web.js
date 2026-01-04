@@ -3,24 +3,17 @@
  * SPDX-License-Identifier: MIT
  */
 
-// This is a workaround for https://github.com/eslint/eslint/issues/3458
-require('@rushstack/eslint-config/patch/modern-module-resolution');
+const baseConfig = require('./.eslintrc.base.js');
 
 module.exports = {
-  extends: ['./.eslintrc.base.js'],
-  plugins: ['react'],
-  env: {
-    browser: true,
-    node: true,
-    es6: true,
-    jest: true,
-  },
+  ignorePatterns: baseConfig.ignorePatterns || [],
   globals: {
     React: true,
     jsdom: true,
     JSX: true,
   },
   settings: {
+    ...(baseConfig.settings || {}),
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -28,6 +21,8 @@ module.exports = {
     },
   },
   rules: {
+    ...(baseConfig.rules || {}),
     'import/no-cycle': 'off',
   },
+  overrides: baseConfig.overrides || [],
 };

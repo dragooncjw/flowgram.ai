@@ -114,7 +114,7 @@
     "@flowgram.ai/ts-config": "workspace:*",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8.54.0",
+    "eslint": "^9.0.0",
     "react": "^18",
     "react-dom": "^18",
     "typescript": "^5.8.3",

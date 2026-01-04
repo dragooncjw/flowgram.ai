@@ -53,7 +53,6 @@ export const CommentRender: FC<{
         setTimeout(() => {
           // 防止 selectNode 拦截事件，导致 slate 编辑器无法聚焦
           selectNode(e);
-          // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- delay
         }, 20);
       }}
     >

@@ -25,7 +25,9 @@
     "test": "vitest run",
     "test:cov": "vitest run --coverage",
     "ts-check": "tsc --noEmit",
-    "watch": "npm run build:fast -- --dts-resolve --watch --ignore-watch dist"
+    "watch": "npm run build:fast -- --dts-resolve --watch --ignore-watch dist",
+    "lint": "eslint ./src --cache",
+    "lint:fix": "eslint ./src --fix"
   },
   "dependencies": {
     "@langchain/openai": "0.5.18",
@@ -41,7 +43,7 @@
     "@types/lodash-es": "^4.17.12",
     "@types/uuid": "^9.0.1",
     "@vitest/coverage-v8": "^3.2.4",
-    "eslint": "^8.54.0",
+    "eslint": "^9.0.0",
     "dotenv": "~16.5.0",
     "tsup": "^8.0.1",
     "typescript": "^5.8.3",
