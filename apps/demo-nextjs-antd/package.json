@@ -7,7 +7,7 @@
   "files": [
     "public/",
     "src/",
-    ".eslintrc.js",
+    "eslint.config.js",
     ".gitignore",
     "next.config.ts",
     "pnpm-lock.yaml",

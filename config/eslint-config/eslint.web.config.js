@@ -3,15 +3,17 @@
  * SPDX-License-Identifier: MIT
  */
 
-const baseConfig = require('./.eslintrc.base.js');
+const baseConfig = require('./eslint.base.config.js');
 
 module.exports = {
   ignorePatterns: baseConfig.ignorePatterns || [],
+
   globals: {
     React: true,
     jsdom: true,
     JSX: true,
   },
+
   settings: {
     ...(baseConfig.settings || {}),
     'import/resolver': {
@@ -20,9 +22,11 @@ module.exports = {
       },
     },
   },
+
   rules: {
     ...(baseConfig.rules || {}),
     'import/no-cycle': 'off',
   },
+
   overrides: baseConfig.overrides || [],
 };

@@ -11,5 +11,5 @@ const compat = new FlatCompat({
 });
 
 export default [
-  ...compat.extends('../eslint-config/.eslintrc.node.js'),
+  ...compat.extends('../eslint-config/eslint.node.config.js'),
 ];

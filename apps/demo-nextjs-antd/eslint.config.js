@@ -8,7 +8,7 @@ const { defineFlatConfig } = require('@flowgram.ai/eslint-config');
 module.exports = defineFlatConfig({
   preset: 'web',
   packageRoot: __dirname,
-  ignore: ['.eslintrc.js', 'src/editor/plugins/context-menu-plugin/context-menu-layer.tsx'],
+  ignore: ['eslint.config.js', 'src/editor/plugins/context-menu-plugin/context-menu-layer.tsx'],
   rules: {
     'no-console': 'off',
     'react/prop-types': 'off',

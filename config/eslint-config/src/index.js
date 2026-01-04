@@ -5,7 +5,6 @@
 
 const { FlatCompat } = require('@eslint/eslintrc');
 
-const { defineConfig } = require('./defineConfig.js');
 const { defineFlatConfig } = require('./defineFlatConfig.js');
 
-module.exports = { defineConfig, defineFlatConfig, FlatCompat };
+module.exports = { defineFlatConfig, FlatCompat };
