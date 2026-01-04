@@ -1,18 +1,23 @@
-/* eslint-disable no-console */
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
+
 /**
  * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
  * SPDX-License-Identifier: MIT
  */
 
 import path from 'path';
+import https from 'https';
+import http from 'http';
 import { execSync } from 'child_process';
+
+import * as tar from 'tar';
 import inquirer from 'inquirer';
 import fs from 'fs-extra';
 import { Command } from 'commander';
 import chalk from 'chalk';
-import * as tar from 'tar';
-import https from 'https';
-import http from 'http';
 
 const program = new Command();
 const args = process.argv.slice(2);
@@ -58,9 +63,7 @@ function downloadFile(url: string, dest: string): Promise<void> {
 
 const main = async () => {
   console.log(chalk.green('Welcome to @flowgram.ai/create-app CLI!123123'));
-  const latest = execSync(
-    'npm view @flowgram.ai/demo-fixed-layout version --tag=latest latest'
-  )
+  const latest = execSync('npm view @flowgram.ai/demo-fixed-layout version --tag=latest latest')
     .toString()
     .trim();
 
@@ -137,9 +140,7 @@ const main = async () => {
     const pkgJsonPath = path.join(targetDir, folderName, 'package.json');
     const data = fs.readFileSync(pkgJsonPath, 'utf-8');
 
-    const packageLatestVersion = execSync(
-      'npm view @flowgram.ai/core version --tag=latest latest'
-    )
+    const packageLatestVersion = execSync('npm view @flowgram.ai/core version --tag=latest latest')
       .toString()
       .trim();
 

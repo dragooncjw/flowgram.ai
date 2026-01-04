@@ -127,3 +127,6 @@ dist-storybook/
 
 # rush standard files
 .eslintcache
+
+# eslint cache for v9
+.lintcache/

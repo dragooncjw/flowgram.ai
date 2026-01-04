@@ -1,15 +1,22 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-// ES Module 下获取 __dirname
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+/**
+ * Copyright (c) 2025 Bytedance Ltd. and/or its affiliates
+ * SPDX-License-Identifier: MIT
+ */
 
 export default [
-  ...compat.extends('../eslint-config/eslint.node.config.js'),
+  {
+    ignores: [
+      '**/*.d.ts',
+      '**/node_modules',
+      '**/dist',
+      '**/build',
+    ],
+  },
+  {
+    files: ['**/*.js', '**/*.ts'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+    },
+  },
 ];

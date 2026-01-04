@@ -1,6 +1,7 @@
 {
   "name": "@flowgram.ai/ts-config",
   "version": "0.1.8",
+  "type": "module",
   "description": "",
   "keywords": [],
   "license": "ISC",
@@ -14,7 +15,6 @@
   },
   "devDependencies": {
     "typescript": "^5.8.3",
-    "@eslint/eslintrc": "3.3.3",
     "eslint": "^9.0.0"
   },
   "publishConfig": {

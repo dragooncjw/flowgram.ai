@@ -4,6 +4,7 @@
  */
 
 module.exports = {
+  plugins: ['prettier'],
   ignorePatterns: [
     '**/*.d.ts',
     '**/__mocks__',
